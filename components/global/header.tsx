@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
@@ -16,6 +15,9 @@ import {
 
 function Header() {
   const pathname = usePathname();
+  if (pathname === '/get-started') {
+    return null;  // Don't render anything
+  }
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false); // State to control sheet
 
@@ -37,9 +39,8 @@ function Header() {
           {navLinks.map((link, index) => (
             <Link href={link.url} key={index}>
               <li
-                className={`font-normal hover:scale-105 hover:text-gray-600 transition-all duration-300 ease-in-out transform ${
-                  pathname === link.url ? "text-black font-semibold" : "text-[#A6A6A6]"
-                }`}
+                className={`font-normal hover:scale-105 hover:text-gray-600 transition-all duration-300 ease-in-out transform ${pathname === link.url ? "text-black font-semibold" : "text-[#A6A6A6]"
+                  }`}
               >
                 {link.name}
               </li>
@@ -49,9 +50,11 @@ function Header() {
 
         {/* Get Started Button (Desktop Only) */}
         <div className="hidden lg:block">
-          <Button className="hover:scale-105 transition-transform duration-300 ease-in-out transform">
-            Get Started
-          </Button>
+          <Link href={'/get-started'}>
+            <Button className="hover:scale-105 transition-transform duration-300 ease-in-out transform">
+              Get Started
+            </Button>
+          </Link>
         </div>
 
         {/* Mobile & Tablet: Hamburger Menu */}
@@ -67,9 +70,8 @@ function Header() {
                   <button
                     key={index}
                     onClick={() => handleNavigation(link.url)}
-                    className={`text-lg font-medium transition-all duration-300 ease-in-out transform hover:scale-105 ${
-                      pathname === link.url ? "text-black font-semibold" : "text-gray-600"
-                    }`}
+                    className={`text-lg font-medium transition-all duration-300 ease-in-out transform hover:scale-105 ${pathname === link.url ? "text-black font-semibold" : "text-gray-600"
+                      }`}
                   >
                     {link.name}
                   </button>

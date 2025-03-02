@@ -1,3 +1,6 @@
+'use client';
+
+import { usePathname } from 'next/navigation';
 import { footerLinks1, footerLinks2 } from '@/lib/constants/constants';
 import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
@@ -7,8 +10,13 @@ import FadeInBottom from '../framermotion/FadeInBottom';
 import FadeInTop from '../framermotion/FadeInTop';
 
 const Footer = () => {
+    const pathname = usePathname();
+    if (pathname === '/get-started') {
+        return null;  // Don't render anything
+    }
+
     return (
-        <footer className="bg-[#161C28] text-[#A6A6A6] p-8 pt-20">
+        <footer className="bg-[#161C28] text-[#A6A6A6] p-8 pt-20 mt-10">
             <div className="container mx-auto">
                 {/* Top Row */}
                 <div className="grid grid-cols-1 md:grid-cols-10 gap-8 mb-8">

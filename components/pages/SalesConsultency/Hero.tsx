@@ -9,6 +9,7 @@ import CRMs from './CRMs'
 import FadeInLeft from '@/components/framermotion/FadeInLeft'
 import FadeInBottom from '@/components/framermotion/FadeInBottom'
 import FadeInRight from '@/components/framermotion/FadeInRight'
+import Link from 'next/link'
 
 
 function SalesConsultencyHero() {
@@ -53,7 +54,9 @@ function SalesConsultencyHero() {
                             </div>
                             <p className='text-white font-medium text-lg mt-4'>We help businesses streamline sales, automate outreach, and boost conversions with expert strategies & cutting-edge tools.</p>
 
+                            <Link href={'/get-started'}>
                             <Button className='self-start mt-4 bg-white text-black rounded-full hover:bg-black hover:text-white' size={'lg'}>Boost Your Sales with Automation</Button>
+                            </Link>
                         </div>
 
                         <div className='md:max-w-[40%] mt-10 md:mt-0'>

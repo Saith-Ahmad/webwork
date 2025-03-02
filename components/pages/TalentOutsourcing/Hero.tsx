@@ -3,6 +3,7 @@ import FadeInLeft from '@/components/framermotion/FadeInLeft'
 import FadeInRight from '@/components/framermotion/FadeInRight'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 function TalentOutsourcingHero() {
@@ -23,7 +24,9 @@ function TalentOutsourcingHero() {
                     <p className='text-white font-medium text-lg mt-4'>We connect you with world-class professionals in sales, design, tech, and operations – all rigorously vetted and ready to drive results</p>
 
                     <FadeInBottom once={false} duration={0.5}>
-                        <Button className='self-start mt-4 bg-white text-black rounded-full hover:bg-black hover:text-white' size={'lg'}>Hire Top Talent Now</Button>
+                        <Link href={'/get-started'}>
+                            <Button className='self-start mt-4 bg-white text-black rounded-full hover:bg-black hover:text-white' size={'lg'}>Hire Top Talent Now</Button>
+                        </Link>
                     </FadeInBottom>
                 </div>
 

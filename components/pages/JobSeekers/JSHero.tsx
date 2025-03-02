@@ -3,6 +3,7 @@ import FadeInLeft from '@/components/framermotion/FadeInLeft'
 import FadeInRight from '@/components/framermotion/FadeInRight'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 function JobSeekersHero() {
@@ -20,7 +21,9 @@ function JobSeekersHero() {
                     </div>
                     <p className='text-white font-medium text-lg mt-4'>Remote & On-Site Jobs with High-Growth Startups & Enterprises</p>
 
-                    <Button size={'lg'} className='self-start mt-4 bg-white text-black rounded-full hover:bg-black hover:text-white'>Apply Now</Button>
+                    <Link href={'/get-started'}>
+                        <Button size={'lg'} className='self-start mt-4 bg-white text-black rounded-full hover:bg-black hover:text-white'>Apply Now</Button>
+                    </Link>
                 </div>
 
                 <div className='md:max-w-[40%]'>
