@@ -10,7 +10,7 @@ function WhatWeDo() {
                 <h2 className='md:text-4xl text-3xl text-center font-semibold'>What do we do?</h2>
             </FadeInBottom>
 
-            <div className='mt-10 flex flex-col md:flex-row justify-between gap-5 items-center '>
+            <div className='mt-10 flex flex-col md:flex-row justify-center gap-5 items-center '>
                 <div className='bg-[#F8E1BE] relative z-10 p-10 lg:min-w-[550px] md:min-w-[450] rounded-md cursor-pointer transform-scale-shadow'>
                     <div className='max-w-[450px]'>
                         <h4 className='text-2xl font-semibold '>Talent Outsourcing</h4>

@@ -21,13 +21,13 @@ function CRMs() {
                     initial={{ opacity: 0, y: 20 }} 
                     animate={{ opacity: 1, y: 0 }} 
                     transition={{ duration: 0.8, delay: index * 0.2 }}
-                    className={`rounded-lg col-span-1 flex flex-col justify-between items-center hover:cursor-pointer `} 
+                    className={`rounded-lg col-span-1 flex flex-col justify-center items-center hover:cursor-pointer `} 
                     style={{ backgroundColor: item.bg }}
                 >
-                    <div className='p-4 flex justify-center items-center'>
-                        <Image src={item.src} alt='CRM Feature' width={250} height={130} unoptimized />
+                    <div className='p-4 flex justify-center items-center self-center'>
+                        <Image src={item.src} alt='CRM Feature' width={300} height={190} unoptimized />
                     </div>
-                    <div className="px-4 py-3 rounded-b-lg w-full text-center text-white" style={{ backgroundColor: item.footerBg }}>
+                    <div className="p-4 rounded-b-lg w-full text-center text-white mt-auto font-bold text-lg" style={{ backgroundColor: item.footerBg }}>
                         <p className='text-base'>{item.text}</p>
                     </div>
                 </motion.div>

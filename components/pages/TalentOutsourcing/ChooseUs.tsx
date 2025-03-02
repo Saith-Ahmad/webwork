@@ -3,7 +3,7 @@ import React from 'react';
 
 const WhyChooseUs = () => {
     return (
-        <div className="bg-[#161C28] py-12 rounded-t-3xl rounded-b-3xl  my-20 relative min-h-[100vh]">
+        <div className="bg-[#161C28] py-12 rounded-t-3xl rounded-b-3xl  my-20 relative min-h-[95vh] flex flex-col items-center justify-center">
 
 
             <div className='absolute md:-top-4 -top-1 right-0 w-[100vw]'>
@@ -14,7 +14,7 @@ const WhyChooseUs = () => {
             </div>
 
 
-            <div className="container">
+            <div className="container ">
                 {/* Heading */}
                 <h2 className="text-3xl md:text-4xl font-semibold text-center mb-8 text-white">Why Choose Us?</h2>
 
