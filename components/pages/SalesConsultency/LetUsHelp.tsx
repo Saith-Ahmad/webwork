@@ -1,3 +1,4 @@
+import FadeInTop from '@/components/framermotion/FadeInTop';
 import Image from 'next/image';
 import React from 'react';
 
@@ -16,14 +17,17 @@ const LetUsHelp = () => {
 
             <div className="container ">
                 {/* Heading */}
+                <FadeInTop duration={0.7} distance={60} once={false}>
+                    
                 <h2 className="text-3xl md:text-4xl font-semibold text-center mb-8 text-white">Let us Help you Sell,  so you can Excel!</h2>
+                </FadeInTop>
 
                 {/* Cards Grid */}
               <div className='flex flex-row flex-wrap gap-3 justify-center items-center mt-5'>
               
               
               
-                                  <div className='bg-[#F3C9B6] p-5 overflow-hidden h-[350px] md:max-w-[300px] w-full rounded-lg flex flex-col justify-between'>
+                                  <div className='bg-[#F3C9B6] p-5 overflow-hidden h-[350px] md:max-w-[300px] w-full rounded-lg flex flex-col justify-between transform-3d'>
                                       <div className='relative  flex justify-center items-center -mr-14 -mt-12'>
                                           <Image src='/assets/polygon1.png' alt='polygon' width={300} height={300} />
                                           <Image src='/assets/sc_icon1.png' alt='polygon' className='absolute' width={200} height={200} unoptimized/>
@@ -32,7 +36,7 @@ const LetUsHelp = () => {
                                   </div>
               
               
-                                  <div className='bg-[#F8E1BE] p-5 overflow-hidden h-[350px] md:max-w-[300px] w-full rounded-lg flex flex-col justify-between'>
+                                  <div className='bg-[#F8E1BE] p-5 overflow-hidden h-[350px] md:max-w-[300px] w-full rounded-lg flex flex-col justify-between transform-3d'>
                                       <div className='relative  flex justify-center items-center -mr-14 -mt-12'>
                                           <Image src='/assets/polygon2.png' alt='polygon' width={280} height={280} />
                                           <Image src='/assets/sc_icon2.png' alt='polygon' className='absolute' width={200} height={200} unoptimized/>
@@ -41,7 +45,7 @@ const LetUsHelp = () => {
                                   </div>
               
               
-                                  <div className='bg-[#D2CCFA] p-5 overflow-hidden h-[350px] md:max-w-[300px] w-full rounded-lg flex flex-col justify-between'>
+                                  <div className='bg-[#D2CCFA] p-5 overflow-hidden h-[350px] md:max-w-[300px] w-full rounded-lg flex flex-col justify-between transform-3d'>
                                       <div className='relative  flex justify-center items-center -mr-14 -mt-12'>
                                           <Image src='/assets/polygon3.png' alt='polygon' width={300} height={300} />
                                           <Image src='/assets/sc_icon3.png' alt='polygon' className='absolute' width={200} height={200} unoptimized/>

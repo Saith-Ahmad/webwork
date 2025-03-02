@@ -6,12 +6,12 @@ import React from 'react'
 
 function JobSeekers() {
   return (
-    <>
+    <div className='overflow-hidden'>
       <JobSeekersHero/>
       <WorkWithUs/>
       <JobListings/>
       <HireTopTalent/>
-    </>
+    </div>
   )
 }
 

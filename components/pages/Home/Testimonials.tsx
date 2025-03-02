@@ -1,3 +1,4 @@
+import FadeInBottom from '@/components/framermotion/FadeInBottom'
 import React from 'react'
 
 function Testimonials() {
@@ -13,11 +14,14 @@ function Testimonials() {
             <div className='container flex flex-col justify-center items-center'>
                 <div className='w-full mt-10'>
                     <h5 className='text-center text-white text-lg font-semibold'>TESTIMONIALS</h5>
+                    <FadeInBottom once={false} duration={0.5} distance={30}>
                     <h4 className='text-white text-center md:text-3xl text-2xl mt-2  font-semibold'>Real Stories, Real Impact: Hear from Our Satisfied Clients</h4>
+                    </FadeInBottom>
                 </div>
                 <div className='flex flex-col md:flex-row gap-3 mt-8'>
                     {/* testimonial */}
-                    <div className="max-w-sm  overflow-hidden shadow-lg p-6 bg-white rounded-2xl">
+
+                    <div className="max-w-sm  overflow-hidden shadow-lg p-6 bg-white rounded-2xl transform-scale-shadow cursor-pointer">
                         <div className="flex items-center mb-4">
 
                             <div>
@@ -43,7 +47,7 @@ function Testimonials() {
                         </div>
 
                     </div>
-                    <div className="max-w-sm  overflow-hidden shadow-lg p-6 bg-white rounded-2xl">
+                    <div className="max-w-sm  overflow-hidden shadow-lg p-6 bg-white rounded-2xl transform-scale-shadow cursor-pointer">
                         <div className="flex items-center mb-4">
 
                             <div>
@@ -69,7 +73,7 @@ function Testimonials() {
                         </div>
 
                     </div>
-                    <div className="max-w-sm  overflow-hidden shadow-lg p-6 bg-white rounded-2xl">
+                    <div className="max-w-sm  overflow-hidden shadow-lg p-6 bg-white rounded-2xl transform-scale-shadow cursor-pointer">
                         <div className="flex items-center mb-4">
 
                             <div>

@@ -2,6 +2,9 @@ import { footerLinks1, footerLinks2 } from '@/lib/constants/constants';
 import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react';
+import FadeInLeft from '../framermotion/FadeInLeft';
+import FadeInBottom from '../framermotion/FadeInBottom';
+import FadeInTop from '../framermotion/FadeInTop';
 
 const Footer = () => {
     return (
@@ -11,9 +14,12 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-10 gap-8 mb-8">
                     {/* First Column - Email Input */}
                     <div className='col-span-1 md:col-span-6 md:pt-10 flex flex-col max-w-[400px] md:p-5 gap-2 justify-start'>
-                        <div className="md:w-[120px] md:h-[80px] w-[90px] h-[60px] relative">
-                            <Image src="/assets/logo.png" alt="Logo" fill className="object-contain" />
-                        </div>
+                        <FadeInBottom once={false} distance={70} duration={1}>
+                            <div className="md:w-[120px] md:h-[80px] w-[90px] h-[60px] relative">
+                                <Image src="/assets/logo.png" alt="Logo" fill className="object-contain" />
+                            </div>
+                        </FadeInBottom>
+
                         <p className='max-w-[350px] text-lg'>Subscribe to our newsletter to stay updated with latest updates!!</p>
                         <form className="border border-gray-100 rounded-full p-2 flex items-center max-w-md">
                             <input
@@ -58,11 +64,17 @@ const Footer = () => {
                 {/* Bottom Row - Copyright */}
                 <div className="text-center border-t border-gray-700 pt-4 flex md:flex-row flex-col space-y-3 justify-between">
 
-                    <p>© 2025 BeyondHut Inc. Copyright and rights reserved</p>
-                    <ul className='flex flex-row justify-center items-center gap-10'>
-                        <li className='hover:text-white'>Terms and Condtions</li>
-                        <li className='hover:text-white'>Privacy Policy</li>
-                    </ul>
+                    <FadeInLeft distance={20} duration={1} once={false}>
+
+                        <p>© 2025 BeyondHut Inc. Copyright and rights reserved</p>
+                    </FadeInLeft>
+
+                    <FadeInTop duration={1} once={false}>
+                        <ul className='flex flex-row justify-center items-center gap-10'>
+                            <li className='hover:text-white'>Terms and Condtions</li>
+                            <li className='hover:text-white'>Privacy Policy</li>
+                        </ul>
+                    </FadeInTop>
                 </div>
             </div>
         </footer>

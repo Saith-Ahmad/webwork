@@ -93,3 +93,13 @@
 }
 
 
+
+
+
+.transform-3d{
+  @apply transition-transform transform-gpu hover:scale-[1.02] hover:rotate-[0.6deg] hover:shadow-xl;
+}
+
+.transform-scale-shadow {
+  @apply transition-transform transform-gpu hover:scale-[1.02] hover:shadow-lg;
+}

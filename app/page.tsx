@@ -7,7 +7,7 @@ import React from 'react'
 
 function Home() {
   return (
-    <div className='mb-20'>
+    <div className='overflow-hidden'>
       <HomeHero/>
       <WhatWeDo/>
       <WhyChoose/>

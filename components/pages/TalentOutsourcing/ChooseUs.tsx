@@ -20,26 +20,26 @@ const WhyChooseUs = () => {
 
                 {/* Cards Grid */}
                 <div className='flex flex-wrap flex-row justify-center items-center gap-5'>
-                    <div className='bg-[#FDFAF1] p-3 flex justify-center flex-col items-center rounded-lg min-w-[250px]'>
+                    <div className='bg-[#FDFAF1] p-3 flex justify-center flex-col items-center rounded-lg min-w-[250px] transform-scale-shadow'>
                         <Image src={'/assets/chooseicon1.png'} alt='icon' width={150} height={150} />
                         <p className='text-black text-base font-semibold text-center'>Pre-vetted global talent</p>
                     </div>
-                    <div className='bg-[#FDFAF1] p-3 flex justify-center flex-col items-center rounded-lg min-w-[250px]'>
+                    <div className='bg-[#FDFAF1] p-3 flex justify-center flex-col items-center rounded-lg min-w-[250px] transform-scale-shadow'>
                         <Image src={'/assets/chooseicon2.png'} alt='icon' width={150} height={150} />
                         <p className='text-black text-base font-semibold text-center'>Fast & efficient hiring process</p>
                     </div>
-                    <div className='bg-[#FDFAF1] p-3 flex justify-center flex-col items-center rounded-lg min-w-[250px]'>
+                    <div className='bg-[#FDFAF1] p-3 flex justify-center flex-col items-center rounded-lg min-w-[250px] transform-scale-shadow'>
                         <Image src={'/assets/chooseicon3.png'} alt='icon' width={150} height={150} />
                         <p className='text-black text-base font-semibold text-center'>Performance tracking & support</p>
                     </div>
                 </div>
 
                 <div className='flex flex-wrap flex-row justify-center items-center gap-5 mt-5'>
-                    <div className='bg-[#FDFAF1] p-3 flex justify-center flex-col items-center rounded-lg min-w-[250px]'>
+                    <div className='bg-[#FDFAF1] p-3 flex justify-center flex-col items-center rounded-lg min-w-[250px] transform-scale-shadow'>
                         <Image src={'/assets/chooseicon4.png'} alt='icon' width={150} height={150} />
                         <p className='text-black text-base font-semibold text-center'>Hassle-free talent replacement</p>
                     </div>
-                    <div className='bg-[#FDFAF1] p-3 flex justify-center flex-col items-center rounded-lg min-w-[250px]'>
+                    <div className='bg-[#FDFAF1] p-3 flex justify-center flex-col items-center rounded-lg min-w-[250px] transform-scale-shadow'>
                         <Image src={'/assets/chooseicon5.png'} alt='icon' width={150} height={150} />
                         <p className='text-black text-base font-semibold text-center'>Scalable hiring solutions</p>
                     </div>

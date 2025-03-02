@@ -6,6 +6,9 @@ import React, { useState } from 'react'
 import LeadGeneration from './LeadGeneration'
 import ColdEmailing from './ColdEmailing'
 import CRMs from './CRMs'
+import FadeInLeft from '@/components/framermotion/FadeInLeft'
+import FadeInBottom from '@/components/framermotion/FadeInBottom'
+import FadeInRight from '@/components/framermotion/FadeInRight'
 
 
 function SalesConsultencyHero() {
@@ -29,7 +32,7 @@ function SalesConsultencyHero() {
 
     return (
         <div>
-            <div className='relative min-h-[100vh] md:min-h-[120vh] bg-[#78D0EA] flex  items-center justify-between'>
+            <div className='relative min-h-[100vh] md:min-h-[120vh] bg-[#78D0EA] flex  items-center justify-between pt-10 md:pt-0'>
                 <div className='flex flex-col space-y-10 items-center justify-center container'>
                     {/* Rirst Row */}
                     <div className=' flex flex-col md:flex-row justify-between items-center'>
@@ -40,9 +43,13 @@ function SalesConsultencyHero() {
 
 
                         <div className='md:p-10 p-3 flex flex-col gap-2'>
+                            <FadeInLeft duration={0.6} once={false} distance={40}>
                             <h1 className='text-4xl md:text-5xl font-bold text-white max-w-[450px]'>Optimize Sales, Automate Growth</h1>
+                            </FadeInLeft>
                             <div className='max-w-[500px]'>
+                                <FadeInBottom once={false} duration={0.8}>
                                 <Image alt='Remote Talent Aquisition' src={'/assets/line.svg'} width={400} height={10} />
+                                </FadeInBottom>
                             </div>
                             <p className='text-white font-medium text-lg mt-4'>We help businesses streamline sales, automate outreach, and boost conversions with expert strategies & cutting-edge tools.</p>
 
@@ -50,7 +57,9 @@ function SalesConsultencyHero() {
                         </div>
 
                         <div className='md:max-w-[40%] mt-10 md:mt-0'>
+                            <FadeInRight duration={0.7} distance={60} once={false}>
                             <Image alt='Remote Talent Aquisition' src={'/assets/sc_hero.png'} width={800} height={600} />
+                            </FadeInRight>
                         </div>
 
 

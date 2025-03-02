@@ -6,7 +6,7 @@ import React from 'react'
 
 function SalesConsultancyAutomation() {
   return (
-    <div>
+    <div className='overflow-hidden'>
       <SalesConsultencyHero/>
       <LetUsHelp/>
       <HireTopTalent/>

@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import FadeInBottom from '@/components/framermotion/FadeInBottom';
 
 const steps = [
     {
@@ -39,31 +40,36 @@ function Timeline() {
             {steps.map((step, index) => (
                 <div
                     key={step.id}
-                    className={`flex flex-col md:flex-row ${
-                        index % 2 !== 0 ? 'md:flex-row-reverse' : ''
-                    } justify-center md:gap-32 gap-2 items-center relative`}
+                    className={`flex flex-col md:flex-row ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''
+                        } justify-center md:gap-32 gap-2 items-center relative`}
                 >
                     {/* Left Side */}
                     {index % 2 === 0 ? (
-                        <div className={`w-[300px] h-[300px] ${step.rightContent} rounded-lg flex items-center justify-center`}>
-                            <Image
-                                src={step.leftContent}
-                                alt={`Step ${step.id}`}
-                                width={200}
-                                height={200}
-                                className='object-cover rounded-lg'
-                            />
-                        </div>
+                        <FadeInBottom duration={1} distance={70}>
+                            <div className={`w-[300px] h-[300px] ${step.rightContent} rounded-lg flex items-center justify-center`}>
+                                <Image
+                                    src={step.leftContent}
+                                    alt={`Step ${step.id}`}
+                                    width={200}
+                                    height={200}
+                                    className='object-cover rounded-lg'
+                                />
+                            </div>
+                        </FadeInBottom>
                     ) : (
-                        <div className={`w-[300px] h-[300px] ${step.leftContent} rounded-lg flex items-center justify-center`}>
-                            <Image
-                                src={step.rightContent}
-                                alt={`Step ${step.id}`}
-                                width={200}
-                                height={200}
-                                className='object-cover rounded-lg'
-                            />
-                        </div>
+                        <FadeInBottom duration={1} distance={70}>
+
+                            <div className={`w-[300px] h-[300px] ${step.leftContent} rounded-lg flex items-center justify-center`}>
+                                <Image
+                                    src={step.rightContent}
+                                    alt={`Step ${step.id}`}
+                                    width={200}
+                                    height={200}
+                                    className='object-cover rounded-lg'
+                                />
+                            </div>
+                        </FadeInBottom>
+
                     )}
 
                     {/* Right Side */}

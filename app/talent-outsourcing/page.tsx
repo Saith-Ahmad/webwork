@@ -7,7 +7,7 @@ import React from 'react'
 
 function Talent_Outsoursing() {
   return (
-    <div>
+    <div className='overflow-hidden'>
       <TalentOutsourcingHero/>
       <WhoWeAre/>
       <WhyChooseUs/>

@@ -21,7 +21,7 @@ function CRMs() {
                     initial={{ opacity: 0, y: 20 }} 
                     animate={{ opacity: 1, y: 0 }} 
                     transition={{ duration: 0.8, delay: index * 0.2 }}
-                    className={`rounded-lg col-span-1 flex flex-col justify-between items-center`} 
+                    className={`rounded-lg col-span-1 flex flex-col justify-between items-center hover:cursor-pointer `} 
                     style={{ backgroundColor: item.bg }}
                 >
                     <div className='p-4 flex justify-center items-center'>
