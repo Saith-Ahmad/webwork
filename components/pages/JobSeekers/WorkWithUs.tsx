@@ -39,6 +39,13 @@ function WorkWithUs() {
                     </div>
 
 
+                  
+
+                </div>
+
+
+                <div className='flex flex-row flex-wrap gap-3 justify-center items-center mt-5'>
+
                     <div className='bg-[#ADD0F3] p-5 overflow-hidden h-[350px] md:max-w-[300px] w-full rounded-lg flex flex-col justify-between'>
                         <div className='relative  flex justify-center items-center -mr-14 -mt-12'>
                             <Image src='/assets/polygon4.svg' alt='polygon' width={300} height={300} />
@@ -59,7 +66,7 @@ function WorkWithUs() {
 
 
 
-                   
+
 
 
             </div>

@@ -6,7 +6,7 @@ function Hero() {
     return (
         <div className='min-h-[90vh] bg-[#78D0EA] flex  items-center justify-between pt-10 md:pt-0 '>
             <div className='container flex flex-col justify-center items-center gap-4 max-w-screen-lg'>
-                <Button className='bg-[#FFF8F2] text-black border-[1px] border-black'>About Beyond Hut</Button>
+                <p className='px-3 py-2 rounded-md font-medium bg-[#FFF8F2] text-black border-[1px] border-black'>About Beyond Hut</p>
 
                 <FadeInBottom duration={1} distance={70} once={false}>
                     <h1 className='text-4xl md:text-5xl font-bold text-white text-center'>Your One-Stop Solution for Remote Talent & Sales Automation</h1>

@@ -10,13 +10,13 @@ function HomeHero() {
     return (
         <div className='relative min-h-[100vh] bg-[#78D0EA] flex  items-center justify-between pt-10 md:pt-0'>
             <div className='container flex flex-col md:flex-row justify-between items-center'>
-                <div className='md:p-10 p-3 flex flex-col gap-2'>
+                <div className='md:p-10 p-3 flex flex-col gap-2 md:w-[50%]'>
                     <FadeInLeft duration={1} distance={70} once={false}> 
-                        <h1 className='text-4xl md:text-5xl font-bold text-white max-w-[450px]'>Your One-Stop Solution for Remote Talent & Sales Automation</h1>
+                        <h1 className='text-4xl md:text-5xl font-bold text-white max-w-[600px]'>Your One-Stop Solution for Remote Talent Hiring and Management</h1>
                     </FadeInLeft>
 
                     <FadeInBottom duration={1} distance={40}>
-                        <div className='max-w-[500px]'>
+                        <div className='max-w-[500px] mt-3'>
                             <Image alt='Remote Talent Aquisition' src={'/assets/line.svg'} width={400} height={10} />
                         </div>
                     </FadeInBottom>

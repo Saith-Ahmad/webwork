@@ -39,10 +39,9 @@ function Testimonials() {
 
 
                         <div className="flex items-center mb-4 gap-2 mt-2">
-                            <img src="/assets/user_profile.svg" alt="user" className='w-12 h-12' />
                             <div className='flex flex-col gap-0'>
-                                <p className="font-bold text-xl -mb-1">Michael R</p>
-                                <p className="font-normal text-base ">CEO</p>
+                                <p className="font-semibold text-xl -mb-1">Michael R</p>
+                                <p className="font-normal text-base text-[#302A2A99]">CEO</p>
                             </div>
                         </div>
 
@@ -64,10 +63,9 @@ function Testimonials() {
 
 
                         <div className="flex items-center mb-4 gap-2 mt-2">
-                            <img src="/assets/user_profile.svg" alt="user" className='w-12 h-12' />
                             <div className='flex flex-col gap-0'>
-                                <p className="font-bold text-xl -mb-1">Sarah L</p>
-                                <p className="font-normal text-base ">Head of Operations</p>
+                                <p className="font-semibold text-xl -mb-1">Sarah L</p>
+                                <p className="font-normal text-base text-[#302A2A99]">Head of Operations</p>
                             </div>
                         </div>
 
@@ -90,10 +88,9 @@ function Testimonials() {
 
 
                         <div className="flex items-center mb-4 gap-2 mt-2">
-                            <img src="/assets/user_profile.svg" alt="user" className='w-12 h-12' />
                             <div className='flex flex-col gap-0'>
-                                <p className="font-bold text-xl -mb-1">David P</p>
-                                <p className="font-normal text-base ">Co-Founder</p>
+                                <p className="font-semibold text-xl -mb-1">David P</p>
+                                <p className="font-normal text-base text-[#302A2A99]">Co-Founder</p>
                             </div>
                         </div>
 

@@ -9,18 +9,18 @@ export const navLinks = [
 
 
 export const footerLinks1 = [
-  { name : "IT and Software"},
+  { name : "Technology & IT"},
+  { name : "Software & Hardware"},
+  { name : "Real Estate"},
+  { name : "Marketing & Communications"},
   { name : "Healthcare"},
-  { name : "System status"},
+  { name : "Design & Media"},
+  { name : "Services and Consultancy"},
   { name : "Legal"},
-  { name : "Marketing"},
-  { name : "Design"},
-  { name : "Media"},
 ]
 
 
 export const footerLinks2 = [
-  { name : "Target Organizations"},
   { name : "Start-Ups"},
   { name : "Scale-Ups"},
   { name : "SMBs"},

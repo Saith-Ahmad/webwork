@@ -50,7 +50,7 @@ const Footer = () => {
                         <ul className="space-y-2">
                             {
                                 footerLinks1.map((link, i) => (
-                                    <li key={i}><a href="#" className="hover:text-white">{link.name}</a></li>
+                                    <li key={i}><a className="hover:text-white hover:cursor-pointer">{link.name}</a></li>
                                 ))
                             }
                         </ul>
@@ -62,7 +62,7 @@ const Footer = () => {
                         <ul className="space-y-2">
                             {
                                 footerLinks2.map((link, i) => (
-                                    <li key={i}><a href="#" className="hover:text-white">{link.name}</a></li>
+                                    <li key={i}><a  className="hover:text-white hover:cursor-pointer">{link.name}</a></li>
                                 ))
                             }
                         </ul>
@@ -74,11 +74,11 @@ const Footer = () => {
 
                     <FadeInLeft distance={20} duration={1} once={false}>
 
-                        <p>© 2025 BeyondHut Inc. Copyright and rights reserved</p>
+                        <p className='text-white'>© 2025 BeyondHut. Copyright and rights reserved</p>
                     </FadeInLeft>
 
                     <FadeInTop duration={1} once={false}>
-                        <ul className='flex flex-row justify-center items-center gap-10'>
+                        <ul className='flex flex-row justify-center items-center gap-10 text-white'>
                             <li className='hover:text-white'>Terms and Condtions</li>
                             <li className='hover:text-white'>Privacy Policy</li>
                         </ul>
