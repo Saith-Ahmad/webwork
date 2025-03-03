@@ -33,7 +33,7 @@ function SalesConsultencyHero() {
 
     return (
         <div>
-            <div className='relative min-h-[100vh] md:min-h-[120vh] bg-[#78D0EA] flex  items-center justify-between pt-10 md:pt-0'>
+            <div className='relative min-h-[100vh] md:min-h-[120vh] bg-[#78D0EA] flex  items-center justify-between py-16 md:pt-0'>
                 <div className='flex flex-col space-y-10 items-center justify-center container'>
                     {/* Rirst Row */}
                     <div className=' flex flex-col md:flex-row justify-between items-center'>
