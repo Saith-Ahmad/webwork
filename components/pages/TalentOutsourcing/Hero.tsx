@@ -19,13 +19,13 @@ function TalentOutsourcingHero() {
                                 Hire Top Talent, <br /> Build Your Dream Team
                             </h1>
 
-                            {/* Yellow Vector Positioned in the Top-Right of the Heading */}
-                            <div className='absolute top-[-30%] right-[-10%] w-[15vw] max-w-[150px] md:max-w-[180px] lg:max-w-[200px]'>
+                            {/* Larger Yellow Vector in the Top-Right */}
+                            <div className='absolute top-[-40px] right-[-30px] md:top-[-50px] md:right-[-60px] w-[30vw] max-w-[140px] md:max-w-[180px] lg:max-w-[220px]'>
                                 <Image 
                                     src='/assets/Group%2048095464.svg' 
                                     alt='Yellow Decorative Vector' 
-                                    width={200} 
-                                    height={200} 
+                                    width={220} 
+                                    height={220} 
                                     className='w-full'
                                 />
                             </div>
@@ -35,7 +35,13 @@ function TalentOutsourcingHero() {
                     {/* Underline SVG */}
                     <div className='w-[90%] max-w-[400px]'>
                         <FadeInBottom once={false} duration={0.9}>
-                            <Image alt='Underline Decoration' src={'/assets/line.svg'} width={400} height={10} className='w-full' />
+                            <Image 
+                                alt='Underline Decoration' 
+                                src='/assets/line.svg' 
+                                width={400} 
+                                height={10} 
+                                className='w-full' 
+                            />
                         </FadeInBottom>
                     </div>
 
@@ -44,8 +50,8 @@ function TalentOutsourcingHero() {
                     </p>
 
                     <FadeInBottom once={false} duration={0.5}>
-                        <Link href={'/get-started'}>
-                            <Button className='self-start mt-3 bg-white text-black rounded-full hover:bg-black hover:text-white' size={'lg'}>
+                        <Link href='/get-started'>
+                            <Button className='self-start mt-3 bg-white text-black rounded-full hover:bg-black hover:text-white' size='lg'>
                                 Hire Top Talent Now
                             </Button>
                         </Link>
@@ -57,7 +63,7 @@ function TalentOutsourcingHero() {
                     <FadeInRight once={false} duration={1}>
                         <Image 
                             alt='Remote Talent Acquisition' 
-                            src={'/assets/talentoutsourcehero.png'} 
+                            src='/assets/talentoutsourcehero.png' 
                             width={800} 
                             height={600} 
                             className='w-full h-auto'
