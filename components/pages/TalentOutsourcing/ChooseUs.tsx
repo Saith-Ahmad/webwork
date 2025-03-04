@@ -29,7 +29,7 @@ const WhyChooseUs = () => {
                     <div className='bg-[#FDFAF1] p-4 flex justify-center flex-col items-center rounded-lg min-w-[250px] max-w-[350px] transform-scale-shadow h-[240px]'>
                         <Image src={'/assets/chooseicon2.png'} alt='icon' width={150} height={150} />
                         <p className='text-black text-base font-semibold text-center mt-3'>
-                            Fast & efficient end to end hiring process
+                            Fast and efficient end-to-end hiring process
                         </p>
                     </div>
                     {/* Card 3 */}
