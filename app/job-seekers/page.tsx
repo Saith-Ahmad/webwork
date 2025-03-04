@@ -1,4 +1,4 @@
-import JobListings from '@/components/pages/JobSeekers/JobListings'
+// import JobListings from '@/components/pages/JobSeekers/JobListings'
 import JobSeekersHero from '@/components/pages/JobSeekers/JSHero'
 import WorkWithUs from '@/components/pages/JobSeekers/WorkWithUs'
 import HireTopTalent from '@/components/pages/TalentOutsourcing/HireTopTalent'
@@ -9,7 +9,7 @@ function JobSeekers() {
     <div className='overflow-hidden'>
       <JobSeekersHero/>
       <WorkWithUs/>
-      <JobListings/>
+    {/*}  <JobListings/> */}
       <HireTopTalent/>
     </div>
   )

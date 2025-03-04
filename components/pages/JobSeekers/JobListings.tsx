@@ -1,3 +1,4 @@
+{/*
 import React from 'react'
 import JobListingCard from './JobListingCard'
 import { Button } from '@/components/ui/button'
@@ -23,3 +24,5 @@ function JobListings() {
 }
 
 export default JobListings
+
+*/}
