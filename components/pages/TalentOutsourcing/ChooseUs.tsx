@@ -12,7 +12,7 @@ const WhyChooseUs = () => {
                 <img src="/assets/bottom_curve.svg" alt="curve" className='w-[100vw]' />
             </div>
 
-            <div className="container px-4">
+            <div className="container px-8">
                 {/* Heading */}
                 <h2 className="text-3xl md:text-4xl font-semibold text-center mb-8 text-white">Why Hire with Us?</h2>
 

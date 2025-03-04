@@ -7,11 +7,13 @@ function WhoWeAre() {
     return (
         <div className='container mt-14'>
             <FadeInBottom once={false}>
-            <h2 className='md:text-4xl text-3xl text-center font-semibold'>Why Choose Beyond Hut?</h2>
+                <h2 className='md:text-4xl text-3xl text-center font-semibold mb-12'>
+                    Why Choose Beyond Hut?
+                </h2>
             </FadeInBottom>
 
             {/* Responsive Grid Layout */}
-            <div className="grid gap-4 p-6 grid-cols-1 md:grid-cols-12">
+            <div className="grid gap-6 p-6 grid-cols-1 md:grid-cols-12">
 
 
 
