@@ -14,20 +14,22 @@ function TalentOutsourcingHero() {
                 {/* Left Side Content */}
                 <div className='relative flex flex-col gap-5'>
                     <FadeInLeft duration={1} distance={70} once={false}>
-                        <h1 className='text-[clamp(2rem,5vw,3.5rem)] font-bold text-white max-w-[600px] leading-tight relative'>
-                            Hire Top Talent, <br /> Build Your Dream Team
-                            {/* Yellow Vector */}
-                            <div className='absolute top-[-2rem] right-[2rem] md:top-[-3rem] md:right-[4rem] lg:top-[-4rem] lg:right-[6rem]'>
-                            <Image 
-                                src='/assets/Group%2048095464.svg' 
-                                alt='Yellow Decorative Vector' 
-                                width={250} 
-                                height={250} 
-                                className='w-[18vw] max-w-[200px] lg:max-w-[250px]' 
-                            />
-                        </div>
+                        <div className='relative inline-block'>
+                            <h1 className='text-[clamp(2rem,5vw,3.5rem)] font-bold text-white max-w-[600px] leading-tight'>
+                                Hire Top Talent, <br /> Build Your Dream Team
+                            </h1>
 
-                        </h1>
+                            {/* Yellow Vector Positioned in the Top-Right of the Heading */}
+                            <div className='absolute top-[-30%] right-[-10%] w-[15vw] max-w-[150px] md:max-w-[180px] lg:max-w-[200px]'>
+                                <Image 
+                                    src='/assets/Group%2048095464.svg' 
+                                    alt='Yellow Decorative Vector' 
+                                    width={200} 
+                                    height={200} 
+                                    className='w-full'
+                                />
+                            </div>
+                        </div>
                     </FadeInLeft>
                     
                     {/* Underline SVG */}
