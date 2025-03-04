@@ -2,18 +2,55 @@
 
 import { usePathname } from 'next/navigation';
 import { footerLinks1, footerLinks2 } from '@/lib/constants/constants';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Check, Loader } from 'lucide-react';
 import Image from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
 import FadeInLeft from '../framermotion/FadeInLeft';
 import FadeInBottom from '../framermotion/FadeInBottom';
 import FadeInTop from '../framermotion/FadeInTop';
 
 const Footer = () => {
+    const [email, setEmail] = useState('');
+    const [loading, setLoading] = useState(false);
+    const [send, setIsSend] = useState(false);
     const pathname = usePathname();
-    if (pathname === '/get-started') {
+    if (pathname === '/get-started' || pathname === '/application-form') {
         return null;  // Don't render anything
     }
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setLoading(true);
+
+        try {
+            const response = await fetch("https://script.google.com/macros/s/AKfycbyF2fK_kQ8cOMZwmgnWQZBBMsVDcD7JY1UiWFBdbaajUesrj4gQH87ah7aZuUcYGfg8/exec", {
+                method: "POST",
+                mode: "no-cors",
+                body: JSON.stringify({ email }),  
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            });
+
+            if (response) {
+                console.log("Email sent successfully");
+                setEmail('');          // Clear the input field
+                setIsSend(true);       // Show success message
+
+                // Hide success message and redirect after 3 seconds
+                setTimeout(() => {
+                    setIsSend(false);
+                    window.location.href = '/';  // Redirect to home page
+                }, 3000);
+            } else {
+                console.log("Failed to send email");
+            }
+        } catch (error) {
+            console.log("Error:", error);
+        } finally {
+            setLoading(false);
+        }
+    };
 
     return (
         <footer className="bg-[#161C28] text-[#A6A6A6] p-8 pt-20 mt-10">
@@ -29,9 +66,11 @@ const Footer = () => {
                         </FadeInBottom>
 
                         <p className='max-w-[350px] text-lg'>Subscribe to our newsletter to stay updated with latest updates!!</p>
-                        <form className="border border-gray-100 rounded-full p-2 flex items-center max-w-md">
+                        <form onSubmit={handleSubmit} className="border border-gray-100 rounded-full p-2 flex items-center max-w-md">
                             <input
                                 type="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                                 placeholder="Enter your email"
                                 className="outline-none bg-transparent flex-grow px-4 w-full"
                             />
@@ -39,9 +78,12 @@ const Footer = () => {
                                 type="submit"
                                 className="p-2 text-white transition-colors bg-[#00B7EB] hover:bg-[#2aa4c6] rounded-full"
                             >
-                                <ArrowRight className="h-7 w-7" />
+                                {loading ? <Loader /> : <ArrowRight className="h-7 w-7" />}
+
                             </button>
                         </form>
+                        {send && <div className='flex ms-3 gap-3 justify-start items-center'><Check className='w-8 h-8 text-green-800' strokeWidth={5} /><p className='text-white font-semibold'>Thanks for Subscribing</p></div>}
+
                     </div>
 
                     {/* Second Column - Links */}
@@ -62,7 +104,7 @@ const Footer = () => {
                         <ul className="space-y-2">
                             {
                                 footerLinks2.map((link, i) => (
-                                    <li key={i}><a  className="hover:text-white hover:cursor-pointer">{link.name}</a></li>
+                                    <li key={i}><a className="hover:text-white hover:cursor-pointer">{link.name}</a></li>
                                 ))
                             }
                         </ul>

@@ -15,7 +15,7 @@ import {
 
 function Header() {
   const pathname = usePathname();
-  if (pathname === '/get-started') {
+  if (pathname === '/get-started' || pathname === '/application-form') {
     return null;  // Don't render anything
   }
   const router = useRouter();
