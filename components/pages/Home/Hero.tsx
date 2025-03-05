@@ -8,7 +8,7 @@ import React from 'react'
 
 function HomeHero() {
     return (
-        <div className='min-h-[120vh] relative md:min-h-[100vh] bg-[#78D0EA] flex  items-center justify-between pt-10 md:pt-0'>
+        <div className='min-h-[100vh] pb-20 md:pb-0 relative md:min-h-[100vh] bg-[#78D0EA] flex  items-center justify-between pt-10 md:pt-0'>
             <div className='container flex flex-col md:flex-row justify-between items-center'>
                 <div className='md:p-10 p-3 flex flex-col gap-2 md:w-[50%]'>
                     <FadeInLeft duration={1} distance={70} once={false}> 

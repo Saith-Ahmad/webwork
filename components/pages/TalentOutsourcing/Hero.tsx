@@ -8,7 +8,7 @@ import React from 'react'
 
 function TalentOutsourcingHero() {
     return (
-        <div className='relative min-h-[100vh] bg-[#78D0EA] flex items-center justify-between pt-10 md:pt-0'>
+        <div className='pb-20 md:pb-0 relative min-h-[100vh] bg-[#78D0EA] flex items-center justify-between pt-10 md:pt-0'>
             <div className='container space-y-10 flex flex-col md:flex-row justify-between items-center'>
 
                 {/* Left Side Content */}
@@ -17,7 +17,7 @@ function TalentOutsourcingHero() {
                         <h1 className='text-4xl md:text-5xl font-bold text-white max-w-[450px] relative'>
                             Hire Top Talent, <br /> Build Your Dream Team
                             {/* Adjusted Yellow Vector Position */}
-                            <div className='absolute -top-14 -right-16 md:-top-18 md:-right-24'>
+                            <div className='absolute -top-12 -right-0 md:-top-18 md:-right-24 max-w-[150px] md:max-w-[250px]'>
                                 <Image 
                                     src='/assets/Group%2048095464.svg' 
                                     alt='Yellow Decorative Vector' 

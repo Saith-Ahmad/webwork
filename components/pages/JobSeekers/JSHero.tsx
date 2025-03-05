@@ -8,7 +8,7 @@ import React from 'react'
 
 function JobSeekersHero() {
     return (
-        <div className='relative min-h-[100vh] bg-[#78D0EA] flex  items-center justify-between pt-10 md:pt-0'>
+        <div className='pb-20 md:pb-0 relative min-h-[100vh] bg-[#78D0EA] flex  items-center justify-between pt-10 md:pt-0'>
             <div className='container flex flex-col space-y-10 md:flex-row justify-between items-start'>
                 <div className='md:p-10 p-3 flex flex-col gap-2'>
                     <FadeInLeft once={false} duration={0.5} distance={60}>
@@ -21,7 +21,7 @@ function JobSeekersHero() {
                     </div>
                     <p className='text-white font-medium text-lg mt-4'>Remote & On-Site Jobs with High-Growth Startups & Enterprises</p>
 
-                    <Link href={'/get-started'}>
+                    <Link href={'/application-form'}>
                         <Button size={'lg'} className='self-start mt-4 bg-white text-black rounded-full hover:bg-black hover:text-white'>Apply Now</Button>
                     </Link>
                 </div>

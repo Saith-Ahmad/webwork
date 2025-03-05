@@ -14,7 +14,7 @@ const Footer = () => {
     const [loading, setLoading] = useState(false);
     const [send, setIsSend] = useState(false);
     const pathname = usePathname();
-    if (pathname === '/get-started' || pathname === '/application-form') {
+    if (pathname === '/get-started' || pathname === '/application-form' ||  pathname.startsWith('/admin-dashboard')) {
         return null;  // Don't render anything
     }
 
