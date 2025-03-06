@@ -33,7 +33,7 @@ const Footer = () => {
             });
 
             if (response) {
-                console.log("Email sent successfully");
+                console.log("Subscribe");
                 setEmail('');          // Clear the input field
                 setIsSend(true);       // Show success message
 
@@ -92,7 +92,7 @@ const Footer = () => {
                         <ul className="space-y-2">
                             {
                                 footerLinks1.map((link, i) => (
-                                    <li key={i}><a className="hover:text-white hover:cursor-pointer">{link.name}</a></li>
+                                    <li key={i}><a className="">{link.name}</a></li>
                                 ))
                             }
                         </ul>
@@ -104,7 +104,7 @@ const Footer = () => {
                         <ul className="space-y-2">
                             {
                                 footerLinks2.map((link, i) => (
-                                    <li key={i}><a className="hover:text-white hover:cursor-pointer">{link.name}</a></li>
+                                    <li key={i}><a className="">{link.name}</a></li>
                                 ))
                             }
                         </ul>
@@ -116,7 +116,7 @@ const Footer = () => {
 
                     <FadeInLeft distance={20} duration={1} once={false}>
 
-                        <p className='text-white'>© 2025 BeyondHut. Copyright and rights reserved</p>
+                        <p className='text-white'>© 2025 Beyond Hut. Copyright and rights reserved</p>
                     </FadeInLeft>
 
                     <FadeInTop duration={1} once={false}>

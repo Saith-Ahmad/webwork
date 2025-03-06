@@ -4,7 +4,7 @@ import React from 'react'
 
 function WhyChoose() {
     return (
-        <div className='container mt-32'>
+        <div className="container mt-32 flex flex-col gap-5">
             <FadeInBottom once={false} duration={0.5} distance={30} >
 
                 <h2 className='md:text-4xl text-3xl text-center font-semibold'>Why Choose Beyond Hut?</h2>

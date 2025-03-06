@@ -26,10 +26,9 @@ function Testimonials() {
 
                             <div>
                                 <div className="flex gap-[1px]">
-                                    {[...Array(4)].map((_, i) => (
-                                        <img src='/assets/star.svg' className='w-[20px]' key={i}/>
-                                    ))}
-                                    <img src='/assets/star1.svg' className='w-[20px]' />
+                                    {[...Array(5)].map((_, i) => (
+                                            <img src='/assets/star.svg' className='w-[20px]' key={i}/>
+                                        ))}
                                 </div>
                             </div>
                         </div>
