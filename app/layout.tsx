@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/global/header";
 import Footer from "@/components/global/footer";
+import { Toaster } from "sonner";
 
 // Load Inter font with all weights
 const inter = Inter({
@@ -23,6 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} antialiased`}>
         <Header />
+        <Toaster />
         {children}
         <Footer/>
       </body>

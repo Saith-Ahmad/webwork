@@ -11,10 +11,10 @@ function WhatWeDo() {
 
             <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Talent Outsourcing */}
-                <div className="bg-[#F8E1BE] relative z-10 p-6 md:p-8 lg:p-10 w-full rounded-md cursor-pointer transform-scale-shadow overflow-hidden">
+                <div className="bg-[#F8E1BE] relative z-10   w-full rounded-md cursor-pointer transform-scale-shadow overflow-hidden">
                     <div className="flex items-center justify-between gap-0">
                         {/* Left Column - Text */}
-                        <div className="max-w-md relative z-10">
+                        <div className="max-w-md relative z-10 p-6">
                             <h4 className="text-xl md:text-2xl font-semibold">Talent Outsourcing</h4>
                             <p className="text-sm md:text-base">
                                 Access top remote professionals <br /> tailored to your business needs.
@@ -33,13 +33,13 @@ function WhatWeDo() {
                 </div>
 
                 {/* Sales Consultancy & Automation */}
-                <div className="bg-[#FAC2C1] relative z-10 p-6 md:p-8 lg:p-10 w-full rounded-md cursor-pointer transform-scale-shadow overflow-hidden">
+                <div className="bg-[#FAC2C1] relative z-10  w-full rounded-md cursor-pointer transform-scale-shadow overflow-hidden">
                     <div className="flex items-center justify-between gap-10">
                         {/* Left Column - Text */}
-                        <div className="max-w-md relative z-10">
+                        <div className="max-w-md relative z-10 p-6">
                             <h4 className="text-xl md:text-2xl font-semibold">Sales Consultancy & Automation</h4>
                             <p className="text-sm md:text-base">
-                                Optimize sales workflows and boost efficiency <br /> with smart automation.
+                                Optimize sales workflows and boost efficiency  with smart automation.
                             </p>
                         </div>
 

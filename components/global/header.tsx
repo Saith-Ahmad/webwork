@@ -31,7 +31,9 @@ function Header() {
       <div className="flex justify-between items-center">
         {/* Logo */}
         <div className="md:w-[90px] md:h-[60px] w-[70px] h-[50px] relative">
-          <Image src="/assets/logo.png" alt="Logo" fill className="object-contain" />
+          <Link href={'/'}>
+            <Image src="/assets/logo.png" alt="Logo" fill className="object-contain" />
+          </Link>
         </div>
 
         {/* Desktop Navigation */}

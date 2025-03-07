@@ -8,7 +8,7 @@ function AboutUs() {
     <div className='overflow-hidden'>
     <Hero/>
     <VisionMision/>
-    <HireTopTalent/>
+    <HireTopTalent heading={"Ready to Scale Your Sales?"} para={"Tell us your needs, and we'll match you with the perfect candidate."} btnText={"Get Started"}/>
     </div>
   )
 }

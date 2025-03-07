@@ -4,7 +4,7 @@ import React from 'react'
 
 function VisionMision() {
     return (
-        <div className='container my-28 min-h-[75vh] md:min-h-[60vh] items-center flex flex-col justify-center'>
+        <div className='container my-28 min-h-[75vh] md:min-h-[50vh] items-center flex flex-col justify-center'>
             <p className='text-lg text-center'>WHY WORK WITH US?</p>
             <FadeInBottom once={false}>
                 <h2 className='md:text-4xl text-3xl text-center font-semibold'>Elevate Your Career with Top Global Companies</h2>

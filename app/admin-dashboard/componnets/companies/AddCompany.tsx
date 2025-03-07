@@ -1,4 +1,6 @@
 'use client';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
 import { Company } from '@/lib/constants/types';
 import React, { useState } from 'react';
 
@@ -27,37 +29,37 @@ const AddCompany: React.FC<Props> = ({ onAddCompany }) => {
   };
 
   return (
-    <div className="w-full mx-auto bg-[#161C28] text-white p-6 rounded-lg shadow-lg mb-6">
-      <h2 className="text-2xl font-semibold mb-4">Add Company</h2>
+    <div className="w-full mx-auto p-6 rounded-lg shadow-lg mb-6 shadow-[#00000092]">
+      <h2 className="text-2xl font-semibold mb-4">Add New Company</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
-        <input
+        <Input
           type="text"
-          placeholder="Company Name"
+          placeholder="Company Title"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="w-full px-4 py-2 bg-gray-800 rounded-md"
+          className="w-full px-4 py-2 shadow-md shadow-gray-300"
           required
         />
-        <input
+        <Input
           type="text"
           placeholder="Image URL"
           value={image}
           onChange={(e) => setImage(e.target.value)}
-          className="w-full px-4 py-2 bg-gray-800 rounded-md"
+          className="w-full px-4 py-2 rounded-md shadow-md shadow-gray-300"
           required
         />
-        <textarea
+        <Textarea
           placeholder="Description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          className="w-full px-4 py-2 bg-gray-800 rounded-md"
+          className="w-full px-4 py-2  rounded-md shadow-md shadow-gray-300"
           rows={5}
           required
-        ></textarea>
+        ></Textarea>
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-blue-600 py-2 rounded-md text-white"
+          className="w-full bg-gray-800 py-2 rounded-md text-white disabled:bg-gray-400 hover:bg-gray-900"
         >
           {loading ? 'Adding...' : 'Add Company'}
         </button>
@@ -67,3 +69,5 @@ const AddCompany: React.FC<Props> = ({ onAddCompany }) => {
 };
 
 export default AddCompany;
+
+

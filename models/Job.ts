@@ -7,7 +7,7 @@ interface IJob extends Document {
     domain: string;
     salary: string;  // Could use number if you want, but string allows more flexibility (e.g., "$50k-$60k")
     description: string;
-    jobType: 'Full-Time' | 'Part-Time' | 'Contract' | 'Internship';
+    jobType: 'full-time' | 'part-time' | 'contract' | 'internship';
 }
 
 const JobSchema = new Schema<IJob>({
@@ -18,15 +18,15 @@ const JobSchema = new Schema<IJob>({
     description: { type: String, required: true },
     jobType: { 
         type: String, 
-        enum: ['Full-Time', 'Part-Time', 'Contract', 'Internship','Remote'], 
+        enum: ['full-time', 'part-time', 'contract', 'internship','remote'], 
         required: true 
     },
 }, { timestamps: true });
 
 
-// if (mongoose.models.Job) {
-//     delete mongoose.models.Job;
-// }
+if (mongoose.models.Job) {
+    delete mongoose.models.Job;
+}
 
 // 🟢 Cascade delete applicants when a job is deleted
 JobSchema.pre('findOneAndDelete', async function (next) {

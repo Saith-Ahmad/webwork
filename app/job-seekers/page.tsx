@@ -10,7 +10,7 @@ function JobSeekers() {
       <JobSeekersHero/>
       <WorkWithUs/>
     {/*}  <JobListings/> */}
-      <HireTopTalent/>
+    <HireTopTalent heading={"Looking for Your Next Opportunity?"} para={"Join our talent network and land high-paying remote and on-site roles with top global companies."} btnText={"Apply Now"}/>
     </div>
   )
 }

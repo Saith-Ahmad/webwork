@@ -12,7 +12,7 @@ function Talent_Outsoursing() {
       <WhoWeAre/>
       <WhyChooseUs/>
       <Timeline/>
-      <HireTopTalent/>
+      <HireTopTalent heading={"Ready to Hire Top Talent?"} para={"Tell us your needs, and we'll match you with the perfect candidate."} btnText={"Get Started"}/>
     </div>
   )
 }

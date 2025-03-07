@@ -9,7 +9,7 @@ function SalesConsultancyAutomation() {
     <div className='overflow-hidden'>
       <SalesConsultencyHero/>
       <LetUsHelp/>
-      <HireTopTalent/>
+      <HireTopTalent heading={"Ready to Scale Your Sales?"} para={"Optimize outreach, automate processes, and generate high-quality leads effortlessly."} btnText={"Get Started"}/>
     </div>
   )
 }
