@@ -65,8 +65,8 @@ const JobsList: React.FC<JobsListProps> = ({ jobs, loading, onDeleteJob, onUpdat
                             </div>
 
                             {/* Job Details */}
-                            <h2 className="text-2xl font-semibold mb-2">{job.title}</h2>
-                            <p className="text-gray-300 mb-4">{(job.description.length) < 100 ? job.description : `${job.description.slice(0, 100)}...`}</p>
+                            <h2 className="text-xl font-semibold mb-2">{job.title.length > 50 ? `${job.title.slice(0, 50)}...` : job.title}</h2>
+                            <p className="text-gray-300 mb-4 text-sm whitespace-pre-line">{(job.description.length) < 100 ? job.description : `${job.description.slice(0, 100)}...`}</p>
                             <div className="grid grid-cols-2 gap-4 mb-4">
                                 <div>
                                     <span className="text-sm text-gray-400">Domain:</span>
@@ -86,9 +86,9 @@ const JobsList: React.FC<JobsListProps> = ({ jobs, loading, onDeleteJob, onUpdat
                             <div className="flex justify-end gap-2 mt-auto self-end ">
                                 <Button
                                     onClick={() => job._id && router.push(`/admin-dashboard/jobs/${job._id}`)}
-                                    className="px-4 py-2  transition bg-gray-200 text-black hover:bg-gray-300"
+                                    className="px-2 py-2  transition bg-gray-200 text-black hover:bg-gray-300"
                                 >
-                                    See Applicants
+                                Applicants
                                 </Button>
                                 <Button
                                     onClick={() => onUpdateClick(job)}

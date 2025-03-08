@@ -1,5 +1,7 @@
+import { Button } from "@/components/ui/button";
 import { Job } from "@/lib/constants/types";
 import { formatDistanceToNow } from "date-fns";
+import Link from "next/link";
 
 type JobDetailsProps = {
     job: Job | null;
@@ -12,7 +14,7 @@ export default function JobDetails({ job }: JobDetailsProps) {
     const postedDate = job.createdAt ? formatDistanceToNow(new Date(job.createdAt), { addSuffix: true }).replace("about ", "") : "Date not available";
 
     return (
-        <div className="p-6 bg-[#fefdf7] rounded-lg shadow-lg shadow-gray-300 max-h-[100vh] overflow-y-scroll">
+        <div className="p-6 mt-10 md:mt-0 bg-[#fefdf7] rounded-lg border-2 border-gray-300 shadow-xl shadow-gray-300 max-h-[100vh] overflow-y-scroll">
             {/* Company Logo and Job Title */}
             <div className="flex items-center mb-4">
                 <img
@@ -31,10 +33,10 @@ export default function JobDetails({ job }: JobDetailsProps) {
 
             {/* Domain and Job Type */}
             <div className="mb-6 flex gap-2">
-                <p className="text-sm  bg-gray-200 px-4 py-1 rounded-lg text-gray-700 font-semibold capitalize">
+                <p className="text-sm  bg-gray-100 px-4 py-1 rounded-lg text-gray-700 font-semibold capitalize">
                     {job.domain}
                 </p>
-                <p className="text-sm  bg-gray-200 px-4 py-1 rounded-lg text-gray-700 font-semibold capitalize">
+                <p className="text-sm  bg-gray-100 px-4 py-1 rounded-lg text-gray-700 font-semibold capitalize">
                     {job.jobType}
                 </p>
             </div>
@@ -49,21 +51,23 @@ export default function JobDetails({ job }: JobDetailsProps) {
             {/* About the Company */}
             {typeof job.company !== "string" && job.company.description && (
                 <div className="mb-6">
-                    <h3 className="text-xl font-semibold mb-2">About the Company</h3>
-                    <p className="text-gray-700">{job.company.description}</p>
+                    <Button className="mt-7 mb-2 bg-gray-900 hover:bg-gray-900 ">About The Company</Button>
+                    <p className="text-gray-700 whitespace-pre-line">{job.company.description}</p>
                 </div>
             )}
 
             {/* Job Description */}
             <div className="mb-6">
-                <h3 className="text-xl font-semibold mb-2">Job Description</h3>
+                <Button className="mt-7 mb-2 bg-gray-900 hover:bg-gray-900 ">Job Description</Button>
                 <p className="text-gray-700 whitespace-pre-line">{job.description}</p>
             </div>
 
             {/* Apply Now Button */}
-            <button className="w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors">
-                Apply Now
-            </button>
+            <Link href={`/job-listings/${job._id}`}>
+                <Button className="w-full py-2 bg-gray-900 text-white rounded-md hover:bg-gray-800 transition-colors">
+                    Apply Now
+                </Button>
+            </Link>
         </div>
     );
 }

@@ -10,13 +10,13 @@ type SidebarProps = {
 
 export default function Sidebar({ jobs, selectedJobId, onSelectJob }: SidebarProps) {
     return (
-        <div className="flex flex-col p-5 gap-2 h-full rounded-sm shadow-lg shadow-gray-300 bg-transparent max-h-[100vh] overflow-y-scroll">
+        <div className="flex flex-col md:p-5 p-2 gap-3 h-full border-2 border-gray-300 rounded-md shadow-xl shadow-gray-500 bg-transparent max-h-[100vh] overflow-y-scroll">
             {jobs.map((job) => (
                 <div
                     key={job._id}
                     onClick={() => job?._id && onSelectJob(job._id)}
                     className={`flex items-center  p-5 cursor-pointer mb-2 rounded-lg transition-colors shadow-md shadow-gray-400 ${
-                        selectedJobId === job._id ? 'bg-[#fefefb] border-2 border-black' : 'bg-[#fefdf7]'
+                        selectedJobId === job._id ? 'bg-[#fefefb] shadow-lg shadow-gray-700' : 'bg-[#fefdf7]'
                     }`}
                 >
                     {/* Company Logo */}

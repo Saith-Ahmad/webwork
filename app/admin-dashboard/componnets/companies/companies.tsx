@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import Image from 'next/image';
 import { Company } from '@/lib/constants/types';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
@@ -48,7 +47,7 @@ const Companies: React.FC<Props> = ({ companies, loading, onDeleteCompany, onUpd
                 <>
                     {companies.map((company, index) => (
                         <div key={index} className="bg-[#161C28] gap-2 flex flex-col justify-between h-full items-start p-3 rounded-lg shadow-xl shadow-[#0603035d] text-white">
-                            <Image src={company?.image} alt="logo" width={50} height={50} className="rounded-full w-[50px] h-[50px] shadow-white shadow-sm" />
+                            <img src={company?.image} alt="logo" width={50} height={50}  className="rounded-full w-[50px] h-[50px] shadow-white shadow-sm" />
                             <div className="mt-2">
                                 <h3 className="text-xl font-semibold">{company.name}</h3>
                                 <p className="text-sm whitespace-pre-line">{(company.description.length) < 200 ? company.description : `${company.description.slice(0, 200)}...`}</p>

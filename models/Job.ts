@@ -24,9 +24,9 @@ const JobSchema = new Schema<IJob>({
 }, { timestamps: true });
 
 
-if (mongoose.models.Job) {
-    delete mongoose.models.Job;
-}
+// if (mongoose.models.Job) {
+//     delete mongoose.models.Job;
+// }
 
 // 🟢 Cascade delete applicants when a job is deleted
 JobSchema.pre('findOneAndDelete', async function (next) {
