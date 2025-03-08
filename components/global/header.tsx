@@ -12,8 +12,10 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { SignOutButton, UserButton, useUser } from "@clerk/nextjs";
 
 function Header() {
+  const { user } = useUser();
   const pathname = usePathname();
   if (pathname === '/get-started' || pathname === '/application-form' || pathname.startsWith('/admin-dashboard')) {
     return null;  // Don't render anything
@@ -51,8 +53,9 @@ function Header() {
         </ul>
 
         {/* Get Started Button (Desktop Only) */}
-        <div className="hidden lg:block">
-          <Link href={'/get-started'}>
+        <div className="hidden lg:flex justify-center items-center  gap-2">
+          <UserButton />
+          <Link href={'/get-started'} >
             <Button className="hover:scale-105 transition-transform duration-300 ease-in-out transform">
               Get Started
             </Button>
@@ -85,6 +88,15 @@ function Header() {
                 <Button className="w-full hover:scale-105 transition-transform duration-300 ease-in-out transform">
                   Get Started
                 </Button>
+
+                {user && <>
+                  <SignOutButton>
+                  <button className="font-bold w-full mt-3 p-2 rounded-md bg-gray-900 text-white">
+                    Logout
+                  </button>
+                </SignOutButton>
+                </>}
+                
               </div>
             </SheetContent>
           </Sheet>

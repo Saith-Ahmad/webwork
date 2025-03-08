@@ -54,6 +54,7 @@ export async function GET(req: Request) {
 
         // Fetch jobs with pagination and filters
         const jobs = await Job.find(filters)
+            .sort({_id:-1})
             .populate('company')
             .skip((pageNumber - 1) * pageSize)
             .limit(pageSize);

@@ -14,7 +14,7 @@ export default function JobDetails({ job }: JobDetailsProps) {
     const postedDate = job.createdAt ? formatDistanceToNow(new Date(job.createdAt), { addSuffix: true }).replace("about ", "") : "Date not available";
 
     return (
-        <div className="p-6 mt-10 md:mt-0 bg-[#fefdf7] rounded-lg border-2 border-gray-300 shadow-xl shadow-gray-300 max-h-[100vh] overflow-y-scroll">
+        <div className="p-6 mt-10 md:mt-0 bg-[#fefdf7] rounded-lg border-2 border-gray-100 shadow-xl shadow-gray-300 max-h-[100vh] overflow-y-scroll">
             {/* Company Logo and Job Title */}
             <div className="flex items-center mb-4">
                 <img

@@ -1,6 +1,7 @@
 import AdminHeader from "@/app/admin-dashboard/componnets/AdminHeader";
 import Sidebar from "@/app/admin-dashboard/componnets/Sidebar";
 import { Poppins } from 'next/font/google';
+import RestrictedUsers from "./componnets/RestrictedUsers";
 const poppins = Poppins({
     subsets: ['latin'],
     weight: ['400', '500', '600', '700'],
@@ -12,6 +13,7 @@ export default function AdminLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
+    <RestrictedUsers>
     <div className={` flex h-screen ${poppins.className}`}>
       <Sidebar />
 
@@ -23,5 +25,6 @@ export default function AdminLayout({
         </main>
       </div>
     </div>
+    </RestrictedUsers>
   );
 }
