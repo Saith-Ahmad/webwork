@@ -30,10 +30,14 @@ function AllJobs() {
         setLoading(true);
         try {
             const response = await fetch(`/api/jobs?page=${page}&limit=${limit}&search=${search}`);
-            const result = await response.json();
+            const result = await response.json(); 
+            if (result.success) {
             setJobs(result.data);
             setTotalPages(result.totalPages);
             setCurrentPage(result.currentPage);
+        }else{
+            console.error('Failed to fetch jobs:', result.message);
+        }
         } catch (error) {
             console.error('Failed to fetch jobs:', error);
         } finally {
