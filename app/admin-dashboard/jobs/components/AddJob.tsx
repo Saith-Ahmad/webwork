@@ -56,7 +56,7 @@ const AddJob: React.FC<AddJobProps> = ({ onAddJob }) => {
     };
 
     return (
-        <div className="w-full mx-auto p-6 rounded-lg shadow-lg mb-6 shadow-[#00000092] my-12">
+        <div className="p-6 rounded-lg shadow-lg mb-6 shadow-[#00000092] my-12 w-full">
             <h2 className="text-2xl font-semibold mb-4">Add New Job</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
                 {error && <p className="text-red-500">{error}</p>}
@@ -67,24 +67,27 @@ const AddJob: React.FC<AddJobProps> = ({ onAddJob }) => {
                     className='shadow-md shadow-gray-300'
                     required
                 />
-                <Select
-                    onValueChange={(value) => setJob({ ...job, domain: value })}>
-                    <SelectTrigger className="border-2 border-gray-300 rounded-lg py-6 px-3 bg-transparent outline-none w-full text-left shadow-lg shadow-gray-300">
-                        <SelectValue placeholder="Domain (Web Development | Mobile App Development)" />
-                    </SelectTrigger>
-                    <SelectContent className='bg-[#fdfcf3]'>
-                        <SelectItem value="all" className='py-3'>All</SelectItem>
-                        <SelectItem value="artificial intelligence" className='py-3'>Artificial Intelligence</SelectItem>
-                        <SelectItem value="development" className='py-3'>Development</SelectItem>
-                        <SelectItem value="design" className='py-3'>Design</SelectItem>
-                        <SelectItem value="software" className='py-3'>Software</SelectItem>
-                        <SelectItem value="machine learning" className='py-3'>Machine Learning</SelectItem>
-                        <SelectItem value="data analyst" className='py-3'>Data Analyst</SelectItem>
-                        <SelectItem value="sales" className='py-3'>Sales</SelectItem>
-                        <SelectItem value="marketing" className='py-3'>Marketing</SelectItem>
-                        <SelectItem value="others" className='py-3'>Others</SelectItem>
-                    </SelectContent>
-                </Select>
+                <select
+                    value={job.domain}
+                    onChange={(e) => setJob({ ...job, domain: e.target.value })}
+                    className="border border-gray-300 rounded-lg py-2 px-2 bg-transparent outline-none w-full text-left shadow-sm"
+                    required
+                >
+                    <option value="" disabled>
+                        Select Category
+                    </option>
+                    <option value="all">All</option>
+                    <option value="artificial intelligence">Artificial Intelligence</option>
+                    <option value="development">Development</option>
+                    <option value="design">Design</option>
+                    <option value="software">Software</option>
+                    <option value="machine learning">Machine Learning</option>
+                    <option value="data analyst">Data Analyst</option>
+                    <option value="sales">Sales</option>
+                    <option value="marketing">Marketing</option>
+                    <option value="others">Others</option>
+                </select>
+
 
                 <Input
                     placeholder="Salary Range (100K$-120K$)"

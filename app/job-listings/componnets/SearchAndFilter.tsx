@@ -78,7 +78,7 @@ export default function SearchAndFilter({ searchQuery, setSearchQuery, filters, 
                     {/* Domain Filter */}
                     <Select onValueChange={(value) => setFilters({ ...filters, domain: value === 'all' ? '' : value })}>
                         <SelectTrigger className="border-2 border-gray-300 rounded-lg p-6 bg-transparent outline-none w-full text-left shadow-lg shadow-gray-300">
-                            <SelectValue placeholder="Domains" />
+                            <SelectValue placeholder="Category" />
                         </SelectTrigger>
                         <SelectContent className='bg-[#fdfcf3]'>
                             <SelectItem value="all" className='px-4 py-3'>All</SelectItem>

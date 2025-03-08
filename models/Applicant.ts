@@ -15,11 +15,9 @@ const ApplicantSchema = new Schema<IApplicant>({
     linkedin: { type: String, required: true },
     resume: { type: String, required: true },
 }, { timestamps: true });
+
 ApplicantSchema.index({ email: 1, job: 1 }, { unique: true });
 
-if (mongoose.models.Applicant) {
-    delete mongoose.models.Applicant;
-}
 
 
 export default mongoose.models.Applicant || model<IApplicant>('Applicant', ApplicantSchema);

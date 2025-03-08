@@ -1,7 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import Job from '@/models/Job';
 import { connectToDB } from '@/lib/db/db';
 import { NextResponse } from 'next/server';
+import mongoose from 'mongoose';
+import Job from '@/models/Job';
 
 function parseDateFilter(date: string) {
     switch (date) {

@@ -1,4 +1,4 @@
-import mongoose, { Schema, Document, model } from 'mongoose';
+import mongoose, { Schema, Document } from 'mongoose';
 import Job from './Job';
 import Applicant from './Applicant';
 
@@ -14,9 +14,6 @@ const CompanySchema = new Schema<ICompany>({
     description: { type: String, required: true, trim: true },
 }, { timestamps: true });
 
-// if (mongoose.models.Company) {
-//     delete mongoose.models.Company;
-// }
 
 CompanySchema.pre('findOneAndDelete', async function (next) {
     const companyId = this.getQuery()['_id'];
@@ -36,6 +33,9 @@ CompanySchema.pre('findOneAndDelete', async function (next) {
     }
 });
 
-CompanySchema.index({ name: 1 }, { unique: true });  
 
-export default mongoose.models.Company || model<ICompany>('Company', CompanySchema);
+
+const Company = mongoose.models.Company || mongoose.model<ICompany>('Company', CompanySchema);
+export default Company;
+
+

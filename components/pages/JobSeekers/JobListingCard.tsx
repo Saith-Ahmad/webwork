@@ -15,7 +15,7 @@ const JobListingCard = ({ job, isFirst }: { job: Job; isFirst: boolean }) => {
   }
 
   return (
-    <div className="max-w-sm bg-white rounded-lg shadow-sm overflow-hidden flex flex-col p-5 gap-4 h-[350px]"> {/* Fixed height */}
+    <div className="max-w-sm bg-white rounded-lg shadow-md overflow-hidden flex flex-col p-5 gap-4 h-[350px]"> {/* Fixed height */}
       <div className='flex gap-3 justify-start items-center mb-4 text-base'>
         <span className='px-3 py-1 border-[1px] rounded-full border-[#111111] text-[#454545] capitalize'>
           {job.domain}

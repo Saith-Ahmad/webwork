@@ -42,7 +42,7 @@ const JobsList: React.FC<JobsListProps> = ({ jobs, loading, onDeleteJob, onUpdat
     }
 
     return (
-        <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
             {jobs.length >= 1 ?
                 <>
                     {jobs.map((job) => (
@@ -69,7 +69,7 @@ const JobsList: React.FC<JobsListProps> = ({ jobs, loading, onDeleteJob, onUpdat
                             <p className="text-gray-300 mb-4 text-sm whitespace-pre-line">{(job.description.length) < 100 ? job.description : `${job.description.slice(0, 100)}...`}</p>
                             <div className="grid grid-cols-2 gap-4 mb-4">
                                 <div>
-                                    <span className="text-sm text-gray-400">Domain:</span>
+                                    <span className="text-sm text-gray-400">Category</span>
                                     <p>{job.domain}</p>
                                 </div>
                                 <div>
