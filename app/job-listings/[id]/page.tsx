@@ -142,15 +142,18 @@ export default function JobApplyPage() {
     }
 
     return (
-        <div className="container p-6 shadow-2xl shadow-gray-500 rounded-md my-10">
-            <Link href="/job-listings">
+        <div className="container p-6  rounded-md my-10">
+           
+
+          <div className='flex justify-center items-center '>
+          <div className='max-w-screen-lg p-5 shadow-2xl  rounded-2xl'>
+          <Link href="/job-listings">
                 <Button className="flex bg-gray-900 mb-4">
                     <ArrowBigLeft />
                     Back to All Job Listings
                 </Button>
             </Link>
-
-            <div className='flex justify-center items-center bg-gray-100 text-gray-900 px-3 py-2 rounded-lg my-5 shadow-lg'>
+           <div className='pointer-events-none flex justify-center items-center bg-gray-900 text-white px-3 py-2 rounded-lg my-5 shadow-xl'>
                 <img
                     src={typeof job.company === "string" ? "/default-logo.png" : job.company.image ?? "/default-logo.png"}
                     alt="Company Logo"
@@ -163,7 +166,7 @@ export default function JobApplyPage() {
                 </div>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4 max-w-3xl ">
                 <input
                     type="text"
                     name="name"
@@ -171,7 +174,7 @@ export default function JobApplyPage() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full border rounded bg-transparent p-3"
+                    className="w-full border rounded-md shadow-md bg-transparent p-3"
                 />
                 <input
                     type="email"
@@ -180,7 +183,7 @@ export default function JobApplyPage() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full border rounded bg-transparent p-3"
+                    className="w-full border rounded-md shadow-md bg-transparent p-3"
                 />
                 <input
                     type="text"
@@ -189,28 +192,30 @@ export default function JobApplyPage() {
                     value={formData.linkedin}
                     onChange={handleChange}
                     required
-                    className="w-full border rounded bg-transparent p-3"
+                    className="w-full border rounded-md shadow-md bg-transparent p-3 bg-gray-100"
                 />
                 <div>
-                    <label>Upload your resume</label>
+                    <label className='ms-2'>Upload your resume</label>
                     <input
                         type="file"
                         name="resume"
                         accept=".pdf,.doc,.docx"
                         onChange={handleChange}
                         required
-                        className="w-full border rounded bg-transparent p-3"
+                        className="w-full border rounded-md shadow-md bg-transparent p-3 mt-2 bg-gray-100"
                     />
                 </div>
 
                 <button
                     type="submit"
                     disabled={submitting}
-                    className={`w-full py-4 text-white flex justify-center gap-2 items-center ${submitting ? 'bg-gray-500' : 'bg-gray-900'} text-lg rounded-md hover:bg-gray-800`}
+                    className={`w-full py-1  bg-transparent text-gray-900 font-semibold flex border-2 border-gray-900 hover:text-white hover:bg-gray-900 justify-center gap-2 items-center ${submitting ? 'bg-gray-500' : 'bg-gray-900'} text-lg rounded-md `}
                 >
                     {submitting ? <><Loader className='animate-spin' />Submitting...</> : 'Submit Application'}
                 </button>
             </form>
+           </div>
+          </div>
         </div>
     );
 }

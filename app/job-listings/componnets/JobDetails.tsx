@@ -41,8 +41,8 @@ export default function JobDetails({ job }: JobDetailsProps) {
                 </p>
             </div>
             <div className="flex -mt-2">
-                <p className="text-base max-w-[200px] self-start  bg-[#78cfea41] px-8 py-1 rounded-lg text-primary font-semibold capitalize">
-                    {job.salary}
+                <p className="ms-2 bg-gray-700 shadow-sm hover:bg-gray-800 text-white px-3 py-[1px] rounded-sm">
+                    Salary {job.salary}
                 </p>
             </div>
 
@@ -51,14 +51,14 @@ export default function JobDetails({ job }: JobDetailsProps) {
             {/* About the Company */}
             {typeof job.company !== "string" && job.company.description && (
                 <div className="mb-6">
-                    <Button className="mt-7 mb-2 bg-gray-900 hover:bg-gray-900 ">About The Company</Button>
+                    <Button className="mt-7 mb-2 bg-transparent border-2 border-gray-900 text-gray-900 hover:bg-transparent">About The Company</Button>
                     <p className="text-gray-700 whitespace-pre-line">{job.company.description}</p>
                 </div>
             )}
 
             {/* Job Description */}
             <div className="mb-6">
-                <Button className="mt-7 mb-2 bg-gray-900 hover:bg-gray-900 ">Job Description</Button>
+                <Button className="mt-7 mb-2 bg-transparent border-2 border-gray-900 text-gray-900 hover:bg-transparent">Job Description</Button>
                 <p className="text-gray-700 whitespace-pre-line">{job.description}</p>
             </div>
 

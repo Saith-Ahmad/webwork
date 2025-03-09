@@ -1,9 +1,8 @@
 'use client';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Job } from '@/lib/constants/types';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
-
 
 import {
     AlertDialog,
@@ -15,7 +14,7 @@ import {
     AlertDialogHeader,
     AlertDialogTitle,
     AlertDialogTrigger,
-} from "@/components/ui/alert-dialog"
+} from "@/components/ui/alert-dialog";
 import { useRouter } from 'next/navigation';
 
 interface JobsListProps {
@@ -27,6 +26,43 @@ interface JobsListProps {
 
 const JobsList: React.FC<JobsListProps> = ({ jobs, loading, onDeleteJob, onUpdateClick }) => {
     const router = useRouter();
+    const [applicantCounts, setApplicantCounts] = useState<{ [key: string]: number }>({});
+
+    // Fetch applicant count for each job
+    useEffect(() => {
+        const fetchApplicantCounts = async () => {
+            const counts: { [key: string]: number } = {};
+            await Promise.all(
+                jobs.map(async (job) => {
+                    try {
+                        const response = await fetch(`/api/applicants?jobId=${job._id}`);
+                        const result = await response.json();
+                        if (result.success) {
+                            if (job._id) {
+                                counts[job._id] = result.data.length;
+                            }
+                            
+                        } else {
+                            if (job._id) {   
+                                counts[job._id] = 0;
+                            }
+                        }
+                    } catch (error) {
+                        console.error("Error fetching applicant count:", error);
+                        if (job._id) {   
+                            counts[job._id] = 0;
+                        }
+                    }
+                })
+            );
+            setApplicantCounts(counts);
+        };
+
+        if (jobs.length > 0) {
+            fetchApplicantCounts();
+        }
+    }, [jobs]);
+
     if (loading) {
         return (
             <div className="grid grid-cols-1 gap-2 md-grid-cols-2 lg:grid-cols-3 ">
@@ -43,7 +79,7 @@ const JobsList: React.FC<JobsListProps> = ({ jobs, loading, onDeleteJob, onUpdat
 
     return (
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
-            {jobs.length >= 1 ?
+            {jobs.length >= 1 ? (
                 <>
                     {jobs.map((job) => (
                         <div
@@ -59,14 +95,19 @@ const JobsList: React.FC<JobsListProps> = ({ jobs, loading, onDeleteJob, onUpdat
                                 />
                                 <div>
                                     <h3 className="text-xl font-bold">{typeof job.company === 'string' ? '' : job.company?.name}</h3>
-                                    <p className="text-sm text-gray-400">Posted on: {job?.createdAt ? new Date(job.createdAt).toLocaleDateString() : 'N/A'}
+                                    <p className="text-sm text-gray-400">
+                                        Posted on: {job?.createdAt ? new Date(job.createdAt).toLocaleDateString() : 'N/A'}
                                     </p>
                                 </div>
                             </div>
 
                             {/* Job Details */}
-                            <h2 className="text-xl font-semibold mb-2">{job.title.length > 50 ? `${job.title.slice(0, 50)}...` : job.title}</h2>
-                            <p className="text-gray-300 mb-4 text-sm whitespace-pre-line">{(job.description.length) < 100 ? job.description : `${job.description.slice(0, 100)}...`}</p>
+                            <h2 className="text-xl font-semibold mb-2">
+                                {job.title.length > 50 ? `${job.title.slice(0, 50)}...` : job.title}
+                            </h2>
+                            <p className="text-gray-300 mb-4 text-sm whitespace-pre-line">
+                                {job.description.length < 100 ? job.description : `${job.description.slice(0, 100)}...`}
+                            </p>
                             <div className="grid grid-cols-2 gap-4 mb-4">
                                 <div>
                                     <span className="text-sm text-gray-400">Category</span>
@@ -78,7 +119,7 @@ const JobsList: React.FC<JobsListProps> = ({ jobs, loading, onDeleteJob, onUpdat
                                 </div>
                                 <div>
                                     <span className="text-sm text-gray-400">Job Type:</span>
-                                    <p className='capitalize'>{job.jobType}</p>
+                                    <p className="capitalize">{job.jobType}</p>
                                 </div>
                             </div>
 
@@ -86,46 +127,43 @@ const JobsList: React.FC<JobsListProps> = ({ jobs, loading, onDeleteJob, onUpdat
                             <div className="flex justify-end gap-2 mt-auto self-end ">
                                 <Button
                                     onClick={() => job._id && router.push(`/admin-dashboard/jobs/${job._id}`)}
-                                    className="px-2 py-2  transition bg-gray-200 text-black hover:bg-gray-300"
+                                    className="px-2 py-2 transition bg-gray-200 text-black hover:bg-gray-300"
                                 >
-                                Applicants
+                                    Applicants ({job._id ? applicantCounts[job._id] ?? '...' : '...'})
                                 </Button>
-                                <Button
-                                    onClick={() => onUpdateClick(job)}
-                                    className="px-4 py-2  transition"
-                                >
+                                <Button onClick={() => onUpdateClick(job)} className="px-4 py-2 transition">
                                     Edit
                                 </Button>
 
                                 <AlertDialog>
                                     <AlertDialogTrigger>
-                                        <Button variant="destructive">
-                                            Delete
-                                        </Button>
+                                        <Button variant="destructive">Delete</Button>
                                     </AlertDialogTrigger>
                                     <AlertDialogContent>
                                         <AlertDialogHeader>
                                             <AlertDialogTitle>Extreme Caution! ⚠️</AlertDialogTitle>
-                                            <AlertDialogDescription className='text-base '>
+                                            <AlertDialogDescription className="text-base ">
                                                 This action cannot be undone. This will permanently delete all applications attached to this job.
                                             </AlertDialogDescription>
                                         </AlertDialogHeader>
                                         <AlertDialogFooter>
                                             <AlertDialogCancel>Cancel</AlertDialogCancel>
-                                            <AlertDialogAction onClick={() => job._id && onDeleteJob(job._id)} className='bg-red-600 hover:bg-red-700'>Yes Delete</AlertDialogAction>
+                                            <AlertDialogAction
+                                                onClick={() => job._id && onDeleteJob(job._id)}
+                                                className="bg-red-600 hover:bg-red-700"
+                                            >
+                                                Yes Delete
+                                            </AlertDialogAction>
                                         </AlertDialogFooter>
                                     </AlertDialogContent>
                                 </AlertDialog>
-
-
                             </div>
                         </div>
                     ))}
-
-                </> :
+                </>
+            ) : (
                 <h2>No Jobs Found</h2>
-            }
-
+            )}
         </div>
     );
 };
