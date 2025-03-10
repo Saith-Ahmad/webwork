@@ -2,7 +2,7 @@
 
 import { usePathname } from 'next/navigation';
 import { footerLinks1, footerLinks2 } from '@/lib/constants/constants';
-import { ArrowRight, Check, Loader } from 'lucide-react';
+import { ArrowRight, Check, Facebook, Instagram, Linkedin, Loader } from 'lucide-react';
 import Image from 'next/image';
 import React, { useState } from 'react';
 import FadeInLeft from '../framermotion/FadeInLeft';
@@ -83,6 +83,12 @@ const Footer = () => {
                             </button>
                         </form>
                         {send && <div className='flex ms-3 gap-3 justify-start items-center'><Check className='w-8 h-8 text-green-800' strokeWidth={5} /><p className='text-white font-semibold'>Thanks for Subscribing</p></div>}
+                        {/* social icons */}
+                        <div className='flex justify-start items-center gap-2 mt-3'>
+                            <a href='https://www.facebook.com/share/1GnpWaB48q/' target='_blank'><div className='bg-[#00B7EB] p-3 rounded-full w-[45px] h-[45px] flex justify-center items-center hover:scale-105 transition-transform duration-200'><Facebook strokeWidth={1} fill='white' color='white' width={20}/></div></a>
+                            <a href="https://www.instagram.com/beyondhut?igsh=ZDgzOGJjdWMwdTQx" target='_blank'><div className='bg-[#00B7EB] p-3 rounded-full w-[45px] h-[45px] flex justify-center items-center hover:scale-105 transition-transform duration-200'><img src='/assets/instagram.svg' width={20}/></div></a>
+                            <a href="https://www.linkedin.com/company/beyondhut/" target='_blank'><div className='bg-[#00B7EB] p-3 rounded-full w-[45px] h-[45px] flex justify-center items-center hover:scale-105 transition-transform duration-200'><Linkedin fill='white' strokeWidth={1} color='white' width={20}/></div></a>
+                        </div>
 
                     </div>
 

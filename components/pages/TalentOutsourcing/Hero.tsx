@@ -31,7 +31,7 @@ function TalentOutsourcingHero() {
                     </p>
 
                     <Link href='/get-started'>
-                        <Button size={'lg'} className='self-start mt-4 bg-white text-black rounded-full hover:bg-black hover:text-white'>
+                        <Button size={'lg'} className='self-start mt-4 bg-white text-black font-bold rounded-full hover:bg-black hover:text-white'>
                             Hire Top Talent Now
                         </Button>
                     </Link>
