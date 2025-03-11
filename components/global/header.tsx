@@ -85,18 +85,20 @@ function Header() {
 
               {/* Get Started Button in Sheet */}
               <div className="mt-6">
-                <Button className="w-full hover:scale-105 transition-transform duration-300 ease-in-out transform">
-                  Get Started
-                </Button>
+                <Link href="/get-started">
+                  <Button className="w-full hover:scale-105 transition-transform duration-300 ease-in-out transform">
+                    Get Started
+                  </Button>
+                </Link>
 
                 {user && <>
                   <SignOutButton>
-                  <button className="font-bold w-full mt-3 p-2 rounded-md bg-gray-900 text-white">
-                    Logout
-                  </button>
-                </SignOutButton>
+                    <button className="font-bold w-full mt-3 p-2 rounded-md bg-gray-900 text-white">
+                      Logout
+                    </button>
+                  </SignOutButton>
                 </>}
-                
+
               </div>
             </SheetContent>
           </Sheet>
