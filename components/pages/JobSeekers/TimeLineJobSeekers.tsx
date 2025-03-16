@@ -47,7 +47,7 @@ function Timeline_Job_Seekers() {
             <div className="absolute -right-40 -top-20 pointer-events-none w-[300px] h-[300px]  md:h-[500px]  md:w-[500px] rounded-full bg-pink-200 blur-3xl opacity-40"></div>
             <div className='container mx-auto p-4'>
 
-                <h2 className='text-black text-3xl md:text-4xl text-center md:my-20 mt-10 mb-14 font-semibold'>How It Works</h2>
+                <h2 className='text-black text-3xl md:text-4xl text-center md:my-20 mt-10 mb-14 font-semibold'>Our Seamless Talent Outsourcing Journey</h2>
                 {steps.map((step, index) => (
                     <div
                         key={step.id}
