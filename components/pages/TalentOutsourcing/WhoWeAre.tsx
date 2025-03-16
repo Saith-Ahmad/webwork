@@ -8,7 +8,7 @@ function WhoWeAre() {
         <div className='container mt-14'>
             <FadeInBottom once={false}>
                 <h2 className='md:text-4xl text-3xl text-center font-semibold mb-8'>
-                    Who We Hire
+                 Who We Help You Hire?
                 </h2>
             </FadeInBottom>
 

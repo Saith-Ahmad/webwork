@@ -5,33 +5,41 @@ import FadeInBottom from '@/components/framermotion/FadeInBottom';
 const steps = [
     {
         id: 1,
-        leftContent: '/assets/timeline1.png',
+        leftContent: '/assets/JStimeline1.png',
         rightContent: 'bg-[#D2CCFA]',
-        heading: 'Screening & Testing',
-        para: 'Two interview rounds + IQ test to ensure top-tier talent.',
+        heading: "Tell Us Your Career Goals",
+        para: `Share your skills, experience, and career aspirations. Whether you're looking for remote work, full-time roles.`,
+        line: "Or freelance opportunities, we help you find the best fit."
     },
+
     {
         id: 2,
         leftContent: 'bg-[#F8E1BE]',
-        rightContent: '/assets/timeline2.png',
-        heading: 'Seamless Onboarding',
-        para: 'Dedicated office support to get started immediately.',
+        rightContent: '/assets/JStimeline2.png',
+        heading: "Get Matched with Top Opportunities",
+        para: "We connect you with leading companies seeking top talent. Our expert team carefully matches your profile.",
+        line: "With roles that align with your expertise and ambitions."
     },
+
     {
         id: 3,
-        leftContent: '/assets/timeline3.png',
+        leftContent: '/assets/JStimeline3.png',
         rightContent: 'bg-[#ADD0F3]',
-        heading: 'Performance Management',
-        para: 'Track efficiency, KPIs, and ongoing performance.',
+        heading: "Interview & Land the Right Job",
+        para: "Prepare with confidence as we guide you through the interview process. Get feedback, negotiate offers,",
+        line: "And secure a role that values your skills and potential."
     },
+
     {
         id: 4,
         leftContent: 'bg-[#FAC2C1]',
-        rightContent: '/assets/timeline4.png',
-        heading: 'Talent Replacement Guarantee',
-        para: 'Quick replacement for continuity if needed.',
-    },
-];
+        rightContent: '/assets/JStimeline4.png',
+        heading: "Grow & Succeed in Your New Role",
+        para: "Once hired, integrate seamlessly into your new job.",
+        line: "Enjoy ongoing career support, skill development opportunities, and a network to help you thrive."
+    }
+]
+
 
 function Timeline_Job_Seekers() {
     return (
@@ -79,6 +87,7 @@ function Timeline_Job_Seekers() {
                         <div className='md:w-[300px] md:h-[300px] w-[300px] h-[150px] flex flex-col items-start justify-center p-4 rounded-lg '>
                             <h3 className='text-xl font-bold mb-2'>{step.heading}</h3>
                             <p className='text-gray-600'>{step.para}</p>
+                            <p className="font-bold mt-2">{step.line}</p>
                         </div>
 
                         {/* Timeline */}
