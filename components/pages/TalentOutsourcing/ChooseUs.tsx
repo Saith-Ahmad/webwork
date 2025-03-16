@@ -3,7 +3,7 @@ import React from 'react';
 
 const WhyChooseUs = () => {
     return (
-        <div className="bg-[#161C28] py-12 rounded-t-3xl rounded-b-3xl my-20 relative min-h-[95vh] flex flex-col items-center justify-center">
+        <div className="bg-[#161C28] py-12 rounded-t-3xl rounded-b-3xl my-20 relative min-h-[120vh] flex flex-col items-center justify-center">
             {/* Top and Bottom Curves */}
             <div className='absolute md:-top-4 -top-1 right-0 w-[100vw]'>
                 <img src="/assets/upper_curve.svg" alt="curve" className='w-[100vw]' />

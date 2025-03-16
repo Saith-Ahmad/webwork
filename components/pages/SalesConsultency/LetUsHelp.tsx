@@ -4,7 +4,7 @@ import React from 'react';
 
 const LetUsHelp = () => {
     return (
-        <div className="bg-[#161C28] py-12 rounded-t-3xl rounded-b-3xl  my-20 relative min-h-[100vh] flex justify-center items-center">
+        <div className="bg-[#161C28] py-12  rounded-t-3xl rounded-b-3xl  my-20 relative min-h-[120vh] flex justify-center items-center">
 
 
             <div className='absolute md:-top-4 -top-1 right-0 w-[100vw]'>

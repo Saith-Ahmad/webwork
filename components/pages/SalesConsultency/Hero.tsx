@@ -33,7 +33,7 @@ function SalesConsultencyHero() {
 
     return (
         <div>
-            <div className='relative min-h-[100vh] md:min-h-[120vh] bg-[#78D0EA] flex  items-center justify-between py-16 md:pt-0'>
+            <div className='relative min-h-[100vh] md:min-h-[120vh] bg-[#78D0EA] flex -z-[10] overflow-hidden  items-center justify-between py-16 md:pt-0'>
                 <div className='flex flex-col space-y-10 items-center justify-center container'>
                     {/* Rirst Row */}
                     <div className=' flex flex-col md:flex-row justify-between items-center'>
@@ -59,7 +59,8 @@ function SalesConsultencyHero() {
                             </Link>
                         </div>
 
-                        <div className='md:max-w-[40%] mt-10 md:mt-0'>
+                        <div className='md:max-w-[40%] mt-10 md:mt-0 relative'>
+                        <div className='absolute md:w-[550px] md:h-[550px] z-[-4] rounded-2xl  md:-top-20 md:-left-10 md:rotate-[25deg] rotate-[55deg] w-[450px] h-[450px] top-24  sm:top-0 sm:left-20  inset-0 bg-[#9BE4FA]'></div>
                             <FadeInRight duration={0.7} distance={60} once={false}>
                             <Image alt='Remote Talent Aquisition' src={'/assets/sc_hero.png'} width={800} height={600} />
                             </FadeInRight>
