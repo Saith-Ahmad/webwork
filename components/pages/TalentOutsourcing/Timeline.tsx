@@ -41,10 +41,10 @@ const steps = [
 function Timeline() {
     return (
         <div className='relative'>
-            <div className="absolute -right-40 -top-20 pointer-events-none w-[300px] h-[300px] md:h-[500px] md:w-[500px] rounded-full bg-pink-300 blur-3xl opacity-30"></div>
+            <div className="absolute -right-40 -top-20 pointer-events-none w-[300px] h-[300px]  md:h-[500px]  md:w-[500px] rounded-full bg-pink-200 blur-3xl opacity-40"></div>
             <div className='container mx-auto p-4'>
 
-                <h2 className='text-black text-3xl md:text-4xl text-center my-10 mb-14 font-semibold'>How It Works – A Seamless Hiring Process</h2>
+                <h2 className='text-black text-3xl md:text-4xl text-center md:my-20 mt-10 mb-14 font-semibold'>Our Seamless Talent Outsourcing Journey</h2>
                 {steps.map((step, index) => (
                     <div
                         key={step.id}
@@ -54,44 +54,42 @@ function Timeline() {
                         {/* Left Side */}
                         {index % 2 === 0 ? (
                             <FadeInBottom duration={1} distance={70}>
-                                <div className={`md:w-[350px] w-[300px] h-[300px] rounded-lg flex items-center justify-center ${step.rightContent.includes('bg-') ? step.rightContent : ''}`}>
-                                    {step.leftContent.includes('/assets') ? (
-                                        <Image
-                                            src={step.leftContent}
-                                            alt={`Step ${step.id}`}
-                                            width={300}
-                                            height={300}
-                                            className='object-cover rounded-lg max-w-[250px] md:max-w-[300px]'
-                                        />
-                                    ) : null}
+                                <div className={`md:w-[350px] w-[280px] h-[240px] ${step.rightContent} rounded-lg flex items-center justify-center`}>
+                                    <Image
+                                        src={step.leftContent}
+                                        alt={`Step ${step.id}`}
+                                        width={300}
+                                        height={300}
+                                        className='object-cover rounded-lg max-w-[250px] md:max-w-[300px]'
+                                    />
                                 </div>
                             </FadeInBottom>
                         ) : (
                             <FadeInBottom duration={1} distance={70}>
-                                <div className={`md:w-[350px] w-[300px] h-[300px] rounded-lg flex items-center justify-center ${step.leftContent.includes('bg-') ? step.leftContent : ''}`}>
-                                    {step.rightContent.includes('/assets') ? (
-                                        <Image
-                                            src={step.rightContent}
-                                            alt={`Step ${step.id}`}
-                                            width={300}
-                                            height={300}
-                                            className='object-cover rounded-lg max-w-[250px] md:max-w-[300px]'
-                                        />
-                                    ) : null}
+
+                                <div className={`md:w-[350px] w-[280px] h-[240px] ${step.leftContent} rounded-lg flex items-center justify-center`}>
+                                    <Image
+                                        src={step.rightContent}
+                                        alt={`Step ${step.id}`}
+                                        width={300}
+                                        height={300}
+                                        className='object-cover rounded-lg max-w-[250px] md:max-w-[300px]'
+                                    />
                                 </div>
                             </FadeInBottom>
+
                         )}
 
                         {/* Right Side */}
-                        <div className='md:w-[300px] md:h-[300px] w-[300px] h-[150px] flex flex-col items-start justify-center p-4 rounded-lg '>
+                        <div className='md:w-[300px] md:h-[300px] w-[300px] h-[250px] flex flex-col items-start justify-center p-4 rounded-lg '>
                             <h3 className='text-xl font-bold mb-2'>{step.heading}</h3>
-                            <div className='text-gray-600'>{step.para}</div>
-                            <p className="font-bold mt-2">{step.line}</p>
+                            <p className='text-gray-600'>{step.para}</p>
+                            <p className="font-bold text-base mt-2">{step.line}</p>
                         </div>
 
                         {/* Timeline */}
                         <div className='absolute w-[2px] h-full bg-black md:left-[50%] left-4 flex justify-center items-start'>
-                            <div className='w-[40px] h-[40px] bg-white rounded-md flex items-center justify-center -mt-10'>
+                            <div className='w-[40px] h-[40px] bg-white rounded-md  flex items-center justify-center -mt-10'>
                                 <p className='text-2xl p-4 font-bold'>{step.id}</p>
                             </div>
                         </div>

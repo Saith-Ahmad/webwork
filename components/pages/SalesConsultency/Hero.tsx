@@ -33,7 +33,7 @@ function SalesConsultencyHero() {
 
     return (
         <div>
-            <div className='relative min-h-[100vh] md:min-h-[120vh] bg-[#78D0EA] flex -z-[10] overflow-hidden  items-center justify-between py-16 md:pt-0'>
+            <div className='relative min-h-[100vh] md:min-h-[120vh] bg-[#78D0EA] flex  overflow-hidden  items-center justify-between py-16 md:pt-0'>
                 <div className='flex flex-col space-y-10 items-center justify-center container'>
                     {/* Rirst Row */}
                     <div className=' flex flex-col md:flex-row justify-between items-center'>
@@ -60,9 +60,9 @@ function SalesConsultencyHero() {
                         </div>
 
                         <div className='md:max-w-[40%] mt-10 md:mt-0 relative'>
-                        <div className='absolute md:w-[550px] md:h-[550px] z-[-4] rounded-2xl  md:-top-20 md:-left-10 md:rotate-[25deg] rotate-[55deg] w-[450px] h-[450px] top-24  sm:top-0 sm:left-20  inset-0 bg-[#9BE4FA]'></div>
+                        <div className='absolute md:w-[550px] md:h-[550px] z-0 rounded-2xl  md:-top-20 md:-left-10 md:rotate-[25deg] rotate-[55deg] w-[450px] h-[450px] top-24  sm:top-0 sm:left-20  inset-0 bg-[#9BE4FA]'></div>
                             <FadeInRight duration={0.7} distance={60} once={false}>
-                            <Image alt='Remote Talent Aquisition' src={'/assets/sc_hero.png'} width={800} height={600} />
+                            <Image alt='Remote Talent Aquisition' src={'/assets/sc_hero.png'} width={800} height={600} className='relative z-10'/>
                             </FadeInRight>
                         </div>
 
@@ -70,7 +70,7 @@ function SalesConsultencyHero() {
                     </div>
 
                     {/* 2nd row */}
-                    <div className='bg-white  md:grid-cols-4 my-16 mb-28 p-3 px-6 rounded-lg hidden md:grid'>
+                    <div className='bg-white relative z-20  md:grid-cols-4 my-16 mb-28 p-3 px-6 rounded-lg hidden md:grid'>
                         <div className='col-span-1 flex flex-row justify-start items-center'>
                             <h4 className='text-black md:text-2xl text-xl font-bold'>Key Services</h4>
                             <div className='w-[1px] h-[30px]  bg-gray-500 ms-5'></div>

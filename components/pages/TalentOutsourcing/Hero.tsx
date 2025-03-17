@@ -8,7 +8,7 @@ import React from 'react'
 
 function TalentOutsourcingHero() {
     return (
-        <div className='min-h-[100vh] pb-20 md:pb-0 -z-[10] overflow-hidden relative md:min-h-[100vh] bg-[#78D0EA] flex items-center justify-between pt-10 md:pt-0'>
+        <div className='min-h-[100vh] pb-20 md:pb-0  overflow-hidden relative md:min-h-[100vh] bg-[#78D0EA] flex items-center justify-between pt-10 md:pt-0'>
             <div className='container flex flex-col md:flex-row justify-between items-center'>
                 {/* Left Side Content */}
                 <div className='md:p-10 p-3 flex flex-col gap-2 md:w-[50%]'>
@@ -39,9 +39,9 @@ function TalentOutsourcingHero() {
 
                 {/* Right Side Illustration */}
                 <div className='md:max-w-[40%] relative'>
-                <div className='absolute md:w-[550px] md:h-[550px] z-[-4] rounded-2xl  md:-top-20 md:-left-10 md:rotate-[25deg] rotate-[45deg] w-[450px] h-[450px] top-14  sm:top-0 sm:left-20  inset-0 bg-[#9BE4FA]'></div>
+                <div className='absolute md:w-[550px] md:h-[550px] z-0 rounded-2xl  md:-top-20 md:-left-10 md:rotate-[25deg] rotate-[45deg] w-[450px] h-[450px] top-14  sm:top-0 sm:left-20  inset-0 bg-[#9BE4FA]'></div>
                     <FadeInRight once={false} duration={1}>
-                        <Image alt='Remote Talent Acquisition' src={'/assets/talentoutsourcehero.png'} width={800} height={600} className='w-full h-auto' />
+                        <Image alt='Remote Talent Acquisition' src={'/assets/talentoutsourcehero.png'} width={800} height={600} className='w-full h-auto relative z-[10]' />
                     </FadeInRight>
                 </div>
             </div>

@@ -47,7 +47,7 @@ function Timeline_Job_Seekers() {
             <div className="absolute -right-40 -top-20 pointer-events-none w-[300px] h-[300px]  md:h-[500px]  md:w-[500px] rounded-full bg-pink-200 blur-3xl opacity-40"></div>
             <div className='container mx-auto p-4'>
 
-                <h2 className='text-black text-3xl md:text-4xl text-center md:my-20 mt-10 mb-14 font-semibold'>Our Seamless Talent Outsourcing Journey</h2>
+                <h2 className='text-black text-3xl md:text-4xl text-center md:my-20 mt-10 mb-14 font-semibold'>How It Works</h2>
                 {steps.map((step, index) => (
                     <div
                         key={step.id}
@@ -57,7 +57,7 @@ function Timeline_Job_Seekers() {
                         {/* Left Side */}
                         {index % 2 === 0 ? (
                             <FadeInBottom duration={1} distance={70}>
-                                <div className={`md:w-[350px] w-[300px] h-[300px] ${step.rightContent} rounded-lg flex items-center justify-center`}>
+                                <div className={`md:w-[350px] w-[280px] h-[240px] ${step.rightContent} rounded-lg flex items-center justify-center`}>
                                     <Image
                                         src={step.leftContent}
                                         alt={`Step ${step.id}`}
@@ -70,7 +70,7 @@ function Timeline_Job_Seekers() {
                         ) : (
                             <FadeInBottom duration={1} distance={70}>
 
-                                <div className={`md:w-[350px] w-[300px] h-[300px] ${step.leftContent} rounded-lg flex items-center justify-center`}>
+                                <div className={`md:w-[350px] w-[280px] h-[240px] ${step.leftContent} rounded-lg flex items-center justify-center`}>
                                     <Image
                                         src={step.rightContent}
                                         alt={`Step ${step.id}`}
@@ -84,10 +84,10 @@ function Timeline_Job_Seekers() {
                         )}
 
                         {/* Right Side */}
-                        <div className='md:w-[300px] md:h-[300px] w-[300px] h-[150px] flex flex-col items-start justify-center p-4 rounded-lg '>
+                        <div className='md:w-[300px] md:h-[300px] w-[300px] h-[250px] flex flex-col items-start justify-center p-4 rounded-lg '>
                             <h3 className='text-xl font-bold mb-2'>{step.heading}</h3>
                             <p className='text-gray-600'>{step.para}</p>
-                            <p className="font-bold mt-2">{step.line}</p>
+                            <p className="font-bold text-base mt-2">{step.line}</p>
                         </div>
 
                         {/* Timeline */}
