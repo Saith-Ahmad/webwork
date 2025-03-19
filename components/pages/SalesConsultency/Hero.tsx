@@ -38,7 +38,7 @@ function SalesConsultencyHero() {
                     {/* Rirst Row */}
                     <div className=' flex flex-col md:flex-row justify-between items-center'>
 
-                        <div className='w-[100vw] absolute md:-bottom-10 -bottom-[5px] right-0'>
+                        <div className='w-[100vw] absolute md:-bottom-10 -bottom-[5px] right-0 z-[20]'>
                             <img src='/assets/shape_hero.svg' className=' w-[100vw]' />
                         </div>
 
@@ -70,21 +70,22 @@ function SalesConsultencyHero() {
                     </div>
 
                     {/* 2nd row */}
-                    <div className='bg-white relative z-20  md:grid-cols-4 my-16 mb-28 p-3 px-6 rounded-lg hidden md:grid'>
+                    <div className='bg-white relative z-20  md:grid-cols-4 my-16 mb-28 p-3 px-6 rounded-lg hidden overflow-hidden md:grid'>
                         <div className='col-span-1 flex flex-row justify-start items-center'>
-                            <h4 className='text-black md:text-2xl text-xl font-bold'>Key Services</h4>
+                            <h4 className='text-black md:text-2xl text-xl font-bold '>Key Services</h4>
                             <div className='w-[1px] h-[30px]  bg-gray-500 ms-5'></div>
                         </div>
-                        <div className='col-span-1'>
-                            <Button className={`rounded-md text-black  hover:bg-gray-300 ${showContent=='LeadGeneration' ? "bg-[#78D0EA33]" : 'bg-transparent border-[1px] border-black'}`} onClick={()=>setShowContent('LeadGeneration')}>Content and Lead Generation</Button>
+                        <div className='col-span-1'> 
+                            <Button size={'sm'} className={` rounded-md text-black  hover:bg-gray-300 ${showContent=='LeadGeneration' ? "bg-[#78D0EA33]" : 'bg-transparent border-[1px] border-black'}`} onClick={()=>setShowContent('LeadGeneration')}>Content and Lead Generation</Button>
                         </div>
 
                         <div className='col-span-1'>
-                            <Button className={`rounded-md text-black  hover:bg-gray-300 ${showContent=='Email' ? "bg-[#78D0EA33]" : 'bg-transparent border-[1px] border-black'}`} onClick={()=>setShowContent('Email')}>Cold Emailing Infrastructure</Button>
+                            <Button size={'sm'} className={`rounded-md sm:ms-8 lg:ms-0 text-black  hover:bg-gray-300 ${showContent=='Email' ? "bg-[#78D0EA33]" : 'bg-transparent border-[1px] border-black'}`} onClick={()=>setShowContent('Email')}>Cold Emailing Infrastructure</Button>
                         </div>
 
                         <div className='col-span-1'>
-                            <Button className={`rounded-md text-black  hover:bg-gray-300 ${showContent=='CRM' ? "bg-[#78D0EA33]" : 'bg-transparent border-[1px] border-black'}`} onClick={()=>setShowContent('CRM')}> CRMs, Automations & Integration</Button>
+                            <Button size={'sm'} className={`rounded-md sm:ms-14 lg:ms-0 text-black  hover:bg-gray-300 ${showContent=='CRM' ? "bg-[#78D0EA33]" : 'bg-transparent border-[1px] border-black'}`} onClick={()=>setShowContent('CRM')}> CRMs, Automations & Integration</Button>
+                        
                         </div>
                     </div>
 
