@@ -26,7 +26,7 @@ function HireTopTalent({heading, para, btnText}:ComponentProps) {
                     <h3 className='text-black text-2xl font-bold text-center md:text-start'>{heading}</h3>
                     <p className='text-base max-w-[450px] text-center md:text-start'>{para}</p>
                     <Link href={pathname=='/job-seekers' ? "/application-form" : "/get-started"} className='self-center md:self-start'>
-                        <Button className='self-center md:self-start w-[200px] mt-3 bg-white border-[1.4px] border-black px-3 py-1 rounded-lg text-black hover:bg-black hover:text-white' size={'lg'}>{btnText}</Button>
+                        <Button className='self-center md:self-start w-[200px] mt-3 bg-white border-[1.4px] border-black px-3 py-1 rounded-lg text-black hover:bg-gray-100' size={'lg'}>{btnText}</Button>
                     </Link>
                 </div>
             </div>

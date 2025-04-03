@@ -9,9 +9,9 @@ export const navLinks = [
 
 
 export const footerLinks1 = [
-  { name : "Technology & IT"},
+  { name : "Technology & IT" },
   { name : "Software & Hardware"},
-  { name : "Real Estate"},
+  { name : "Real Estate" , link:"/real-estate"},
   { name : "Marketing & Communications"},
   { name : "Healthcare"},
   { name : "Design & Media"},

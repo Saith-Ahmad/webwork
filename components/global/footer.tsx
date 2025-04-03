@@ -8,6 +8,7 @@ import React, { useState } from 'react';
 import FadeInLeft from '../framermotion/FadeInLeft';
 import FadeInBottom from '../framermotion/FadeInBottom';
 import FadeInTop from '../framermotion/FadeInTop';
+import Link from 'next/link';
 
 const Footer = () => {
     const [email, setEmail] = useState('');
@@ -98,8 +99,15 @@ const Footer = () => {
                         <ul className="space-y-2">
                             {
                                 footerLinks1.map((link, i) => (
-                                    <li key={i}><a className="">{link.name}</a></li>
-                                ))
+                                    <li key={i}>
+                                      {link.link ? (
+                                        <Link href={link.link} className="">{link.name}</Link>
+                                      ) : (
+                                        <span className="">{link.name}</span>
+                                      )}
+                                    </li>
+                                  ))
+                                  
                             }
                         </ul>
                     </div>
