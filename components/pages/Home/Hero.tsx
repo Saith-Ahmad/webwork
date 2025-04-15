@@ -17,7 +17,7 @@ function HomeHero() {
                 <div className='md:p-10 p-3 flex flex-col gap-2 md:w-[50%] relative z-10'>
                     <FadeInLeft duration={1} distance={70} once={false}>
                         <h1 className='text-4xl md:text-5xl font-bold text-white md:max-w-[600px]'>
-                            Your One-Stop Solution for Remote Talent Hiring and Management
+                        Build Your Dream Team With The Best Talent And Management Hassle Free
                         </h1>
                     </FadeInLeft>
 
@@ -28,14 +28,14 @@ function HomeHero() {
                     </FadeInBottom>
 
                     <p className='text-white font-medium text-lg mt-4'>
-                        Empowering businesses with top-tier remote talent and seamless sales automation—anytime, anywhere.
+                    Beyond Hut helps businesses scale with cost-effective top-tier (elite)  talent  – vetted, trained and ready to plug into your team.
                     </p>
 
                     {/* Ensure button is clickable */}
                     <div className='relative z-20'>
                         <Link href={'/get-started'}>
                             <Button size={'lg'} className='self-start mt-4 bg-white text-black rounded-full hover:bg-black hover:text-white'>
-                                Get Started
+                                Hire Talent
                             </Button>
                         </Link>
                     </div>
