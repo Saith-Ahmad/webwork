@@ -7,19 +7,19 @@ function WhatWeDo() {
     {
       title: 'Fast',
       subtitle: 'within just a week',
-      icon: <Clock className="w-24 h-24 text-[#E59373]" />,
+      icon: <Clock className="w-20 h-20 text-[#E59373]" />,
       bg: 'bg-[#F3C8B9]',
     },
     {
       title: 'Dependable',
       subtitle: 'Best longevity. Never worry about retention again.',
-      icon: <Handshake className="w-24 h-24 text-[#A48AD4]" />,
+      icon: <Handshake className="w-20 h-20 text-[#A48AD4]" />,
       bg: 'bg-[#D5C9F4]',
     },
     {
       title: 'Dedicated',
       subtitle: 'full-time talent through rigorous selection process',
-      icon: <User className="w-24 h-24 text-[#D4B369]" />,
+      icon: <User className="w-20 h-20 text-[#D4B369]" />,
       bg: 'bg-[#F4E2BD]',
     },
     {
