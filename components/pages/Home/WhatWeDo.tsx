@@ -6,7 +6,7 @@ function WhatWeDo() {
   const benefits = [
     {
       title: 'Fast',
-      subtitle: 'within just a week',
+      subtitle: 'Within just a week',
       icon: <Clock className="w-20 h-20 text-[#E59373]" />,
       bg: 'bg-[#F3C8B9]',
     },
@@ -18,7 +18,7 @@ function WhatWeDo() {
     },
     {
       title: 'Dedicated',
-      subtitle: 'full-time talent through rigorous selection process',
+      subtitle: 'Full-time talent through rigorous selection process',
       icon: <User className="w-20 h-20 text-[#D4B369]" />,
       bg: 'bg-[#F4E2BD]',
     },
