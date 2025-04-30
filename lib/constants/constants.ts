@@ -1,9 +1,9 @@
 export const navLinks = [
     { name: "Home", url: "/" },
-    { name: "Talent and Resources", url: "/talent-outsourcing" },
     { name: "Sales Consultancy ", url: "/sales-consultancy-automation" },
     { name: "Job Seekers", url: "/job-seekers" },
     { name: "About Us", url: "/about-us" },
+    { name: "Pricing", url: "#" },
   ];
 
 

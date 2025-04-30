@@ -8,8 +8,6 @@
   }
 }
 
-
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -104,6 +102,59 @@
   @apply transition-transform transform-gpu hover:scale-[1.02] hover:shadow-lg;
 }
 
+
+
+
+
+
+
+/* After Redesign */
+@keyframes glowMove {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(60%); /* adjust as needed */
+  }
+}
+
+.glow-animation {
+  animation: glowMove 6s ease-in-out infinite;
+}
+
+
+
+
+
+
+
+
+
+@keyframes glowTop {
+  0%, 100% {
+    transform: translateX(0) rotate(0deg);
+  }
+  50% {
+    transform: translateX(10%) rotate(10deg);
+  }
+}
+
+@keyframes glowBottom {
+  0%, 100% {
+    transform: translateX(0) rotate(0deg);
+  }
+  50% {
+    transform: translateX(-20%) rotate(15deg);
+  }
+}
+
+.animate-glow-top {
+  animation: glowTop 8s ease-in-out infinite;
+}
+
+.animate-glow-bottom {
+  animation: glowBottom 8s ease-in-out infinite;
+}
 
 
 

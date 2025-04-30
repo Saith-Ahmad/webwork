@@ -75,6 +75,10 @@ const config: Config = {
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
       },
+      fontFamily: {
+        inter: ['var(--font-inter)', 'sans-serif'], // Assuming you've set this up
+        roca: ['var(--font-roca)', 'sans-serif'],   // Add your custom font family
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

@@ -29,12 +29,13 @@ function Header() {
   };
 
   return (
-    <header className="container py-2">
+    <div className="container">
+    <header className=" py-2 bg-white my-5 md:my-7 lg:my-8 rounded-3xl shadow-lg shadow-gray-200 px-10">
       <div className="flex justify-between items-center">
         {/* Logo */}
         <div className="md:w-[90px] md:h-[60px] w-[70px] h-[50px] relative">
           <Link href={'/'}>
-            <Image src="/assets/logo.png" alt="Logo" fill className="object-contain" />
+            <Image src="/assets/logo.png" alt="Logo" fill className="object-contain"/>
           </Link>
         </div>
 
@@ -56,10 +57,10 @@ function Header() {
         <div className="hidden lg:flex justify-center items-center  gap-2">
           <UserButton />
           <Link href={'/get-started'} >
-            <Button className="hover:scale-105 transition-transform duration-300 ease-in-out transform">
+            <Button size={'lg'} className="hover:scale-105 rounded-full transition-transform duration-300 ease-in-out transform">
               Get Started
             </Button>
-          </Link>
+          </Link> 
         </div>
 
         {/* Mobile & Tablet: Hamburger Menu */}
@@ -105,6 +106,7 @@ function Header() {
         </div>
       </div>
     </header>
+    </div>
   );
 }
 

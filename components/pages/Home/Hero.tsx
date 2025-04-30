@@ -8,52 +8,48 @@ import React from 'react'
 
 function HomeHero() {
     return (
-        <div className='min-h-[100vh] pb-20 md:pb-0 relative md:min-h-[100vh] bg-[#78D0EA] flex items-center justify-between pt-10 md:pt-0 overflow-hidden'>
+        <div className='container '>
+            <div className='bg-white shadow-lg shadow-gray-200 md:min-h-[100vh] rounded-3xl  flex flex-col justify-center items-center relative overflow-hidden'>
 
-            {/* Content Section */}
-            <div className='container flex flex-col md:flex-row justify-between items-center'>
+                {/* Glow*/}
+                <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
+                    <div className="relative w-full h-full glow-animation">
+                        {/* Purple Glow */}
+                        <div className="absolute md:w-[400px] md:h-[300px] w-[200px] h-[200px] bg-[#A78BFA] rounded-full blur-3xl opacity-50 bottom-0 left-0"></div>
 
-                {/* Left Section */}
-                <div className='md:p-10 p-3 flex flex-col gap-2 md:w-[50%] relative z-10'>
-                    <FadeInLeft duration={1} distance={70} once={false}>
-                        <h1 className='text-4xl md:text-5xl font-bold text-white md:max-w-[600px]'>
-                        Build Your Dream Team With The Best Talent And Management Hassle Free
-                        </h1>
-                    </FadeInLeft>
-
-                    <FadeInBottom duration={1} distance={40}>
-                        <div className='max-w-[500px] mt-3'>
-                            <Image alt='Remote Talent Aquisition' src={'/assets/line.svg'} width={400} height={10} />
-                        </div>
-                    </FadeInBottom>
-
-                    <p className='text-white font-medium text-lg mt-4'>
-                    Beyond Hut helps businesses scale with cost-effective top-tier (elite)  talent  – vetted, trained and ready to plug into your team.
-                    </p>
-
-                    {/* Ensure button is clickable */}
-                    <div className='relative z-20'>
-                        <Link href={'/get-started'}>
-                            <Button size={'lg'} className='self-start mt-4 bg-white text-black rounded-full hover:bg-black hover:text-white'>
-                                Hire Talent
-                            </Button>
-                        </Link>
+                        {/* Sky Blue Glow */}
+                        <div className="absolute md:w-[400px] md:h-[300px] w-[200px] h-[200px] bg-[#7DD3FC] rounded-full blur-3xl opacity-50 bottom-20 left-30"></div>
                     </div>
                 </div>
 
-                {/* Right Section */}
-                <div className='md:max-w-[40%] relative z-10'>
-                    <div className='absolute md:w-[550px] pointer-events-none md:h-[550px] z-0 rounded-2xl md:-top-28 md:-left-10 md:rotate-[25deg] rotate-[55deg] w-[450px] h-[450px] top-24 sm:top-0 sm:left-20 inset-0 bg-[#9BE4FA]'></div>
 
-                    <FadeInRight once={false} duration={1}>
-                        <Image alt='Remote Talent Aquisition' src={'/assets/home_hero.png'} width={800} height={600} className='relative z-10' />
-                    </FadeInRight>
+
+                <div className='w-full md:max-w-[70%] mt-14 md:p-5 p-3'>
+                    <h1 className="font-roca text-3xl md:text-4xl lg:text-[40px] font-thin text-center md:max-w-[900px]">Build Your Dream Team With The <br className='hidden lg:flex' /> Best Talent And Management <br className='hidden lg:flex' /> Hassle Free</h1>
+                    <p className='mt-7 text-center  text-lg text-[#516371]'>Beyond Hut helps businesses scale with cost-effective top-tier talent  vetted, trained and ready to plug into your team.</p>
                 </div>
 
-                {/* Bottom Shape */}
-                <div className='w-[100vw] absolute md:-bottom-10 -bottom-[7px] right-0 z-[20]'>
-                    <img src='/assets/shape_hero.svg' className='w-[100vw]' />
+                {/* semicircle */}
+                <div className='mt-16 md:min-h-[350px] flex justify-center items-end w-full md:py-20 py-5'>
+                    <img src='/assets/new/eclipse.png' className='w-[100%] md:w-[80%] absolute bottom-0 transform translate-y-[10px] z-[2]' />
+
+                    <div className='relative flex flex-col justify-between items-center z-[10]'>
+                        <Button size={'lg'} className="hover:scale-105 rounded-full mb-[50px] transition-transform duration-300 ease-in-out transform shadow-md">
+                            Hire Talent
+                        </Button>
+                        <p className='text-center text-sm md:text-base text-[#A7ABB6] mb-2'>Trusted Partners</p>
+                        {/* logos */}
+                        <div className='grid grid-cols-3 md:grid-cols-6'>
+                            <img src={'/assets/new/hero_logo1.png'} alt='trusted companies' className='w-[60px] md:w-[90px]'/>
+                            <img src={'/assets/new/hero_logo2.png'} alt='trusted companies' className='w-[60px] md:w-[90px]' />
+                            <img src={'/assets/new/hero_logo3.png'} alt='trusted companies' className='w-[60px] md:w-[90px]' />
+                            <img src={'/assets/new/hero_logo4.png'} alt='trusted companies' className='w-[60px] md:w-[90px]' />
+                            <img src={'/assets/new/hero_logo5.png'} alt='trusted companies' className='w-[60px] md:w-[90px]' />
+                            <img src={'/assets/new/hero_logo6.png'} alt='trusted companies' className='w-[60px] md:w-[90px]' />
+                        </div>
+                    </div>
                 </div>
+
 
             </div>
         </div>
