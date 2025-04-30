@@ -267,6 +267,17 @@ const HybridScrollSection = ({ cards = cardData }) => {
                                 {/* You can add more custom elements based on your card object */}
                             </div>
                         ))}
+
+
+                        <div className="absolute inset-0 -z-[1] pointer-events-none overflow-hidden">
+                            <div className="relative w-full h-full">
+                                {/* Purple Glow */}
+                                <div className="absolute w-[200px] h-[200px] bg-[#A78BFA] rounded-full blur-3xl opacity-50 bottom-[20%] left-[30%]"></div>
+
+                                {/* Sky Blue Glow */}
+                                <div className="absolute w-[200px] h-[200px] bg-[#7DD3FC] rounded-full blur-3xl opacity-50 bottom-[30%] left-[25%]"></div>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </div>
