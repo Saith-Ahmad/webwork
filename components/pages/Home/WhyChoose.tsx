@@ -10,7 +10,7 @@ function WhyChoose() {
             <div className="bg-white shadow-lg shadow-gray-200 min-h-[100vh] rounded-3xl p-5 flex flex-col gap-5">
                 <FadeInBottom once={false} duration={0.5} distance={30} >
 
-                    <h2 className="font-roca text-2xl md:text-4xl font-thin text-center mt-6">We find elite talent for every department.</h2>
+                    <h2 className="font-roca capitalize text-2xl md:text-4xl font-thin text-center mt-6">We find elite talent for every department.</h2>
                 </FadeInBottom>
                 <p className='mt-1 text-center  text-lg text-[#516371]'>If you need a role filled, we get it done: <span className='font-bold'>FAST</span>.</p>
 

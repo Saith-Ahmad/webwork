@@ -1,4 +1,7 @@
-
+import FadeInLeft from '@/components/framermotion/FadeInLeft'
+import { Button } from '@/components/ui/button'
+import { MoveRightIcon } from 'lucide-react'
+import Link from 'next/link'
 import React from 'react'
 
 function GrowthPuzzle() {
@@ -6,31 +9,51 @@ function GrowthPuzzle() {
         <div className='container mt-12'>
             <div className='bg-white shadow-lg shadow-gray-200 min-h-[100vh] rounded-3xl p-5  flex flex-col justify-center items-center relative overflow-hidden'>
                 <div className='w-full md:max-w-[70%] mt-14 mb-10'>
-                    <h2 className="font-roca text-2xl md:text-4xl font-thin text-center md:max-w-[900px]">We solve the growth puzzle </h2>
+                    <FadeInLeft once={false} duration={0.7} distance={30}>
+                        <h2 className="font-roca text-2xl md:text-4xl font-thin text-center md:max-w-[900px]">We solve the growth puzzle </h2>
+                    </FadeInLeft>
                     <p className='mt-1 text-center  text-lg text-[#516371]'>So you can focus on what matters.</p>
                 </div>
 
                 <div className='flex flex-col md:flex-row justify-around w-full items-center gap-4'>
-                    <div className='bg-[#F8F8F8] min-h-[300px] w-full lg:max-w-[300px] 2xl:max-w-[350px] p-5 rounded-lg'>
+                    <div className='bg-[#F8F8F8] min-h-[300px] w-full lg:max-w-[300px] 2xl:max-w-[350px] p-5 rounded-lg transform-3d'>
                         <h3 className='font-roca text-3xl mb-10'>1</h3>
                         <h3 className='font-roca text-2xl'>Talent hiring <br /> handled</h3>
                         <hr className="border-t-[3px] border-dashed border-black my-4" />
                         <p>End-to-end recruitment,<br /> without the hassle.</p>
                     </div>
 
-                    <div className='bg-[#F8F8F8] min-h-[300px] w-full lg:max-w-[300px] 2xl:max-w-[350px] p-5 rounded-lg'>
+                    <div className='bg-[#F8F8F8] min-h-[300px] w-full lg:max-w-[300px] 2xl:max-w-[350px] p-5 rounded-lg transform-3d'>
                         <h3 className='font-roca text-3xl mb-10'>2</h3>
                         <h3 className='font-roca text-2xl'>Sales processes<br /> automated</h3>
                         <hr className="border-t-[3px] border-dashed border-black my-4" />
                         <p>Let automation drive your <br/> revenue growth.</p>
                     </div>
 
-                    <div className='bg-[#F8F8F8] min-h-[300px] w-full lg:max-w-[300px] 2xl:max-w-[350px] p-5 rounded-lg'>
+
+                    <div
+                    className='bg-[#F8F8F8] min-h-[300px] w-full lg:max-w-[300px] 2xl:max-w-[350px] p-5 rounded-lg transform-3d'>
                         <h3 className='font-roca text-3xl mb-10'>3</h3>
                         <h3 className='font-roca text-2xl'>Scale your team <br/> without overhead</h3>
                         <hr className="border-t-[3px] border-dashed border-black my-4" />
                         <p>Grow fast without adding <br/> complexity or cost.</p>
                     </div>
+                </div>
+
+                <div className='flex flex-col justify-center items-center mt-10'>
+                  <div className='flex flex-row justify-center items-center gap-3'>
+                    <Link href={'/get-started'}>
+                        <Button size={'lg'} className="hover:scale-105 rounded-full mb-[50px] transition-transform duration-300 ease-in-out transform shadow-md">
+                            Hire Talent <MoveRightIcon/>
+                        </Button>
+                        </Link>
+
+                        <a href={'https://calendly.com/fahad-aslam4500'}>
+                        <Button size={'lg'} variant={'outline'} className="hover:scale-105 border-2 border-solid border-[#00B7EB] text-[#00B7EB] hover:text-[#00B7EB] hover:bg-[#e3f9ff] rounded-full mb-[50px] transition-transform duration-300 ease-in-out transform shadow-md">
+                            Questions? <MoveRightIcon/>
+                        </Button>
+                        </a>
+                  </div>
                 </div>
 
             </div>

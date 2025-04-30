@@ -2,6 +2,7 @@
 import CutFire from '@/components/pages/Home/CutFire'
 import GrowthPuzzle from '@/components/pages/Home/GrowthPuzzle'
 import HomeHero from '@/components/pages/Home/Hero'
+import HybridScrollSection from '@/components/pages/Home/HorizontalScrollCards'
 import StartWithUs from '@/components/pages/Home/StartWithUs'
 import TalentWithoutHussle from '@/components/pages/Home/TalentWithoutHussle'
 import Testimonials from '@/components/pages/Home/Testimonials'
@@ -16,9 +17,10 @@ function Home() {
       <HomeHero/>
       <TalentWithoutHussle/>
       <CutFire/>
+      <WhatWeDo/>
+      <HybridScrollSection/>
       <GrowthPuzzle/>
       <WhyChoose/>
-      <WhatWeDo/>
       <StartWithUs/>
     </div>
   )
