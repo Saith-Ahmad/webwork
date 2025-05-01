@@ -95,7 +95,7 @@
 
 
 .transform-3d{
-  @apply transition-transform transform-gpu hover:scale-[1.01] hover:rotate-[0.6deg] hover:shadow-md;
+  @apply transition-transform transform-gpu hover:scale-[1.01] hover:rotate-[0.4deg] hover:shadow-md hover:shadow-gray-100;
 }
 
 .transform-scale-shadow {
@@ -111,10 +111,10 @@
 /* After Redesign */
 @keyframes glowMove {
   0%, 100% {
-    transform: translateX(0);
+    transform: translateX(10%);
   }
   50% {
-    transform: translateX(60%); /* adjust as needed */
+    transform: translateX(50%); /* adjust as needed */
   }
 }
 

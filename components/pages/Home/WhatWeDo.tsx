@@ -28,7 +28,7 @@ function WhatWeDo() {
 
     return (
         <div className='container mt-10'>
-            <div className='bg-white shadow-lg shadow-gray-200 md:min-h-[70vh] rounded-3xl flex flex-col justify-center items-center relative overflow-hidden'>
+            <div className='border-[1px] border-solid border-[#c9c9c9a3] md:rounded-[50px] rounded-[30px] bg-white  md:min-h-[70vh] flex flex-col justify-center items-center relative overflow-hidden p-1'>
                 <div className='w-full md:max-w-[60%] mt-5 p-5'>
                     <FadeInLeft once={false} duration={0.7} distance={30}>
                         <h2 className="font-roca capitalize text-2xl md:text-4xl font-thin text-center">How our process works</h2>
@@ -36,35 +36,35 @@ function WhatWeDo() {
                 </div>
 
               <div className='relative p-5 px-10'>
-                    <img src="/assets/new/line.png" alt="" />
+                    <img src="/assets/new/linebg.png" alt="" className='md:w-[90%]'/>
 
 
 
                     
                 <div className='group'>
-                    <img src='/assets/new/process1.png' alt='process' className='max-w-[50px] md:max-w-[100px] lg:max-w-[200px] absolute bottom-[10%] md:bottom-0 md:left-[40px] left-[30px] transition-opacity duration-600 ease-in-out opacity-100 group-hover:opacity-0'/>
-                    <img src='/assets/new/processbg1.png' alt='process' className='max-w-[50px] md:max-w-[100px] lg:max-w-[200px] absolute bottom-[10%] md:bottom-0 md:left-[40px] left-[30px] transition-opacity duration-600 ease-in-out opacity-0 group-hover:opacity-100'/>
+                    <img src='/assets/new/process1.png' alt='process' className='max-w-[50px] md:max-w-[100px] lg:max-w-[200px] absolute bottom-[10%] md:bottom-0 md:left-[40px] left-[30px] transition-opacity duration-1000 ease-in-out opacity-100 group-hover:opacity-0'/>
+                    <img src='/assets/new/processbg1.png' alt='process' className='max-w-[50px] md:max-w-[100px] lg:max-w-[200px] absolute bottom-[10%] md:bottom-0 md:left-[40px] left-[30px] transition-opacity duration-1000 ease-in-out opacity-0 group-hover:opacity-100'/>
                 </div>
 
                 <div className='group'>
-                    <img src='/assets/new/process2.png' alt='process' className='max-w-[50px] md:max-w-[100px] lg:max-w-[200px] absolute md:top-0 md:left-[30%] top-[20%] left-[30%] transition-opacity duration-600 ease-in-out opacity-100 group-hover:opacity-0'/>
-                    <img src='/assets/new/processbg2.png' alt='process' className='max-w-[50px] md:max-w-[100px] lg:max-w-[200px] absolute md:top-0 md:left-[30%] top-[20%] left-[30%] transition-opacity duration-600 ease-in-out opacity-0 group-hover:opacity-100'/>
+                    <img src='/assets/new/process2.png' alt='process' className='max-w-[50px] md:max-w-[100px] lg:max-w-[200px] absolute md:top-10 md:left-[30%] top-[20%] left-[30%] transition-opacity duration-1000 ease-in-out opacity-100 group-hover:opacity-0'/>
+                    <img src='/assets/new/processbg2.png' alt='process' className='max-w-[50px] md:max-w-[100px] lg:max-w-[200px] absolute md:top-10 md:left-[30%] top-[20%] left-[30%] transition-opacity duration-1000 ease-in-out opacity-0 group-hover:opacity-100'/>
                 </div>
 
                 <div className='group'>
-                    <img src='/assets/new/process3.png' alt='process' className='max-w-[50px] md:max-w-[100px] lg:max-w-[200px] transition-opacity duration-600 ease-in-out opacity-100 group-hover:opacity-0 absolute md:bottom-0 right-[25%] bottom-[10%]'/>
-                    <img src='/assets/new/processbg3.png' alt='process' className='max-w-[50px] md:max-w-[100px] lg:max-w-[200px] transition-opacity duration-600 ease-in-out opacity-0 group-hover:opacity-100 absolute md:bottom-0 right-[25%] bottom-[10%]'/>
+                    <img src='/assets/new/process3.png' alt='process' className='max-w-[50px] md:max-w-[100px] lg:max-w-[200px] transition-opacity duration-1000 ease-in-out opacity-100 group-hover:opacity-0 absolute md:bottom-0 right-[25%] bottom-[10%]'/>
+                    <img src='/assets/new/processbg3.png' alt='process' className='max-w-[50px] md:max-w-[100px] lg:max-w-[200px] transition-opacity duration-1000 ease-in-out opacity-0 group-hover:opacity-100 absolute md:bottom-0 right-[25%] bottom-[10%]'/>
                 </div>
 
                 <div className='group'>
-                    <img src='/assets/new/process4.png' alt='process' className='max-w-[50px] md:max-w-[100px] lg:max-w-[200px] transition-opacity duration-600 ease-in-out opacity-100 group-hover:opacity-0 absolute top-[20%] right-[10px]'/>
-                    <img src='/assets/new/processbg4.png' alt='process' className='max-w-[50px] md:max-w-[100px] lg:max-w-[200px] transition-opacity duration-600 ease-in-out opacity-0 group-hover:opacity-100 absolute top-[20%] right-[10px]'/>
+                    <img src='/assets/new/process4.png' alt='process' className='max-w-[50px] md:max-w-[100px] lg:max-w-[200px] transition-opacity duration-1000 ease-in-out opacity-100 group-hover:opacity-0 absolute top-[20%] right-[10px]'/>
+                    <img src='/assets/new/processbg4.png' alt='process' className='max-w-[50px] md:max-w-[100px] lg:max-w-[200px] transition-opacity duration-1000 ease-in-out opacity-0 group-hover:opacity-100 absolute top-[20%] right-[10px]'/>
                 </div>
 
               </div>
 
 
-                <div className='flex flex-col justify-center items-center'>
+                <div className='flex flex-col justify-center items-center my-4'>
                   <div className='flex flex-row justify-center items-center gap-3'>
                     <Link href={'/get-started'}>
                         <Button size={'lg'} className="hover:scale-105 rounded-full mb-[20px] transition-transform duration-300 ease-in-out transform shadow-md">

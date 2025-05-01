@@ -56,7 +56,7 @@ const HybridScrollSection = ({ cards = cardData }) => {
             const horizontalSection = horizontalSectionRef.current;
             const horizontalWrapper = horizontalWrapperRef.current;
             const panels = panelsRef.current;
-
+    
             gsap.to(panels, {
                 xPercent: -100 * (panels.length - 1),
                 ease: "none",
@@ -64,33 +64,33 @@ const HybridScrollSection = ({ cards = cardData }) => {
                     trigger: horizontalSection,
                     pin: true,
                     scrub: 1,
-                    start: "top top",
+                    start: "center center", // Changed start to "center center"
                     end: () => {
                         return horizontalWrapper ? "+=" + (horizontalWrapper.offsetWidth * 1.5) : "+=1000";
                     },
                     invalidateOnRefresh: true,
                 }
             });
-
+    
             return () => {
                 ScrollTrigger.getAll().forEach(trigger => trigger.kill());
             };
         }
-    }, [cards]); // Re-run effect if the cards array changes
+    }, [cards]);
 
     return (
-        <div className='container mt-10'>
-            <div className='bg-white shadow-lg shadow-gray-200 md:min-h-[70vh] rounded-3xl relative'>
+        <div className='container mt-16'>
+            <div className='bg-white shadow-lg shadow-gray-200 md:min-h-[70vh] relative md:rounded-[50px] rounded-[30px]'>
                 <FadeInRight once={false} duration={0.8} distance={30} >
-                    <h2 className="font-roca text-2xl md:text-4xl font-thin text-center p-5 pt-8">Why teams choose BeyondHut?</h2>
+                    <h2 className="font-roca text-2xl md:text-4xl font-thin text-center pt-16 p-2">Why teams choose BeyondHut?</h2>
                 </FadeInRight>
                 <section
                     ref={horizontalSectionRef}
-                    className={`overflow-x-hidden mt-12`}
+                    className={`overflow-x-hidden`}
                 >
                     <div
                         ref={horizontalWrapperRef}
-                        className={`z-[20] md:min-h-[80vh] min-h-[50vh] flex gap-5 md:gap-20 bg-white overflow-hidden scroll-smooth relative`}
+                        className={`z-[20]  min-h-[500px] py-10 flex gap-7 md:gap-20  overflow-hidden scroll-smooth relative`}
                         style={{ width: `${cards.length * 300}px` }} // Simplified width calculation
                     >
                         {cards.map((card, index) => (
@@ -101,7 +101,7 @@ const HybridScrollSection = ({ cards = cardData }) => {
                                         panelsRef.current[index] = el;
                                     }
                                 }}
-                                className={`mt-10 min-w-[300px] h-[350px] flex flex-col items-start justify-center p-5 ${card.style}`}
+                                className={`md:mt-10 mt-4 shadow-md md:min-w-[350px] md:h-[380px] min-h-[350px] w-[280px] flex flex-col items-start justify-center p-6 ${card.style}`}
                             >
                                 {card.image && (
                                     <div className="relative w-64 h-48 mb-4">
@@ -110,13 +110,13 @@ const HybridScrollSection = ({ cards = cardData }) => {
                                 )}
                                 {card.title && (
                                     <p
-                                        className="mb-2 font-roca text-2xl text-black"
+                                        className="mb-2 font-roca md:text-3xl text-2xl text-black"
                                         dangerouslySetInnerHTML={{ __html: card.title }}
                                     />
                                 )}
                                 {card.paragraph && (
                                     <p
-                                        className="text-black"
+                                        className="text-black text-base "
                                         dangerouslySetInnerHTML={{ __html: card.paragraph }}
                                     />
                                 )}
@@ -127,9 +127,9 @@ const HybridScrollSection = ({ cards = cardData }) => {
 
                         <div className="absolute inset-0 -z-[1] pointer-events-none overflow-hidden">
                             <div className="relative w-full h-full">
-                                <div className="absolute  w-[200px] h-[200px] bg-[#A78BFA] rounded-full blur-3xl opacity-30 bottom-[0] left-[30%]"></div>
+                                <div className="absolute  w-[250px] h-[250px] bg-[#A78BFA] rounded-full blur-3xl opacity-60 lg:bottom-[20%] lg:left-[15%] bottom-[15%] left-0"></div>
 
-                                <div className="absolute w-[250px] h-[250px] bg-[#7DD3FC] rounded-full blur-3xl opacity-30 bottom-[30%] left-[25%]"></div>
+                                <div className="absolute w-[250px] h-[250px] bg-[#7DD3FC] rounded-full blur-3xl opacity-60 lg:bottom-[30%] lg:left-[20%] bottom-[13%] left-[10%]"></div>
                             </div>
                         </div>
                     </div>

@@ -6,8 +6,8 @@ import React from 'react'
 
 function GrowthPuzzle() {
     return (
-        <div className='container mt-10'>
-            <div className='bg-white shadow-lg shadow-gray-200 min-h-[80vh] rounded-3xl p-5  flex flex-col justify-center items-center relative overflow-hidden'>
+        <div className='container mt-16'>
+            <div className='md:px-16 md:py-10 p-5 bg-white min-h-[80vh] border-[1px] border-solid border-[#c9c9c9a3] md:rounded-[50px] rounded-[30px] flex flex-col justify-center items-center relative overflow-hidden'>
                 <div className='w-full md:max-w-[70%] mt-4 mb-4'>
                     <FadeInLeft once={false} duration={0.7} distance={30}>
                         <h2 className="font-roca text-2xl md:text-4xl font-thin text-center md:max-w-[900px]">We solve the growth puzzle </h2>
@@ -17,7 +17,7 @@ function GrowthPuzzle() {
 
                 <div className='flex flex-col md:flex-row justify-around w-full items-center gap-4 '>
 
-                    <div className='group bg-[#F8F8F8] min-h-[330px] w-full lg:max-w-[300px] 2xl:max-w-[350px] p-5 rounded-lg transform-3d relative overflow-hidden cursor-pointer'>
+                    <div className='group bg-[#F8F8F8] min-h-[400px] w-full lg:max-w-[300px]  p-5 rounded-2xl transform-3d relative overflow-hidden cursor-pointer'>
 
                         <img
                             src='/assets/new/framebg.png'
@@ -26,15 +26,15 @@ function GrowthPuzzle() {
                         />
 
                         <div className='z-[10] p-1'>
-                            <h3 className='font-roca text-3xl mt-6 mb-16'>1</h3>
-                            <h3 className='font-roca text-2xl'>Talent hiring <br /> handled</h3>
+                            <h3 className='font-roca text-4xl font-bold mt-6 mb-20'>1</h3>
+                            <h3 className='font-roca text-3xl'>Talent hiring <br /> handled</h3>
                             <hr className="border-t-[3px] border-dashed border-black my-4" />
                             <p>End-to-end recruitment,<br /> without the hassle.</p>
                         </div>
 
                     </div>
 
-                    <div className='group bg-[#F8F8F8] min-h-[330px] w-full lg:max-w-[300px] 2xl:max-w-[350px] p-5 rounded-lg transform-3d relative overflow-hidden cursor-pointer'>
+                    <div className='group bg-[#F8F8F8] min-h-[400px] w-full lg:max-w-[300px]  p-5 rounded-2xl transform-3d relative overflow-hidden cursor-pointer'>
 
                         <img
                             src='/assets/new/framebg.png'
@@ -43,15 +43,15 @@ function GrowthPuzzle() {
                         />
 
                         <div className='z-[10] p-1'>
-                            <h3 className='font-roca text-3xl mt-6 mb-16'>2</h3>
-                            <h3 className='font-roca text-2xl'>Sales processes <br /> automated</h3>
+                            <h3 className='font-roca text-4xl mt-6 mb-20'>2</h3>
+                            <h3 className='font-roca text-3xl'>Sales processes <br /> automated</h3>
                             <hr className="border-t-[3px] border-dashed border-black my-4" />
                             <p>Let automation drive your<br /> revenue growth.</p>
                         </div>
 
                     </div>
 
-                    <div className='group bg-[#F8F8F8] min-h-[330px] w-full lg:max-w-[300px] 2xl:max-w-[350px] p-5 rounded-lg transform-3d relative overflow-hidden cursor-pointer'>
+                    <div className='group bg-[#F8F8F8] min-h-[400px] w-full lg:max-w-[300px]  p-5 rounded-2xl transform-3d relative overflow-hidden cursor-pointer'>
 
                         <img
                             src='/assets/new/framebg.png'
@@ -60,8 +60,8 @@ function GrowthPuzzle() {
                         />
 
                         <div className='z-[10] p-1'>
-                            <h3 className='font-roca text-3xl mt-6 mb-16'>3</h3>
-                            <h3 className='font-roca text-2xl'>Scale your team <br /> without overhead</h3>
+                            <h3 className='font-roca text-4xl mt-6 mb-20'>3</h3>
+                            <h3 className='font-roca text-3xl'>Scale your team <br /> without overhead</h3>
                             <hr className="border-t-[3px] border-dashed border-black my-4" />
                             <p>Grow fast without adding<br /> complexity or cost.</p>
                         </div>
@@ -82,7 +82,9 @@ function GrowthPuzzle() {
                                 Questions? <MoveRightIcon />
                             </Button>
                         </a>
+
                     </div>
+                        <p className='mt-2 text-[12px]'>No Commitment Required · Cancel Anytime · Zero Risk</p>
                 </div>
 
             </div>

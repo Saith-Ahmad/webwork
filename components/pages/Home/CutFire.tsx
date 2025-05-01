@@ -24,7 +24,7 @@ function CutFire() {
 
     return (
         <div className='container mt-10'>
-            <div className='bg-white shadow-lg shadow-gray-200 md:min-h-[80vh] rounded-3xl flex flex-col justify-center items-center relative overflow-hidden'>
+            <div className='border-[1px] border-solid border-[#c9c9c9a3] md:rounded-[50px] rounded-[30px] bg-white  md:min-h-[80vh] flex flex-col justify-center items-center relative overflow-hidden'>
                 {/* Heading */}
                 <div className='w-full md:max-w-[60%] mt-4 p-5'>
                     <FadeInBottom once={false} duration={0.7} distance={30}>
@@ -40,7 +40,7 @@ function CutFire() {
                     animate={controls}
                     className='md:p-5 mb-10 p-1 w-full'
                 >
-                    <img src="/assets/new/cutpriceteam.svg" alt="cutprice" className='w-full' />
+                    <img src="/assets/new/itemcutprive.svg" alt="cutprice" className='w-full' />
                 </motion.div>
             </div>
         </div>
