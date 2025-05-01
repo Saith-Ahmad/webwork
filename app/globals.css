@@ -95,7 +95,7 @@
 
 
 .transform-3d{
-  @apply transition-transform transform-gpu hover:scale-[1.01] hover:rotate-[0.6deg] hover:shadow-xl;
+  @apply transition-transform transform-gpu hover:scale-[1.01] hover:rotate-[0.6deg] hover:shadow-md;
 }
 
 .transform-scale-shadow {
@@ -188,4 +188,32 @@
 
 
 
+@keyframes zigzag-glow {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(50%, 20%);
+  }
+  50% {
+    transform: translate(0%, 50%);
+  }
+  75% {
+    transform: translate(50%, 100%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
 
+/* Base invisible state */
+.glow-anim {
+  opacity: 0;
+}
+
+/* On hover, show + animate */
+.group:hover .glow-anim {
+  animation: zigzag-glow 6s ease-in-out;
+  animation-fill-mode: forwards;
+  opacity: 0.4;
+}

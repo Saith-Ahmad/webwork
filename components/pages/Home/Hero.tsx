@@ -9,33 +9,33 @@ import React from 'react'
 function HomeHero() {
     return (
         <div className='container '>
-            <div className='bg-white shadow-lg shadow-gray-200 md:min-h-[100vh] rounded-3xl  flex flex-col justify-center items-center relative overflow-hidden'>
+            <div className='bg-white shadow-lg shadow-gray-200 md:min-h-[80vh] rounded-3xl  flex flex-col justify-center items-center relative overflow-hidden'>
 
                 {/* Glow*/}
                 <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
                     <div className="relative w-full h-full glow-animation">
                         {/* Purple Glow */}
-                        <div className="absolute md:w-[400px] md:h-[300px] w-[200px] h-[200px] bg-[#A78BFA] rounded-full blur-3xl opacity-50 bottom-0 left-0"></div>
+                        <div className="absolute md:w-[400px] md:h-[300px] w-[200px] h-[200px] bg-[#A78BFA] rounded-full blur-3xl opacity-50 -bottom-10 left-0"></div>
 
                         {/* Sky Blue Glow */}
-                        <div className="absolute md:w-[400px] md:h-[300px] w-[200px] h-[200px] bg-[#7DD3FC] rounded-full blur-3xl opacity-50 bottom-20 left-30"></div>
+                        <div className="absolute md:w-[400px] md:h-[300px] w-[200px] h-[200px] bg-[#7DD3FC] rounded-full blur-3xl opacity-50 -bottom-20 left-20"></div>
                     </div>
                 </div>
 
 
 
-                <div className='w-full md:max-w-[70%] mt-14 md:p-5 p-3'>
+                <div className='w-full md:max-w-[70%] mt-10 md:p-4 p-2'>
                     <h1 className="fade-in-up font-roca text-3xl md:text-4xl lg:text-[40px] font-thin text-center md:max-w-[900px]">
                         Build Your Dream Team With The <br className="hidden xl:flex" />
                         Best Talent And Management <br className="hidden xl:flex" />
                         Hassle Free
                     </h1>
 
-                    <p className='mt-7 text-center  text-lg text-[#516371]'>Beyond Hut helps businesses scale with cost-effective top-tier talent  vetted, trained and ready to plug into your team.</p>
+                    <p className='mt-3 text-center  text-lg text-[#516371]'>Beyond Hut helps businesses scale with cost-effective top-tier talent  vetted, trained and ready to plug into your team.</p>
                 </div>
 
                 {/* semicircle */}
-                <div className='mt-16 md:min-h-[350px] flex justify-center items-end w-full md:py-20 py-5'>
+                <div className='md:min-h-[300px] 2xl:min-h-[380px] flex justify-center items-end w-full md:py-10 py-5'>
                     <img src='/assets/new/eclipse.png' className='w-[100%] md:w-[80%] absolute bottom-0 transform translate-y-[10px] z-[2]' />
 
                     <div className='relative flex flex-col justify-between items-center z-[10]'>

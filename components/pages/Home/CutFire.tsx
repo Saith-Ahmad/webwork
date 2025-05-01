@@ -23,10 +23,10 @@ function CutFire() {
     }, [inView, controls])
 
     return (
-        <div className='container mt-12'>
-            <div className='bg-white shadow-lg shadow-gray-200 md:min-h-[90vh] rounded-3xl flex flex-col justify-center items-center relative overflow-hidden'>
+        <div className='container mt-10'>
+            <div className='bg-white shadow-lg shadow-gray-200 md:min-h-[80vh] rounded-3xl flex flex-col justify-center items-center relative overflow-hidden'>
                 {/* Heading */}
-                <div className='w-full md:max-w-[60%] mt-14 mb-10 p-5'>
+                <div className='w-full md:max-w-[60%] mt-4 p-5'>
                     <FadeInBottom once={false} duration={0.7} distance={30}>
                         <h2 className="font-roca text-2xl md:text-4xl font-thin text-center">Cut Hire Time By Half</h2>
                     </FadeInBottom>
