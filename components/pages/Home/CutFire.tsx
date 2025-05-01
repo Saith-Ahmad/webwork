@@ -40,7 +40,7 @@ function CutFire() {
                     animate={controls}
                     className='md:p-5 mb-10 p-1 w-full'
                 >
-                    <img src="/assets/new/cutprice.svg" alt="cutprice" className='w-full' />
+                    <img src="/assets/new/cutpriceteam.svg" alt="cutprice" className='w-full' />
                 </motion.div>
             </div>
         </div>
