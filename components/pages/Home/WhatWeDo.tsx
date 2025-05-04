@@ -28,7 +28,7 @@ function WhatWeDo() {
 
     return (
         <div className='container mt-10'>
-            <div className='border-[1px] border-solid border-[#c9c9c9a3] md:rounded-[50px] rounded-[30px] bg-white  md:min-h-[70vh] flex flex-col justify-center items-center relative overflow-hidden p-1'>
+            <div className='border-[1px] border-solid border-[#c9c9c9a3] md:rounded-[50px] rounded-[30px] bg-white  max-lg:min-h-[60vh] flex flex-col justify-center items-center relative overflow-hidden p-1'>
                 <div className='w-full md:max-w-[60%] mt-5 p-5'>
                     <FadeInLeft once={false} duration={0.7} distance={30}>
                         <h2 className="font-roca capitalize text-2xl md:text-4xl font-thin text-center">How our process works</h2>

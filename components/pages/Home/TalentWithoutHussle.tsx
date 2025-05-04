@@ -7,7 +7,7 @@ import React from 'react'
 function TalentWithoutHussle() {
     return (
         <div className='container mt-10'>
-            <div className='bg-white  md:px-16 md:py-10 p-8  flex flex-col justify-center items-center relative overflow-hidden border-[1px] border-solid border-[#c9c9c9a3] md:rounded-[50px] rounded-[30px]'>
+            <div className='bg-white max-lg:min-h-[60vh]  md:px-16 md:py-10 p-8  flex flex-col justify-center items-center relative overflow-hidden border-[1px] border-solid border-[#c9c9c9a3] md:rounded-[50px] rounded-[30px]'>
                 <div className='w-full md:max-w-[60%] mt-4 mb-4'>
                     <FadeInTop once={false} duration={0.6} distance={30}>
                         <h2 className="font-roca text-2xl md:text-4xl font-thin text-center">Talent Without Hassle</h2>

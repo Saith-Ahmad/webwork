@@ -9,7 +9,7 @@ import React from 'react'
 function HomeHero() {
     return (
         <div className='container '>
-            <div className='bg-white shadow-lg shadow-gray-200  min-h-[60vh] max-w-[1630px] flex flex-col justify-center items-center relative overflow-hidden md:rounded-[50px] rounded-[30px]'>
+            <div className='bg-white shadow-lg shadow-gray-200 max-lg:min-h-[60vh] flex flex-col justify-center items-center relative overflow-hidden md:rounded-[50px] rounded-[30px]'>
 
                 {/* Glow*/}
                 <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">

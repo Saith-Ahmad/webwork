@@ -7,7 +7,7 @@ function WhyChoose() {
         <div className='container mt-12'>
 
 
-            <div className="md:px-16 md:py-10 p-5 bg-white min-h-[100vh] flex flex-col gap-5 border-[1px] border-solid border-[#c9c9c9a3] md:rounded-[50px] rounded-[30px]">
+            <div className="md:px-16 md:py-10 p-5 bg-white max-lg:min-h-[60vh] flex flex-col gap-5 border-[1px] border-solid border-[#c9c9c9a3] md:rounded-[50px] rounded-[30px]">
                 <FadeInBottom once={false} duration={0.5} distance={30} >
 
                     <h2 className="font-roca capitalize text-2xl md:text-4xl font-thin text-center mt-6">We find elite talent for every department.</h2>

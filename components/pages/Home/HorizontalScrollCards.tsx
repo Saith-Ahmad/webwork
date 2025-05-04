@@ -80,7 +80,7 @@ const HybridScrollSection = ({ cards = cardData }) => {
 
     return (
         <div className='container mt-16'>
-            <div className='bg-white shadow-lg shadow-gray-200 md:min-h-[70vh] relative md:rounded-[50px] rounded-[30px]'>
+            <div className='bg-white shadow-lg shadow-gray-200 max-lg:min-h-[60vh] relative md:rounded-[50px] rounded-[30px]'>
                 <FadeInRight once={false} duration={0.8} distance={30} >
                     <h2 className="font-roca text-2xl md:text-4xl font-thin text-center pt-16 p-2">Why teams choose BeyondHut?</h2>
                 </FadeInRight>
@@ -90,7 +90,7 @@ const HybridScrollSection = ({ cards = cardData }) => {
                 >
                     <div
                         ref={horizontalWrapperRef}
-                        className={`z-[20]  min-h-[500px] py-10 flex gap-7 md:gap-20  overflow-hidden scroll-smooth relative`}
+                        className={`z-[20]  min-h-[500px] py-10 flex  items-center gap-7 md:gap-20  overflow-hidden scroll-smooth relative`}
                         style={{ width: `${cards.length * 300}px` }} // Simplified width calculation
                     >
                         {cards.map((card, index) => (
@@ -101,7 +101,7 @@ const HybridScrollSection = ({ cards = cardData }) => {
                                         panelsRef.current[index] = el;
                                     }
                                 }}
-                                className={`md:mt-10 mt-4 shadow-md md:min-w-[350px] md:h-[380px] min-h-[350px] w-[280px] flex flex-col items-start justify-center p-6 ${card.style}`}
+                                className={` md:mt-10 mt-4 rounded-xl md:min-h-[400px] shadow-md md:min-w-[300px] md:h-[380px] min-h-[350px] w-[280px] flex flex-col items-start justify-center p-6 ${card.style}`}
                             >
                                 {card.image && (
                                     <div className="relative w-64 h-48 mb-4">
@@ -127,9 +127,9 @@ const HybridScrollSection = ({ cards = cardData }) => {
 
                         <div className="absolute inset-0 -z-[1] pointer-events-none overflow-hidden">
                             <div className="relative w-full h-full">
-                                <div className="absolute  w-[250px] h-[250px] bg-[#A78BFA] rounded-full blur-3xl opacity-60 lg:bottom-[20%] lg:left-[15%] bottom-[15%] left-0"></div>
+                                <div className="absolute  w-[250px] h-[250px] bg-[#dddbfa] rounded-full blur-3xl opacity-100 lg:bottom-[20%] lg:left-[25%] bottom-[15%] left-0"></div>
+                                <div className="absolute w-[250px] h-[250px] bg-[#f8e9ca] rounded-full blur-3xl opacity-100 lg:bottom-[20%] lg:left-[15%] bottom-[13%] left-[10%]"></div>
 
-                                <div className="absolute w-[250px] h-[250px] bg-[#7DD3FC] rounded-full blur-3xl opacity-60 lg:bottom-[30%] lg:left-[20%] bottom-[13%] left-[10%]"></div>
                             </div>
                         </div>
                     </div>
