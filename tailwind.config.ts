@@ -78,10 +78,14 @@ const config: Config = {
       fontFamily: {
         inter: ['var(--font-inter)', 'sans-serif'], // Assuming you've set this up
         roca: ['var(--font-roca)', 'sans-serif'],   // Add your custom font family
+        rocathin: ['var(--font-rocathin)', 'sans-serif'], 
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require('@tailwindcss/typography')
+  ]  
 };
 
 export default config;

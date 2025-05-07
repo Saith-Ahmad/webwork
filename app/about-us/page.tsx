@@ -1,15 +1,23 @@
-import Hero from '@/components/pages/AboutUs/Hero'
-import VisionMision from '@/components/pages/AboutUs/VisionMision'
-import HireTopTalent from '@/components/pages/TalentOutsourcing/HireTopTalent'
+import AboutHero from '@/components/pages/AboutUs/Hero'
+import MakeDifference from '@/components/pages/AboutUs/MakeDifference'
+import MeetTheTeam from '@/components/pages/AboutUs/MeetTheTeam'
+import MissionVission from '@/components/pages/AboutUs/MissionVission'
+import OurValues from '@/components/pages/AboutUs/OurValues'
+import WeGotHere from '@/components/pages/AboutUs/WeGotHere'
+import StartWithUs from '@/components/pages/Home/StartWithUs'
 import React from 'react'
 
 function AboutUs() {
   return (
-    <div className='overflow-hidden'>
-    <Hero/>
-    <VisionMision/>
-    <HireTopTalent heading={"Ready to Scale Your Sales?"} para={"Tell us your needs, and we'll match you with the perfect candidate."} btnText={"Get Started"}/>
-    </div>
+    <>
+      <AboutHero/>
+      <MissionVission/>
+      <MeetTheTeam/>
+      <OurValues/>
+      <MakeDifference/>
+      <WeGotHere/>
+      <StartWithUs/>
+    </>
   )
 }
 

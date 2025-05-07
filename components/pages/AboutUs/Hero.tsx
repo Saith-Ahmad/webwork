@@ -1,21 +1,43 @@
 import FadeInBottom from '@/components/framermotion/FadeInBottom'
+import FadeInLeft from '@/components/framermotion/FadeInLeft'
+import FadeInRight from '@/components/framermotion/FadeInRight'
 import { Button } from '@/components/ui/button'
+import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
-function Hero() {
+function AboutHero() {
     return (
-        <div className='min-h-[90vh] bg-[#78D0EA] flex  items-center justify-between pt-10 md:pt-0 '>
-            <div className='container flex flex-col justify-center items-center gap-4 max-w-screen-lg'>
-                <p className='px-3 py-2 rounded-md font-medium bg-[#FFF8F2] text-black border-[1px] border-black'>About Beyond Hut</p>
+        <div className='container '>
+            <div className='bg-white shadow-lg shadow-gray-200 max-lg:min-h-[60vh] flex flex-col md:flex-row justify-center items-center relative overflow-hidden md:rounded-[50px] rounded-[30px] md:p-20 p-5'>
 
-                <FadeInBottom duration={1} distance={70} once={false}>
-                    <h1 className='text-4xl md:text-5xl font-bold text-white text-center'>Your One-Stop Solution for Remote Talent & Sales Automation</h1>
-                </FadeInBottom>
+                <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
+                    <div className="relative w-full h-full">
+                        <div className="absolute  w-[300px] h-[350px] bg-[#dddbfa]   rounded-full blur-3xl opacity-80 lg:bottom-[20%] lg:left-[35%] bottom-[15%] left-0"></div>
+                        <div className="absolute w-[300px] h-[350px] bg-[#f8e9ca] rounded-full blur-3xl opacity-80 lg:bottom-[20%] lg:left-[25%] bottom-[13%] left-[10%]"></div>
 
-                <p className='text-white font-medium text-lg mt-4 text-center'>At Beyond Hut, we believe in breaking hiring barriers. Our mission is simple: connect businesses with world-class talent effortlessly. We help companies scale faster with pre-vetted professionals, seamless hiring, and smart automation.</p>
+                    </div>
+                </div>
+
+                <div className='w-full mt-10 md:p-4 p-2 flex flex-col justify-center items-center relative z-[10] md:mb-10'>
+                    <h1 className="fade-in-up text-center md:text-start font-roca text-3xl md:text-4xl lg:text-[40px] md:max-w-[600px] font-thin">
+                        We Go Beyond. That’s the Difference.
+                    </h1>
+
+                    <p className='mt-3 text-start  text-lg text-[#516371] max-w-[600px]'>We’re not just here to advise. At Beyond Hut we help YOU build the best teams, grow faster, and stay focused on what matters most.
+                    </p>
+                                    </div>
+
+                    <div className='relative z-[15] mt-5 md:mt-0'>
+                        <Image src={'/assets/new/abouthero.png'} alt='go beyond' width={500} height={500} />
+                    </div>
+                
             </div>
         </div>
+
+
+
     )
 }
 
-export default Hero
+export default AboutHero

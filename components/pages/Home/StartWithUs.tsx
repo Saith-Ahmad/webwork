@@ -41,16 +41,16 @@ function StartWithUs() {
                 {/* Top Glow Group */}
                 <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
                     <div className="relative w-full h-full animate-glow-top">
-                        <div className="absolute md:w-[400px] md:h-[300px] w-[200px] h-[200px] bg-[#a78bfada] rounded-full blur-3xl opacity-50 -bottom-28 left-0" />
-                        <div className="absolute md:w-[400px] md:h-[300px] w-[200px] h-[200px] bg-[#7dd4fcce] rounded-full blur-3xl opacity-50 -bottom-28 left-20" />
+                        <div className="absolute md:w-[400px] md:h-[300px] w-[200px] h-[200px] bg-[#a78bfada] rounded-full blur-3xl opacity-[25%] -bottom-28 left-0" />
+                        <div className="absolute md:w-[400px] md:h-[300px] w-[200px] h-[200px] bg-[#7dd4fcce] rounded-full blur-3xl opacity-[25%] -bottom-28 left-20" />
                     </div>
                 </div>
 
                 {/* Bottom Glow Group */}
                 <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
                     <div className="relative w-full h-full animate-glow-bottom">
-                        <div className="absolute md:w-[400px] md:h-[300px] w-[200px] h-[200px] bg-[#a78bface] rounded-full blur-3xl opacity-50 -top-24 right-0" />
-                        <div className="absolute md:w-[400px] md:h-[300px] w-[200px] h-[200px] bg-[#7dd4fcd9] rounded-full blur-3xl opacity-50 -top-24 right-20" />
+                        <div className="absolute md:w-[400px] md:h-[300px] w-[200px] h-[200px] bg-[#a78bface] rounded-full blur-3xl opacity-[25%] -top-24 right-0" />
+                        <div className="absolute md:w-[400px] md:h-[300px] w-[200px] h-[200px] bg-[#7dd4fcd9] rounded-full blur-3xl opacity-[25%] -top-24 right-20" />
                     </div>
                 </div>
 

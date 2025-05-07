@@ -17,6 +17,15 @@ const Roca = localfont(
   }
 );
 
+const RocaLight = localfont(
+  {
+    src: [
+      { path: '../public/fonts/rocathin.ttf', weight: "800" }, 
+    ],
+    variable: '--font-rocathin',
+  }
+);
+
 // Load Inter font with all weights
 const inter = Inter({
   subsets: ["latin"],
@@ -35,7 +44,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`${inter.variable} ${Roca.variable} antialiased bg-[#F8F8F8]`}>
+        <body className={`${inter.variable} ${Roca.variable} ${RocaLight.variable} antialiased bg-[#F8F8F8]`}>
           <Header />
           <Toaster />
           {children}
