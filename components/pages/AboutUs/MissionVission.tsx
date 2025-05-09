@@ -8,8 +8,8 @@ function MissionVission() {
 
                 <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
                     <div className="relative w-full h-full">
-                        <div className="absolute  w-[350px] h-[250px] bg-[#dddbfa]   rounded-full blur-3xl opacity-70 lg:bottom-[20%] lg:left-[35%] bottom-[15%] left-0"></div>
-                        <div className="absolute w-[350px] h-[250px] bg-[#f8e9ca] rounded-full blur-3xl opacity-70 lg:bottom-[20%] lg:left-[25%] bottom-[13%] left-[10%]"></div>
+                        <div className="absolute  w-[350px] h-[250px] bg-[#dddbfa]   rounded-full blur-3xl opacity-50 lg:bottom-[20%] lg:left-[35%] bottom-[15%] left-0"></div>
+                        <div className="absolute w-[350px] h-[250px] bg-[#f8e9ca] rounded-full blur-3xl opacity-50 lg:bottom-[20%] lg:left-[25%] bottom-[13%] left-[10%]"></div>
 
                     </div>
                 </div>
