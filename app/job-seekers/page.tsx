@@ -1,19 +1,22 @@
-
-import JobListings from '@/components/pages/JobSeekers/JobListings'
+import StartWithUs from '@/components/pages/Home/StartWithUs'
 import JobSeekersHero from '@/components/pages/JobSeekers/JSHero'
-import Timeline_Job_Seekers from '@/components/pages/JobSeekers/TimeLineJobSeekers'
-import WorkWithUs from '@/components/pages/JobSeekers/WorkWithUs'
+import MoreThanResume from '@/components/pages/JobSeekers/MoreThanResume'
+import TalentMovesFast from '@/components/pages/JobSeekers/TalentMovesFast'
+import ThreeStepProcess from '@/components/pages/JobSeekers/ThreeStepProcess'
+import FindRightPeople from '@/components/pages/JobSeekers/WorkWithUs'
 import HireTopTalent from '@/components/pages/TalentOutsourcing/HireTopTalent'
 import React from 'react'
 
 function JobSeekers() {
   return (
-    <div className='overflow-hidden'>
+    <div className=''>
       <JobSeekersHero/>
-      <WorkWithUs/>
+      <FindRightPeople/>
+      <MoreThanResume/>
+      <TalentMovesFast/>
+      <ThreeStepProcess/>
+      <StartWithUs/>
       {/* <JobListings/> */}
-      <Timeline_Job_Seekers/>
-    <HireTopTalent heading={"Looking for Your Next Opportunity?"} para={"Join our talent network and land high-paying remote and on-site roles with top global companies."} btnText={"Apply Now"}/>
     </div>
   )
 }

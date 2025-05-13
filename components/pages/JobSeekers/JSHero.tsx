@@ -8,38 +8,50 @@ import React from 'react'
 
 function JobSeekersHero() {
     return (
-        <div className='pb-20 md:pb-0 relative min-h-[100vh] bg-[#78D0EA]  overflow-hidden flex  items-center justify-between pt-10 md:pt-0'>
-            <div className='container flex flex-col space-y-10 md:flex-row justify-between items-start'>
-                <div className='md:p-10 p-3 flex flex-col gap-2'>
-                    <FadeInLeft once={false} duration={0.5} distance={60}>
-                        <h1 className='text-4xl md:text-5xl font-bold text-white max-w-[450px]'>Find Your Dream Job with Top Global Companies</h1>
-                    </FadeInLeft>
-                    <div className='max-w-[500px] mt-3 '>
-                    
-                        <FadeInBottom once={false} duration={1} distance={40}>
-                            <Image alt='Remote Talent Aquisition' src={'/assets/line.svg'} width={400} height={10} />
-                        </FadeInBottom>
+        <div className='container '>
+            <div className='bg-white shadow-lg shadow-gray-200 max-lg:min-h-[60vh] flex flex-col justify-center items-center relative overflow-hidden md:rounded-[50px] rounded-[30px]'>
+
+                {/* Glow*/}
+                <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
+                    <div className="relative w-full h-full glow-animation">
+                        {/* Purple Glow */}
+                        <div className="absolute md:w-[400px] md:h-[300px] w-[200px] h-[200px] bg-[#A78BFA] rounded-full blur-3xl opacity-50 -bottom-10 left-0"></div>
+
+                        {/* Sky Blue Glow */}
+                        <div className="absolute md:w-[400px] md:h-[300px] w-[200px] h-[200px] bg-[#7DD3FC] rounded-full blur-3xl opacity-50 -bottom-20 left-20"></div>
                     </div>
-                    <p className='text-white font-medium text-lg mt-4'>Remote & On-Site Jobs with High-Growth Startups & Enterprises</p>
-
-                    <Link href={'/application-form'}>
-                        <Button size={'lg'} className='self-start mt-4 bg-white text-black rounded-full hover:bg-black hover:text-white'>Apply Now</Button>
-                    </Link>
-                </div>
-
-                <div className='md:max-w-[40%] relative'>
-                <div className='absolute md:w-[580px] md:h-[580px] z-0 rounded-2xl  md:-top-20 md:-left-20 md:rotate-[25deg] rotate-[55deg] w-[480px] h-[480px] top-24  sm:top-0 sm:left-20  inset-0 bg-[#9BE4FA]'></div>
-                    <FadeInRight once={false} duration={0.6} distance={70}>
-                        <Image alt='Remote Talent Aquisition' src={'/assets/joobseekerhero.png'} width={800} height={600} className='relative z-10'/>
-                    </FadeInRight>
                 </div>
 
 
-                <div className='w-[100vw] absolute md:-bottom-10 -bottom-[5px] right-0'>
-                    <img src='/assets/shape_hero.svg' className=' w-[100vw]' />
+
+                <div className='w-full md:max-w-[70%] mt-10 md:p-4 p-2 flex flex-col justify-center items-center relative z-[3]'>
+                    <h1 className="fade-in-up font-roca text-3xl md:text-4xl lg:text-[40px] font-thin text-center md:max-w-[900px]">
+                    Smart Careers Start Here.<br className="hidden xl:flex" />
+                    Fast.  Focused.  Human.<br className="hidden xl:flex" />
+                    </h1>
+
+                    <p className='mt-3 text-center  text-lg text-[#516371] max-w-[600px]'>At Beyond Hut, we don’t just connect you to work: we match you with real opportunities, at real companies, that value what you bring to the table.</p>
                 </div>
+
+                {/* semicircle */}
+                <div className='md:min-h-[250px] flex justify-center 2xl:items-start items-center w-full md:py-10 py-5'>
+                    <img src='/assets/new/eclipse.png' className='w-[100%] md:w-[60%] absolute bottom-0 transform translate-y-[10px] z-[2]' />
+
+                    <div className='relative flexjustify-start items-start z-[10]'>
+                        <Link href={'/get-started'}>
+                            <Button size={'lg'} className="hover:scale-105 rounded-full md:mt-5 mt-10 transition-transform duration-300 ease-in-out transform shadow-md">
+                                Hire Talent
+                            </Button>
+                        </Link>
+                    </div>
+                </div>
+
+
             </div>
         </div>
+
+
+
     )
 }
 

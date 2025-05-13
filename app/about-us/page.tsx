@@ -12,10 +12,10 @@ function AboutUs() {
     <>
       <AboutHero/>
       <MissionVission/>
-      <MeetTheTeam/>
       <OurValues/>
-      <MakeDifference/>
+      <MeetTheTeam/>
       <WeGotHere/>
+      <MakeDifference/>
       <StartWithUs/>
     </>
   )
