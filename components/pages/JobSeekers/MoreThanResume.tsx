@@ -36,8 +36,8 @@ function MoreThanResume() {
                     </div>
 
                     <div className='w-full bg-[#F1F0FE] p-4 flex flex-col md:flex-row gap-4 justify-between items-center rounded-2xl'>
-                        <h4 className='text-2xl font-roca'>
-                            Always <br /> expanding
+                        <h4 className='text-2xl font-roca max-md:self-start'>
+                            Always <br className='hidden md:flex'/> expanding
                         </h4>
                         <p className='text-base'>10 people. 100 people. 1,000. <br />
                             We’re here to help you grow to any size.</p>

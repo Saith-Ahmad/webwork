@@ -39,7 +39,7 @@ function JobSeekersHero() {
 
                     <div className='relative flexjustify-start items-start z-[10]'>
                         <Link href={'/get-started'}>
-                            <Button size={'lg'} className="hover:scale-105 rounded-full md:mt-5 mt-10 transition-transform duration-300 ease-in-out transform shadow-md">
+                            <Button size={'lg'} className="hover:scale-105 rounded-full md:mt-5 mt-24 transition-transform duration-300 ease-in-out transform shadow-md">
                                 Hire Talent
                             </Button>
                         </Link>

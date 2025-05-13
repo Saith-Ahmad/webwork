@@ -19,7 +19,7 @@ function StartWithUs() {
                     </div>
 
                     <img src="/assets/new/arrow.png" alt="" className='absolute  top-36 hidden md:flex'/>
-                    <img src="/assets/new/arrow.png" alt="" className='absolute w-[100px] rotate-[60deg] right-[210px] top-[200px] flex md:hidden'/>
+                    <img src="/assets/new/arrow.png" alt="" className='absolute w-[100px] rotate-[60deg] right-[240px] top-[200px] flex md:hidden'/>
 
 
                     <div className='flex flex-col justify-center items-center'>
