@@ -4,7 +4,6 @@ import MoreThanResume from '@/components/pages/JobSeekers/MoreThanResume'
 import TalentMovesFast from '@/components/pages/JobSeekers/TalentMovesFast'
 import ThreeStepProcess from '@/components/pages/JobSeekers/ThreeStepProcess'
 import FindRightPeople from '@/components/pages/JobSeekers/WorkWithUs'
-import HireTopTalent from '@/components/pages/TalentOutsourcing/HireTopTalent'
 import React from 'react'
 
 function JobSeekers() {

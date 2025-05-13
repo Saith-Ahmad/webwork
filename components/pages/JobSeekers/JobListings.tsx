@@ -1,12 +1,12 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-import JobListingCard from './JobListingCard'
 import { Button } from '@/components/ui/button'
 import { ArrowRight } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { Job } from '@/lib/constants/types'
 import { Skeleton } from '@/components/ui/skeleton'
+import JobListingCard from './JobListingCard'
 
 function JobListings() {
   const [jobs, setJobs] = useState<Job[]>([])
