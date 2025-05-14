@@ -87,9 +87,9 @@ const ContactForm = () => {
 
     return (
         <div className='md:mt-10'>
-            <h2 className='text-center text-3xl md:text-4xl font-bold'>Get Started with BeyondHut</h2>
-            <p className='text-lg text-black text-center mt-3'>Schedule a 30-minute product demo with expert Q&A</p>
-            <form onSubmit={handleSubmit} className="w-full h-full min-h-[55vh] mx-auto grid grid-cols-1 md:grid-cols-2 gap-2 md:p-4 mt-10">
+            <h2 className='text-center text-3xl md:text-4xl font-bold font-roca'>Get Started with BeyondHut</h2>
+            <p className='text-lg font-medium text-black text-center tracking-tighter mt-3'>Schedule a 30-minute product demo with expert Q&A</p>
+            <form onSubmit={handleSubmit} className="w-full h-full min-h-[40vh] mx-auto grid grid-cols-1 md:grid-cols-2 gap-3 md:p-1 mt-10">
                 <InputField id="firstName" label="First name" value={formData.firstName} error={errors.firstName} onChange={handleChange} />
                 <InputField id="lastName" label="Last name" value={formData.lastName} error={errors.lastName} onChange={handleChange} />
                 <InputField id="workEmail" label="Work Email" type="email" value={formData.workEmail} error={errors.workEmail} onChange={handleChange} />
@@ -100,9 +100,9 @@ const ContactForm = () => {
                         name="companySize"
                         value={formData.companySize}
                         onChange={handleChange}
-                        className={`peer border rounded-md py-3 px-4 w-full focus:outline-none focus:border-black focus:ring-1 focus:ring-black ${errors.companySize && 'border-red-500'}`}
+                        className={` peer border-2 border-black rounded-md py-3 px-4 w-full focus:outline-none focus:border-black focus:ring-0 ${errors.companySize && 'border-red-500'}`}
                     >
-                        <option value="">Company Size</option>
+                        <option value="" className=''>Company Size</option>
                         <option value="1-10">1-10</option>
                         <option value="11-50">11-50</option>
                         <option value="51-200">51-200</option>
@@ -114,7 +114,7 @@ const ContactForm = () => {
 
                 <InputField id="companyWebsite" label="Company Website" value={formData.companyWebsite} onChange={handleChange} />
                 <InputField id="phoneNumber" label="Phone Number" value={formData.phoneNumber} error={errors.phoneNumber} onChange={handleChange} />
-                <InputField id="headquarters" label="Headquarters" value={formData.headquarters} error={errors.headquarters} onChange={handleChange} className="md:col-span-2" />
+                <InputField id="headquarters" label="HeadQuarters" value={formData.headquarters} error={errors.headquarters} onChange={handleChange} className="md:col-span-2" />
 
                 <p className='text-sm text-center text-black my-2 md:col-span-2'>
                     We respect your data. By submitting this form, you agree that we will contact you in relation to our products and services, in accordance with our privacy policy.
@@ -122,7 +122,7 @@ const ContactForm = () => {
 
                 <button
                     type="submit"
-                    className={`font-semibold md:col-span-2 bg-[#00B7EB] text-center text-white py-2 rounded-md hover:bg-gray-800 transition-all ${(!isFormValid || submitting) && 'opacity-50 cursor-not-allowed'}`}
+                    className={`ml-[50%]  translate-x-[-50%] font-semibold md:col-span-2 bg-[#00B7EB] text-center text-white py-3 max-w-[200px] rounded-md hover:bg-gray-800 transition-all ${(!isFormValid || submitting) && 'opacity-90 cursor-not-allowed'}`}
                     disabled={!isFormValid || submitting}  // Disable when form is invalid or submitting
                 >
                     {submitting ? "Loading..." : "Book a demo"}
@@ -132,13 +132,13 @@ const ContactForm = () => {
                 <>
                     <Dialog open={isCalendlyOpen} onOpenChange={(open) => setIsCalendlyOpen(open)}>
                         <DialogContent
-                            className="max-w-[95vw] md:max-w-[700px] md:max-h-[95vh] max-h-[80vh] bg-[#FDFCF3] rounded-lg"
+                            className="max-w-[95vw] md:max-w-[700px] md:max-h-[95vh] max-h-[80vh] bg-white rounded-lg"
                             onInteractOutside={(e) => {
                                 e.preventDefault();
                             }}
                         >
                             <DialogHeader>
-                                <DialogTitle className="text-center text-black font-bold">Schedule a Meeting</DialogTitle>
+                                <DialogTitle className="text-center text-black font-bold font-roca">Schedule a Meeting</DialogTitle>
                             </DialogHeader>
                             {/* Container for Calendly Widget with fixed height */}
                             <div className="h-[600px] overflow-hidden rounded-lg">
@@ -189,14 +189,14 @@ const InputField = ({
             type={type}
             id={id}
             name={id}
-            placeholder=" "
+            placeholder=""
             value={value}
             onChange={onChange}
-            className={`peer border rounded-md py-3 px-4 w-full focus:outline-none focus:border-black ${error && 'border-red-500'}`}
+            className={`peer border-2 border-black rounded-md py-3 px-4 w-full font-semibold  focus:border-black placeholder:text-black bg-[#F8F8F8] ${error && 'border-red-500'}`}
         />
         <label
             htmlFor={id}
-            className="absolute left-3 -top-2.5 text-gray-600 text-sm transition-all peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-black peer-focus:font-semibold peer-focus:bg-white"
+            className="absolute left-3 -top-2.5 text-gray-800 rounded-sm bg-[#F8F8F8] text-sm transition-all peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-900 peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-black peer-focus:font-semibold peer-focus:bg-white"
         >
             {label}
         </label>

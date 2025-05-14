@@ -224,7 +224,7 @@ const Form = () => {
 
     return (
         <div className='md:mt-10'>
-            <h2 className='text-center text-3xl md:text-4xl font-bold'>Be a part of our talent pool</h2>
+            <h2 className='text-center text-3xl md:text-4xl font-bold font-roca'>Be a part of our talent pool</h2>
 
             {successMessage && (
                 <p className='text-center text-green-600 my-4'>
@@ -232,7 +232,7 @@ const Form = () => {
                 </p>
             )}
 
-            <form onSubmit={handleSubmit} className="w-full h-full min-h-[55vh] mx-auto grid grid-cols-1 md:grid-cols-2 gap-2 md:p-4 mt-10">
+            <form onSubmit={handleSubmit} className="w-full h-full min-h-[20vh] mx-auto grid grid-cols-1 md:grid-cols-2 gap-3 md:p-1 mt-10">
                 <InputField id="firstName" label="First name" value={formData.firstName} error={errors.firstName} onChange={handleChange} />
                 <InputField id="lastName" label="Last name" value={formData.lastName} error={errors.lastName} onChange={handleChange} />
                 <InputField id="linkedinurl" label="LinkedIn Profile URL" value={formData.linkedinurl} error={errors.linkedinurl} onChange={handleChange} />
@@ -245,7 +245,7 @@ const Form = () => {
                 <div className="md:col-span-2 flex justify-center">
                     <button
                         type="submit"
-                        className={`font-semibold bg-[#00B7EB] text-center text-white px-8 rounded-md hover:bg-gray-800 transition-all ${(!isFormValid || submitting) && 'opacity-50 cursor-not-allowed'}`}
+                        className={`ml-[50%]  translate-x-[-50%] font-semibold md:col-span-2 bg-[#00B7EB] text-center text-white py-3 min-w-[200px] rounded-md hover:bg-gray-800 transition-all ${(!isFormValid || submitting) && 'opacity-90 cursor-not-allowed'}`}
                         disabled={!isFormValid || submitting}
                     >
                         {submitting ? "Loading..." : "Sign up"}
@@ -281,11 +281,11 @@ const InputField = ({
             placeholder=" "
             value={value}
             onChange={onChange}
-            className={`peer border rounded-md py-3 px-4 w-full focus:outline-none focus:border-black ${error && 'border-red-500'}`}
+            className={`peer border-2 border-black rounded-md py-3 px-4 w-full font-semibold  focus:border-black placeholder:text-black bg-[#F8F8F8] ${error && 'border-red-500'}`}
         />
         <label
             htmlFor={id}
-            className="absolute left-3 -top-2.5 text-gray-600 text-sm transition-all peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-black peer-focus:font-semibold peer-focus:bg-white"
+            className="absolute left-3 -top-2.5 text-gray-800 rounded-sm bg-[#F8F8F8] text-sm transition-all peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-900 peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-black peer-focus:font-semibold peer-focus:bg-white"
         >
             {label}
         </label>
