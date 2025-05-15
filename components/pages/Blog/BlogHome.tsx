@@ -184,7 +184,7 @@ const BlogsPage = () => {
                                 <CardContent className="p-4">
                                     {/* Image */}
                                     {post._embedded?.["wp:featuredmedia"]?.[0]?.source_url && (
-                                        <div className="relative w-full h-[300px] mb-4 rounded-md overflow-hidden">
+                                        <div className="relative w-full min-h-[200px] md:h-[300px] mb-4 rounded-md overflow-hidden">
                                             <Image
                                                 src={post._embedded["wp:featuredmedia"][0].source_url}
                                                 alt={post.title.rendered}
@@ -193,7 +193,7 @@ const BlogsPage = () => {
                                                 className="rounded-md"
                                                 placeholder="blur"
                                                  objectPosition="center"
-                                                blurDataURL="/assets/new/Coders.png"
+                                                blurDataURL="/assets/new/placeholder.jpg"
                                             />
                                         </div>
                                     )}

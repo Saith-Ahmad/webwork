@@ -93,7 +93,7 @@ const HybridScrollSection = ({ cards = cardData }) => {
             </div>
             <div className='container  max-lg:min-h-[60vh] relative md:rounded-[50px] rounded-[30px] overflow-hidden'>
                 <FadeInRight once={false} duration={0.8} distance={30} >
-                    <h2 className="font-roca text-2xl md:text-4xl font-thin text-center pt-16 p-2">Why teams choose BeyondHut?</h2>
+                    <h2 className="mx-auto font-roca text-2xl md:text-4xl font-thin text-center pt-16 p-2">Why teams choose BeyondHut?</h2>
                 </FadeInRight>
                 <section
                     ref={horizontalSectionRef}
@@ -101,11 +101,11 @@ const HybridScrollSection = ({ cards = cardData }) => {
                 >
                     <div
                         ref={horizontalWrapperRef}
-                        className={`z-[20]  min-h-[500px] py-10 flex  items-center gap-7 md:gap-20  overflow-hidden scroll-smooth relative`}
+                        className={`md:ps-20 z-[20]  min-h-[500px] py-10 flex  items-center gap-7 md:gap-20  overflow-hidden scroll-smooth relative`}
                         style={{ width: `${cards.length * 300}px` }} // Simplified width calculation
                     >
-                        <div className='h-[500px] bg-[#F6F6F6] w-[50px] inset-0 absolute -left-8 z-[10] blur-2xl'></div>
-                        <div className='h-[500px] bg-[#F6F6F6] w-[100px] inset-0 absolute -right-8 z-[10] blur-2xl'></div>
+                        <div className='h-[500px] bg-[#F6F6F6] w-[150px] inset-0 absolute -left-24 z-[10] blur-xl max-md:hidden'></div>
+                        <div className='h-[500px] bg-[#F6F6F6] w-[150px]  absolute top-0 right-40 z-[10] blur-2xl max-md:hidden'></div>
                         {cards.map((card, index) => (
                             <div
                                 key={index}
@@ -114,7 +114,7 @@ const HybridScrollSection = ({ cards = cardData }) => {
                                         panelsRef.current[index] = el;
                                     }
                                 }}
-                                className={` md:mt-10 mt-4 rounded-xl md:min-h-[400px] shadow-md md:min-w-[300px] md:h-[380px] min-h-[350px] w-[280px] flex flex-col items-start justify-center p-6 ${card.style}`}
+                                className={`md:mt-10 mt-4 rounded-xl md:min-h-[400px] shadow-md md:min-w-[300px] md:h-[380px] min-h-[350px] w-[280px] flex flex-col items-start justify-center p-6 ${card.style}`}
                             >
                                 {card.image && (
                                     <div className="relative w-64 h-48 mb-4">

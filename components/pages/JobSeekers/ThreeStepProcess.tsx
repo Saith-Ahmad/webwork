@@ -7,6 +7,7 @@ import React from 'react'
 function ThreeStepProcess() {
     return (
         <div className='my-14 py-14 bg-[#F6F6F6]  max-lg:min-h-[50vh] relative'>
+        <div  className='container'>
              <div className="custom-shape-divider-top-1747344540">
                 <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                     <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" className="shape-fill"></path>
@@ -18,7 +19,7 @@ function ThreeStepProcess() {
                 </svg>
             </div>
 
-            <div className=' container md:px-16 md:py-10 p-5  max-lg:min-h-[60vh] flex flex-col justify-center items-center relative overflow-hidden'>
+            <div className=' md:px-16 md:py-10 p-5  max-lg:min-h-[60vh] flex flex-col justify-center items-center relative overflow-hidden'>
                 <div className='w-full md:max-w-[70%] mt-4 mb-4'>
                     <FadeInLeft once={false} duration={0.7} distance={30}>
                         <h2 className="font-roca text-2xl md:text-4xl font-thin text-center md:max-w-[900px]">Our 3-Step Process</h2>
@@ -28,7 +29,7 @@ function ThreeStepProcess() {
 
                 <div className='flex flex-col md:flex-row justify-around w-full items-center gap-4 '>
 
-                    <div className='group bg-[#F8F8F8] min-h-[400px] w-full lg:max-w-[300px]  p-5 rounded-2xl transform-3d relative overflow-hidden cursor-pointer'>
+                    <div className='group bg-[#FFFFFF] min-h-[400px] w-full lg:max-w-[300px]  p-5 rounded-2xl transform-3d relative overflow-hidden cursor-pointer'>
 
                         <img
                             src='/assets/new/framebg.png'
@@ -45,7 +46,7 @@ function ThreeStepProcess() {
 
                     </div>
 
-                    <div className='group bg-[#F8F8F8] min-h-[400px] w-full lg:max-w-[300px]  p-5 rounded-2xl transform-3d relative overflow-hidden cursor-pointer'>
+                    <div className='group bg-[#FFFFFF] min-h-[400px] w-full lg:max-w-[300px]  p-5 rounded-2xl transform-3d relative overflow-hidden cursor-pointer'>
 
                         <img
                             src='/assets/new/framebg.png'
@@ -62,7 +63,7 @@ function ThreeStepProcess() {
 
                     </div>
 
-                    <div className='group bg-[#F8F8F8] min-h-[400px] w-full lg:max-w-[300px]  p-5 rounded-2xl transform-3d relative overflow-hidden cursor-pointer'>
+                    <div className='group bg-[#FFFFFF] min-h-[400px] w-full lg:max-w-[300px]  p-5 rounded-2xl transform-3d relative overflow-hidden cursor-pointer'>
 
                         <img
                             src='/assets/new/framebg.png'
@@ -100,7 +101,7 @@ function ThreeStepProcess() {
 
             </div>
         </div>
-
+</div>
 
 
     )

@@ -6,6 +6,7 @@ import React from 'react'
 function WeGoBeyond() {
     return (
         <div className='my-14 py-14 bg-[#F6F6F6]  max-lg:min-h-[50vh] relative'>
+        <div  className='container'>
             <div className="custom-shape-divider-top-1747344540">
                 <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                     <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" className="shape-fill"></path>
@@ -17,7 +18,7 @@ function WeGoBeyond() {
                 </svg>
             </div>
 
-            <div className='container max-lg:min-h-[50vh]  md:py-20 p-8 md:px-12  flex flex-col justify-center items-center relative overflow-hidden'>
+            <div className=' max-lg:min-h-[50vh]  md:py-20 p-8 md:px-12  flex flex-col justify-center items-center relative overflow-hidden'>
                 <div className=''>
 
                     <div className='flex flex-col lg:flex-row justify-between items-center gap-10'>
@@ -76,7 +77,7 @@ function WeGoBeyond() {
 
             </div>
         </div>
-
+</div>
 
 
     )
