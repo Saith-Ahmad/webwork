@@ -23,7 +23,7 @@ const SingleBlogPage = () => {
 
                 // 1. Get the blog post by slug
                 const res = await fetch(
-                    `https://webwork.store/wp-json/wp/v2/posts?slug=${slug}&_embed`
+                    `${process.env.NEXT_PUBLIC_BASE_BLOG_URL}/posts?slug=${slug}&_embed`
                 );
                 const data = await res.json();
 
@@ -37,7 +37,7 @@ const SingleBlogPage = () => {
 
                 // 2. Fetch related blogs
                 const relatedRes = await fetch(
-                    `https://webwork.store/wp-json/wp/v2/posts?per_page=5&_embed`
+                    `${process.env.NEXT_PUBLIC_BASE_BLOG_URL}/posts?per_page=5&_embed`
                 );
                 const relatedData = await relatedRes.json();
                 setRelatedPosts(relatedData.filter((p: any) => p.id !== data[0].id));
@@ -56,7 +56,7 @@ const SingleBlogPage = () => {
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const res = await fetch("https://webwork.store/wp-json/wp/v2/categories");
+                const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_BLOG_URL}/categories`);
                 const data = await res.json();
                 setCategories(data);
             } catch (err) {
@@ -103,7 +103,7 @@ const SingleBlogPage = () => {
                     <img
                         src={post._embedded["wp:featuredmedia"][0].source_url}
                         alt={post.title.rendered}
-                        className="w-full md:h-80 object-cover rounded-lg mb-6 shadow-md"
+                        className="w-full md:max-h-96 object-cover bg-bottom rounded-lg mb-6 shadow-md"
                     />
                 )}
 
@@ -121,9 +121,9 @@ const SingleBlogPage = () => {
                     <div className="">
                         <div className="flex justify-start items-center gap-2">
                             <p className="text-base font-medium font-roca capitalize">{post._embedded.author[0].name}</p>
-                            <p className="text-xs text-gray-500">{new Date(post.date).toLocaleDateString()}</p>
+                            <p className="text-xs text-gray-500 mt-1">{new Date(post.date).toLocaleDateString()}</p>
                         </div>
-                        <p className="text-sm  font-roca text-gray-600">{getCategoryName(post)}</p>
+                        <p className="capitalize text-sm  font-roca text-gray-600">Category : {getCategoryName(post)}</p>
                     </div>
                 </div>
 
@@ -132,14 +132,16 @@ const SingleBlogPage = () => {
 
                 {/* Full Blog Content */}
                 <div
-                    className="prose max-w-none p-1 prose-headings:font-roca prose-li:font-rocathin prose-li:text-gray-600 prose-p:text-lg prose-p:text-gray-600 prose-img:w-full prose-img:rounded-lg  prose-img:object-cover"
+                    className="prose max-w-none p-1 prose-headings:font-roca prose-li:font-rocathin prose-li:text-gray-600 prose-p:text-lg prose-p:text-gray-600 prose-img:w-full prose-img:rounded-lg  prose-img:object-cover
+                    prose-h1:text-3xl prose-h1:md:text-5xl prose-h2:text-2xl prose-h2:md:text-4xl prose-h3:text-xl prose-h3:md:text-3xl prose-h4:text-xl prose-h4:md:text-2xl prose-h5:text-lg prose-h5:md:text-xl
+                    "
                     dangerouslySetInnerHTML={{ __html: post.content.rendered }}
                 />
             </div>
 
             {/* Sidebar */}
             <div>
-                <h2 className="text-2xl font-semibold mb-4 font-roca">Similar Blogs</h2>
+                <h2 className="text-2xl font-semibold mb-4 font-roca">{relatedPosts.length >= 1 ? "Sililar Blogs" : ""}</h2>
                 <div className="flex flex-col gap-4">
                     {relatedPosts.map((related) => (
                         <Link

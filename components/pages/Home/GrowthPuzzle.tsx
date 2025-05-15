@@ -7,7 +7,7 @@ import React from 'react'
 function GrowthPuzzle() {
     return (
         <div className='container mt-16'>
-            <div className='md:px-16 md:py-10 p-5 bg-white max-lg:min-h-[60vh] border-[1px] border-solid border-[#c9c9c9a3] md:rounded-[50px] rounded-[30px] flex flex-col justify-center items-center relative overflow-hidden'>
+            <div className='md:px-16 md:py-10 p-5 bg-white max-lg:min-h-[60vh]  flex flex-col justify-center items-center relative overflow-hidden'>
                 <div className='w-full md:max-w-[70%] mt-4 mb-4'>
                     <FadeInLeft once={false} duration={0.7} distance={30}>
                         <h2 className="font-roca text-2xl md:text-4xl font-thin text-center md:max-w-[900px]">We solve the growth puzzle </h2>

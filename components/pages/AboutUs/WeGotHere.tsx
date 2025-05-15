@@ -4,7 +4,7 @@ import React from 'react'
 function WeGotHere() {
   return (
      <div className='container mt-10'>
-                <div className='bg-white shadow-lg shadow-gray-200 max-lg:min-h-[40vh] flex flex-col justify-center items-center relative overflow-hidden md:rounded-[50px] rounded-[30px] pb-10'>
+                <div className='bg-white max-lg:min-h-[40vh] flex flex-col justify-center items-center relative overflow-hidden pb-10'>
     
                     <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
                         <div className="relative w-full h-full">

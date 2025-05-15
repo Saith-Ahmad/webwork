@@ -4,10 +4,21 @@ import React from 'react'
 
 function WhyChoose() {
     return (
-        <div className='container mt-12'>
+        <div className=' mt-12 my-14 py-14 bg-[#F6F6F6]  max-lg:min-h-[50vh] relative'>
+
+             <div className="custom-shape-divider-top-1747344540">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" className="shape-fill"></path>
+                </svg>
+            </div>
+            <div className="custom-shape-divider-bottom-1747344583">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" className="shape-fill"></path>
+                </svg>
+            </div>
 
 
-            <div className="md:px-16 md:py-10 p-5 bg-white max-lg:min-h-[60vh] flex flex-col gap-5 border-[1px] border-solid border-[#c9c9c9a3] md:rounded-[50px] rounded-[30px]">
+            <div className="container md:px-16 md:py-10 p-5 max-lg:min-h-[60vh] flex flex-col gap-5 ">
                 <FadeInBottom once={false} duration={0.5} distance={30} >
 
                     <h2 className="font-roca capitalize text-2xl md:text-4xl font-thin text-center mt-6">We find elite talent for every department.</h2>

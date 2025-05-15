@@ -5,8 +5,19 @@ import React from 'react'
 
 function MeetTheTeam() {
     return (
-        <div className='container mt-10'>
-            <div className='bg-white max-lg:min-h-[50vh] md:px-16 md:py-10 md:p-8 p-2  flex flex-col justify-center items-center relative overflow-hidden shadow-lg shadow-gray-200 md:rounded-[50px] rounded-[30px]'>
+        <div className='my-14 py-14 bg-[#F6F6F6]  max-lg:min-h-[50vh] relative'>
+            <div className="custom-shape-divider-top-1747344540">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" className="shape-fill"></path>
+                </svg>
+            </div>
+            <div className="custom-shape-divider-bottom-1747344583">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" className="shape-fill"></path>
+                </svg>
+            </div>
+
+            <div className='container max-lg:min-h-[50vh] md:px-16 md:py-10 md:p-8 p-2  flex flex-col justify-center items-center relative overflow-hidden '>
 
                 <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
                     <div className="relative w-full h-full">

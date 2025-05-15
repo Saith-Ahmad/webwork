@@ -5,7 +5,6 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
 import FadeInRight from '@/components/framermotion/FadeInRight';
-import useRouteScrollReset from '@/hooks/useRouteScrollReset';
 
 // Register ScrollTrigger plugin
 if (typeof window !== 'undefined') {
@@ -47,7 +46,6 @@ const cardData = [
 ];
 
 const HybridScroll2 = ({ cards = cardData }) => {
-      useRouteScrollReset();
     const horizontalSectionRef = useRef<HTMLElement | null>(null);
     const horizontalWrapperRef = useRef<HTMLDivElement | null>(null);
     const panelsRef = useRef<HTMLDivElement[]>([]);
@@ -84,8 +82,8 @@ useEffect(() => {
 
 
     return (
-        <div className='container mt-16'>
-            <div className='bg-white shadow-lg shadow-gray-200 max-lg:min-h-[60vh] relative md:rounded-[50px] rounded-[30px]'>
+        <div className='container bg-[#F6F6F6] mt-16 overflow-hidden'>
+            <div className=' shadow-lg shadow-gray-200 max-lg:min-h-[60vh]  md:rounded-[50px] rounded-[30px] overflow-hidden'>
                 <FadeInRight once={false} duration={0.8} distance={30} >
                     <h2 className="font-roca text-2xl md:text-4xl font-thin text-center pt-16 p-2">Why teams choose BeyondHut?</h2>
                 </FadeInRight>
@@ -95,7 +93,7 @@ useEffect(() => {
                 >
                     <div
                         ref={horizontalWrapperRef}
-                        className={`z-[20]  min-h-[500px] py-10 flex  items-center gap-7 md:gap-20  overflow-hidden scroll-smooth relative`}
+                        className={`z-[20]  min-h-[500px] py-10 flex  items-center gap-7 md:gap-20  overflow-hidden relative`}
                         style={{ width: `${cards.length * 300}px` }} 
                     >
                         {cards.map((card, index) => (

@@ -3,8 +3,21 @@ import React from 'react'
 
 function MissionVission() {
     return (
-        <div className='container mt-10'>
-            <div className='bg-white shadow-lg shadow-gray-200 max-lg:min-h-[60vh] flex flex-col md:flex-row justify-center items-center relative overflow-hidden md:rounded-[50px] rounded-[30px] md:p-20 p-5'>
+        <div className=' bg-[#F6F6F6] relative'>
+        <div className='my-14 py-14  max-lg:min-h-[50vh]  container'>
+
+            <div className="custom-shape-divider-top-1747344540">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" className="shape-fill"></path>
+                </svg>
+            </div>
+            <div className="custom-shape-divider-bottom-1747344583">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" className="shape-fill"></path>
+                </svg>
+            </div>
+
+            <div className=' max-lg:min-h-[60vh] flex flex-col md:flex-row justify-center items-center relative overflow-hidden  md:p-20 p-5'>
 
                 <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
                     <div className="relative w-full h-full">
@@ -30,6 +43,7 @@ function MissionVission() {
                 </div>
 
             </div>
+        </div>
         </div>
 
     )

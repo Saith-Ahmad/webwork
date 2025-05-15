@@ -38,7 +38,7 @@ function JobSeekersHero() {
                     <img src='/assets/new/eclipse.png' className='w-[100%] md:w-[60%] absolute bottom-0 transform translate-y-[10px] z-[2]' />
 
                     <div className='relative flexjustify-start items-start z-[10]'>
-                        <Link href={'/get-started'}>
+                        <Link href={'/application-form'}>
                             <Button size={'lg'} className="hover:scale-105 rounded-full md:mt-5 mt-24 transition-transform duration-300 ease-in-out transform shadow-md">
                                 Hire Talent
                             </Button>

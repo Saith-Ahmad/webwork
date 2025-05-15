@@ -79,8 +79,19 @@ const HybridScrollSection = ({ cards = cardData }) => {
     }, [cards]);
 
     return (
-        <div className='container mt-16'>
-            <div className='bg-white shadow-lg shadow-gray-200 max-lg:min-h-[60vh] relative md:rounded-[50px] rounded-[30px]'>
+        <div className=' bg-[#F6F6F6] my-16 relative py-14'>
+
+             <div className="custom-shape-divider-top-1747344540">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" className="shape-fill"></path>
+                </svg>
+            </div>
+            <div className="custom-shape-divider-bottom-1747344583">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" className="shape-fill"></path>
+                </svg>
+            </div>
+            <div className='container  max-lg:min-h-[60vh] relative md:rounded-[50px] rounded-[30px] overflow-hidden'>
                 <FadeInRight once={false} duration={0.8} distance={30} >
                     <h2 className="font-roca text-2xl md:text-4xl font-thin text-center pt-16 p-2">Why teams choose BeyondHut?</h2>
                 </FadeInRight>
@@ -93,6 +104,8 @@ const HybridScrollSection = ({ cards = cardData }) => {
                         className={`z-[20]  min-h-[500px] py-10 flex  items-center gap-7 md:gap-20  overflow-hidden scroll-smooth relative`}
                         style={{ width: `${cards.length * 300}px` }} // Simplified width calculation
                     >
+                        <div className='h-[500px] bg-[#F6F6F6] w-[50px] inset-0 absolute -left-8 z-[10] blur-2xl'></div>
+                        <div className='h-[500px] bg-[#F6F6F6] w-[100px] inset-0 absolute -right-8 z-[10] blur-2xl'></div>
                         {cards.map((card, index) => (
                             <div
                                 key={index}

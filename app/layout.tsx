@@ -44,7 +44,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`${inter.variable} ${Roca.variable} ${RocaLight.variable} antialiased bg-[#F8F8F8]`}>
+        <body className={`${inter.variable} ${Roca.variable} ${RocaLight.variable} antialiased bg-white`}>
           <Header />
           <Toaster />
           {children}

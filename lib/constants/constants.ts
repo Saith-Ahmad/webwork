@@ -3,7 +3,7 @@ export const navLinks = [
     { name: "Sales Consultancy ", url: "/sales-consultancy-automation" },
     { name: "Job Seekers", url: "/job-seekers" },
     { name: "About Us", url: "/about-us" },
-    { name: "Pricing", url: "#" },
+    // { name: "Pricing", url: "#" },
     { name: "Blogs", url: "/blogs" },
   ];
 

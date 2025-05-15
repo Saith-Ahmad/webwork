@@ -23,8 +23,8 @@ function CutFire() {
     }, [inView, controls])
 
     return (
-        <div className='container mt-10'>
-            <div className='border-[1px] border-solid border-[#c9c9c9a3] md:rounded-[50px] rounded-[30px] bg-white  max-lg:min-h-[60vh] flex flex-col justify-center items-center relative overflow-hidden'>
+        <div className=' mt-10 bg-white'>
+            <div className='container    max-lg:min-h-[60vh] flex flex-col justify-center items-center relative overflow-hidden'>
                 {/* Heading */}
                 <div className='w-full md:max-w-[60%] mt-4 p-5'>
                     <FadeInBottom once={false} duration={0.7} distance={30}>

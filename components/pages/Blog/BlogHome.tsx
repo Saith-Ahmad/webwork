@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Search } from "lucide-react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const BlogsPage = () => {
     const router = useRouter();
@@ -30,7 +31,7 @@ const BlogsPage = () => {
         const fetchPosts = async () => {
             try {
                 setLoading(true);
-                const res = await fetch("https://webwork.store/wp-json/wp/v2/posts?per_page=100&_embed");
+                const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_BLOG_URL}/posts?per_page=100&_embed`);
                 const data = await res.json();
                 setPosts(data);
                 setError("");
@@ -48,7 +49,7 @@ const BlogsPage = () => {
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const res = await fetch("https://webwork.store/wp-json/wp/v2/categories");
+                const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_BLOG_URL}/categories`);
                 const data = await res.json();
                 setCategories(data);
             } catch (err) {
@@ -125,7 +126,7 @@ const BlogsPage = () => {
                         <SelectContent>
                             <SelectItem value="all" className="px-4 py-2 text-base text-gray-500 font-rocathin">All</SelectItem>
                             {categories.map((cat) => (
-                                <SelectItem className="px-4 py-2 text-base text-gray-500 font-rocathin" key={cat.id} value={cat.id.toString()}>
+                                <SelectItem className="capitalize px-4 py-2 text-base text-gray-500 font-rocathin" key={cat.id} value={cat.id.toString()}>
                                     {cat.name}
                                 </SelectItem>
                             ))}
@@ -179,15 +180,22 @@ const BlogsPage = () => {
                     {/* Blogs */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {paginatedPosts.map((post) => (
-                            <Card key={post.id} className="shadow-lg shadow-gray-100 transform-3d cursor-pointer" onClick={()=> router.push(`/blogs/${post.slug}`)}>
+                            <Card key={post.id} className="shadow-lg shadow-gray-100 transform-3d cursor-pointer" onClick={() => router.push(`/blogs/${post.slug}`)}>
                                 <CardContent className="p-4">
                                     {/* Image */}
                                     {post._embedded?.["wp:featuredmedia"]?.[0]?.source_url && (
-                                        <img
-                                            src={post._embedded["wp:featuredmedia"][0].source_url}
-                                            alt={post.title.rendered}
-                                            className="w-full max-h-72 object-cover rounded-md mb-4"
-                                        />
+                                        <div className="relative w-full h-[300px] mb-4 rounded-md overflow-hidden">
+                                            <Image
+                                                src={post._embedded["wp:featuredmedia"][0].source_url}
+                                                alt={post.title.rendered}
+                                                layout="fill"
+                                                objectFit="cover"
+                                                className="rounded-md"
+                                                placeholder="blur"
+                                                 objectPosition="center"
+                                                blurDataURL="/assets/new/Coders.png"
+                                            />
+                                        </div>
                                     )}
 
                                     {/* Date + Time */}
@@ -208,7 +216,6 @@ const BlogsPage = () => {
                             </Card>
                         ))}
                     </div>
-
                     {/* Pagination */}
                     {totalPages > 1 && (
                         <div className="flex justify-center mt-8 gap-2">

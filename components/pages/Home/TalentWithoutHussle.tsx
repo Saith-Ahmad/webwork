@@ -5,8 +5,21 @@ import React from 'react'
 
 function TalentWithoutHussle() {
     return (
-        <div className='container mt-10'>
-            <div className='bg-white max-lg:min-h-[60vh]  md:px-16 md:py-10 p-8  flex flex-col justify-center items-center relative overflow-hidden border-[1px] border-solid border-[#c9c9c9a3] md:rounded-[50px] rounded-[30px]'>
+        <div className='my-14 py-14 bg-[#F6F6F6]  max-lg:min-h-[50vh] relative'>
+            <div className="custom-shape-divider-top-1747344540">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" className="shape-fill"></path>
+                </svg>
+            </div>
+            <div className="custom-shape-divider-bottom-1747344583">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" className="shape-fill"></path>
+                </svg>
+            </div>
+
+            <div className='container  md:px-16 md:py-10 p-8  flex flex-col justify-center items-center relative overflow-hidden'>
+
+
                 <div className='w-full md:max-w-[60%] mt-4 mb-4'>
                     <FadeInTop once={false} duration={0.6} distance={30}>
                         <h2 className="font-roca text-2xl md:text-4xl font-thin text-center">Talent Without Hassle</h2>
@@ -56,10 +69,11 @@ function TalentWithoutHussle() {
                             <p className='text-sm md:text-base'>Never worry about a bad hire again/ talent replacement</p>
                         </div>
                     </div>
-                   
+
                 </div>
 
             </div>
+
         </div>
 
 

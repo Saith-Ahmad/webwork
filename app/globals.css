@@ -76,7 +76,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-[#FDFCF3] text-foreground;
+    @apply bg-white text-foreground;
   }
 }
 
@@ -91,7 +91,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-[#FDFCF3] text-foreground;
+    @apply bg-white text-foreground;
   }
 }
 
@@ -245,4 +245,64 @@
   animation: zigzag-glow 6s ease-in-out;
   animation-fill-mode: forwards;
   opacity: 0.4;
+}
+
+
+
+
+
+
+
+
+
+/* Shape Dividor */
+/* Top Divider */
+.custom-shape-divider-top-1747344540 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1747344540 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 53px; /* Default height for desktop */
+}
+
+.custom-shape-divider-top-1747344540 .shape-fill {
+    fill: #FFFFFF;
+}
+
+/* Bottom Divider */
+.custom-shape-divider-bottom-1747344583 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1747344583 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 53px; /* Default height for desktop */
+}
+
+.custom-shape-divider-bottom-1747344583 .shape-fill {
+    fill: #FFFFFF;
+}
+
+/* 📱 Mobile Responsive Curve Control */
+@media (max-width: 768px) {
+    .custom-shape-divider-top-1747344540 svg,
+    .custom-shape-divider-bottom-1747344583 svg {
+        height: 30px; /* Shallower curve for mobile */
+    }
 }

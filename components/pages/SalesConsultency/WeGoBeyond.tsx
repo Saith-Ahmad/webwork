@@ -5,8 +5,19 @@ import React from 'react'
 
 function WeGoBeyond() {
     return (
-        <div className='container mt-10'>
-            <div className='bg-white max-lg:min-h-[60vh]   md:py-20 p-8 md:px-12  flex flex-col justify-center items-center relative overflow-hidden border-[1px] border-solid border-[#c9c9c9a3] md:rounded-[50px] rounded-[30px]'>
+        <div className='my-14 py-14 bg-[#F6F6F6]  max-lg:min-h-[50vh] relative'>
+            <div className="custom-shape-divider-top-1747344540">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" className="shape-fill"></path>
+                </svg>
+            </div>
+            <div className="custom-shape-divider-bottom-1747344583">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" className="shape-fill"></path>
+                </svg>
+            </div>
+
+            <div className='container max-lg:min-h-[50vh]  md:py-20 p-8 md:px-12  flex flex-col justify-center items-center relative overflow-hidden'>
                 <div className=''>
 
                     <div className='flex flex-col lg:flex-row justify-between items-center gap-10'>
@@ -14,7 +25,7 @@ function WeGoBeyond() {
 
                         <div className='max-w-[350px] lg:min-w-[310px]'>
                             <FadeInTop once={false} duration={0.6} distance={30}>
-                                <h2 className="font-roca text-2xl md:text-3xl font-thin text-start">We Don’t Just Advise.<br/> We Go Beyond.</h2>
+                                <h2 className="font-roca text-2xl md:text-3xl font-thin text-start">We Don’t Just Advise.<br /> We Go Beyond.</h2>
                             </FadeInTop>
                             <h3 className='tracking-tight text-lg md:text-xl font-medium leading-tight text-start mt-4'>
                                 Most consultants hand you a strategy and disappear.
@@ -48,7 +59,7 @@ function WeGoBeyond() {
                                 </div>
                             </div>
 
-                             <div className='group cursor-pointer flex-grow-1 bg-[#EBFAFF] md:min-h-[250px] min-h-[170px] p-3 rounded-xl flex flex-col justify-around relative overflow-hidden'>
+                            <div className='group cursor-pointer flex-grow-1 bg-[#EBFAFF] md:min-h-[250px] min-h-[170px] p-3 rounded-xl flex flex-col justify-around relative overflow-hidden'>
                                 <div className="absolute w-[170px] h-[170px] bg-[#57aca4cf] rounded-full blur-xl top-0 left-0 glow-anim z-0" />
                                 <Image width={60} height={60} alt='no hussle' src={'/assets/new/beyond3.png'} className='relative z-10' />
                                 <div className='relative z-10'>
