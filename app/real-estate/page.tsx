@@ -1,3 +1,4 @@
+'use client'
 import Challenges from '@/components/pages/RealEstate/Challenges'
 import RealEstateHero from '@/components/pages/RealEstate/Hero'
 import RemotePartners from '@/components/pages/RealEstate/RemotePartners'

@@ -1,3 +1,4 @@
+'use client'
 import StartWithUs from '@/components/pages/Home/StartWithUs'
 import JobSeekersHero from '@/components/pages/JobSeekers/JSHero'
 import MoreThanResume from '@/components/pages/JobSeekers/MoreThanResume'

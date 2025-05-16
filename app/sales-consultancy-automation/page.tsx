@@ -1,4 +1,4 @@
-
+'use client'
 import BeyondFlow from '@/components/pages/SalesConsultency/BeyondFlow'
 import CTASales from '@/components/pages/SalesConsultency/CTASales'
 import SalesConsultencyHero from '@/components/pages/SalesConsultency/Hero'

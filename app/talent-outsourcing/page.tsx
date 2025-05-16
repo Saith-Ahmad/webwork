@@ -1,3 +1,4 @@
+'use client'
 import WhyChooseUs from '@/components/pages/TalentOutsourcing/ChooseUs'
 import TalentOutsourcingHero from '@/components/pages/TalentOutsourcing/Hero'
 import HireTopTalent from '@/components/pages/TalentOutsourcing/HireTopTalent'

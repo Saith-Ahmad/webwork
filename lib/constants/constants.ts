@@ -29,3 +29,7 @@ export const footerLinks2 = [
   { name : "Enterprise"},
   { name : "Corporations"},
 ]
+
+
+
+

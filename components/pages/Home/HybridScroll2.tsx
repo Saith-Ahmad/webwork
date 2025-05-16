@@ -1,17 +1,14 @@
 
 'use client';
-import React, { useEffect, useRef } from 'react';
+
+import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
 import Image from 'next/image';
 import FadeInRight from '@/components/framermotion/FadeInRight';
 
-// Register ScrollTrigger plugin
-if (typeof window !== 'undefined') {
-    gsap.registerPlugin(ScrollTrigger);
-}
 
-// Define the array of card data
 const cardData = [
     {
         title: 'Top 2% Global <br/>Talent',
@@ -45,102 +42,112 @@ const cardData = [
     },
 ];
 
-const HybridScroll2 = ({ cards = cardData }) => {
-    const horizontalSectionRef = useRef<HTMLElement | null>(null);
-    const horizontalWrapperRef = useRef<HTMLDivElement | null>(null);
-    const panelsRef = useRef<HTMLDivElement[]>([]);
+gsap.registerPlugin(ScrollTrigger);
 
-useEffect(() => {
-    if (!horizontalSectionRef.current || !horizontalWrapperRef.current || panelsRef.current.length === 0) return;
-
-    const horizontalSection = horizontalSectionRef.current;
-    const horizontalWrapper = horizontalWrapperRef.current;
-    const panels = panelsRef.current;
-
-    const tween = gsap.to(panels, {
-        xPercent: -100 * (panels.length - 1),
-        ease: "none",
-        scrollTrigger: {
-            trigger: horizontalSection,
-            pin: true,
-            scrub: 2,
-            start: "center center",
-            end: () => "+=" + (horizontalWrapper.offsetWidth * 1.5),
-            invalidateOnRefresh: true,
-        }
-    });
-
-    // ✅ Important to refresh ScrollTrigger after a slight delay
-    setTimeout(() => ScrollTrigger.refresh(), 100);
-
-    return () => {
-        tween.kill();
-        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-        gsap.killTweensOf(panels);
-    };
-}, [cards]);
-
-
-    return (
-        <div className='container bg-[#F6F6F6] mt-16 overflow-hidden'>
-            <div className=' shadow-lg shadow-gray-200 max-lg:min-h-[60vh]  md:rounded-[50px] rounded-[30px] overflow-hidden'>
-                <FadeInRight once={false} duration={0.8} distance={30} >
-                    <h2 className="font-roca text-2xl md:text-4xl font-thin text-center pt-16 p-2">Why teams choose BeyondHut?</h2>
-                </FadeInRight>
-                <section
-                    ref={horizontalSectionRef}
-                    className={`overflow-x-hidden`}
-                >
-                    <div
-                        ref={horizontalWrapperRef}
-                        className={`z-[20]  min-h-[500px] py-10 flex  items-center gap-7 md:gap-20  overflow-hidden relative`}
-                        style={{ width: `${cards.length * 300}px` }} 
-                    >
-                        {cards.map((card, index) => (
-                            <div
-                                key={index}
-                                ref={(el) => {
-                                    if (el) {
-                                        panelsRef.current[index] = el;
-                                    }
-                                }}
-                                className={` md:mt-10 mt-4 rounded-xl md:min-h-[400px] shadow-md md:min-w-[300px] md:h-[380px] min-h-[350px] w-[280px] flex flex-col items-start justify-center p-6 ${card.style}`}
-                            >
-                                {card.image && (
-                                    <div className="relative w-64 h-48 mb-4">
-                                        <Image src={card.image} alt={card.title} width={80} height={100} unoptimized />
-                                    </div>
-                                )}
-                                {card.title && (
-                                    <p
-                                        className="mb-2 font-roca md:text-3xl text-2xl text-black"
-                                        dangerouslySetInnerHTML={{ __html: card.title }}
-                                    />
-                                )}
-                                {card.paragraph && (
-                                    <p
-                                        className="text-black text-base "
-                                        dangerouslySetInnerHTML={{ __html: card.paragraph }}
-                                    />
-                                )}
-                                {/* You can add more custom elements based on your card object */}
-                            </div>
-                        ))}
-
-
-                        <div className="absolute inset-0 -z-[1] pointer-events-none overflow-hidden">
-                            <div className="relative w-full h-full">
-                                <div className="absolute  w-[250px] h-[250px] bg-[#dddbfa] rounded-full blur-3xl opacity-100 lg:bottom-[20%] lg:left-[25%] bottom-[15%] left-0"></div>
-                                <div className="absolute w-[250px] h-[250px] bg-[#f8e9ca] rounded-full blur-3xl opacity-100 lg:bottom-[20%] lg:left-[15%] bottom-[13%] left-[10%]"></div>
-
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </div>
-    );
+type Card = {
+  title: string;
+  paragraph: string;
+  image?: string;
+  style?: string;
 };
 
-export default HybridScroll2;
+type Props = {
+  cards?: Card[];
+};
 
+const HybridScrollSection: React.FC<Props> = ({ cards = cardData }) => {
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
+  const panelsRef = useRef<HTMLDivElement[]>([]);
+
+  useGSAP(() => {
+    const section = sectionRef.current;
+    const wrapper = wrapperRef.current;
+    const panels = panelsRef.current;
+
+    if (!section || !wrapper || panels.length === 0) return;
+
+    const tween = gsap.to(panels, {
+      xPercent: -100 * (panels.length - 1),
+      ease: 'none',
+      scrollTrigger: {
+        trigger: section,
+        pin: true,
+        scrub: 1,
+        start: 'center center',
+        end: () => `+=${wrapper.scrollWidth * 1.5}`,
+        invalidateOnRefresh: true,
+        refreshPriority: 1,
+      },
+    });
+
+    return () => {
+      tween?.kill();
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, { scope: sectionRef });
+
+  return (
+    <div className="bg-[#F6F6F6] my-16 relative py-14 overflow-hidden">
+      {/* Top Shape */}
+      <div className="custom-shape-divider-top-1747344540">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" className="shape-fill" />
+        </svg>
+      </div>
+
+      {/* Bottom Shape */}
+      <div className="custom-shape-divider-bottom-1747344583">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" className="shape-fill" />
+        </svg>
+      </div>
+
+      <div className="container max-lg:min-h-[60vh] relative md:rounded-[50px] rounded-[30px] overflow-hidden">
+        <FadeInRight once={false} duration={0.8} distance={30}>
+          <h2 className="mx-auto font-roca text-2xl md:text-4xl font-thin text-center pt-16 p-2">
+            Why teams choose BeyondHut?
+          </h2>
+        </FadeInRight>
+
+        <section ref={sectionRef} className="overflow-hidden relative">
+          <div
+            ref={wrapperRef}
+            className="flex gap-7 md:gap-20 py-10 min-h-[520px] items-center"
+            style={{ width: `${cards.length * 320}px` }}
+          >
+            <div className="h-[500px] bg-[#F6F6F6] w-[150px] absolute -left-24 z-[10] blur-xl max-md:hidden" />
+            <div className="h-[500px] bg-[#F6F6F6] w-[150px] absolute -right-24 z-[10] blur-2xl max-md:hidden" />
+
+            {cards.map((card, index) => (
+              <div
+                key={index}
+                ref={el => {
+                  if (el) panelsRef.current[index] = el;
+                }}
+                className={`rounded-xl shadow-md p-6 flex flex-col items-start justify-center md:min-w-[300px] w-[280px] min-h-[350px] xl:min-w-[350px] xl:min-h-[450px] md:min-h-[400px] ${card.style}`}
+              >
+                {card.image && (
+                  <div className="relative w-64 h-48 mb-4">
+                    <Image src={card.image} alt={card.title} width={80} height={100} unoptimized />
+                  </div>
+                )}
+                <p className="mb-2 font-roca md:text-3xl text-2xl text-black" dangerouslySetInnerHTML={{ __html: card.title }} />
+                <p className="text-black text-base" dangerouslySetInnerHTML={{ __html: card.paragraph }} />
+              </div>
+            ))}
+
+            <div className="absolute inset-0 -z-[1] pointer-events-none overflow-hidden">
+              <div className="relative w-full h-full">
+                <div className="absolute w-[250px] h-[250px] bg-[#dddbfa] rounded-full blur-3xl opacity-100 lg:bottom-[20%] lg:left-[25%] bottom-[15%] left-0" />
+                <div className="absolute w-[250px] h-[250px] bg-[#f8e9ca] rounded-full blur-3xl opacity-100 lg:bottom-[20%] lg:left-[15%] bottom-[13%] left-[10%]" />
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  );
+};
+
+export default HybridScrollSection;

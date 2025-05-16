@@ -132,15 +132,26 @@ const SingleBlogPage = () => {
 
                 {/* Full Blog Content */}
                 <div
-                    className="prose max-w-none p-1 prose-headings:font-roca prose-li:font-rocathin prose-li:text-gray-600 prose-p:text-lg prose-p:text-gray-600 prose-img:w-full prose-img:rounded-lg  prose-img:object-cover
-                    prose-h1:text-3xl prose-h1:md:text-5xl prose-h2:text-2xl prose-h2:md:text-4xl prose-h3:text-xl prose-h3:md:text-3xl prose-h4:text-xl prose-h4:md:text-2xl prose-h5:text-lg prose-h5:md:text-xl
-                    "
+                    className="prose max-w-none p-1 
+    prose-headings:font-roca 
+    prose-li:font-rocathin prose-li:text-gray-800 prose-li:text-lg prose-li:md:text-xl 
+    prose-p:text-lg prose-p:md:text-xl prose-p:text-gray-500 
+    prose-img:w-full prose-img:rounded-lg prose-img:object-cover 
+    prose-h1:text-3xl prose-h1:md:text-5xl 
+    prose-h2:text-2xl prose-h2:md:text-4xl 
+    prose-h3:text-xl prose-h3:md:text-3xl 
+    prose-h4:text-xl prose-h4:md:text-2xl 
+    prose-h5:text-lg prose-h5:md:text-xl
+     prose-em:font-roca prose-em:text-xl
+     prose-hr:mt-4 prose-hr:mb-4
+   "
                     dangerouslySetInnerHTML={{ __html: post.content.rendered }}
                 />
+
             </div>
 
             {/* Sidebar */}
-            <div>
+            <div className="md:col-span-1">
                 <h2 className="text-2xl font-semibold mb-4 font-roca">{relatedPosts.length >= 1 ? "Sililar Blogs" : ""}</h2>
                 <div className="flex flex-col gap-4">
                     {relatedPosts.map((related) => (
