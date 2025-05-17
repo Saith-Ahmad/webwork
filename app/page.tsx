@@ -2,8 +2,7 @@
 import CutFire from '@/components/pages/Home/CutFire'
 import GrowthPuzzle from '@/components/pages/Home/GrowthPuzzle'
 import HomeHero from '@/components/pages/Home/Hero'
-import HybridScrollSection from '@/components/pages/Home/HybridScroll2'
-// import SnapScroll from '@/components/pages/Home/HybridScroll2'
+import HybridScrollSection from '@/components/pages/Home/HybridScrollSection'
 import StartWithUs from '@/components/pages/Home/StartWithUs'
 import TalentWithoutHussle from '@/components/pages/Home/TalentWithoutHussle'
 import WhatWeDo from '@/components/pages/Home/WhatWeDo'
@@ -18,7 +17,6 @@ function Home() {
       <TalentWithoutHussle/>
       <CutFire/>
       <WhatWeDo/>
-      {/* <div className='overflow-hidden'><SnapScroll/></div> */}
       <HybridScrollSection/>
       <GrowthPuzzle/>
       <WhyChoose/>

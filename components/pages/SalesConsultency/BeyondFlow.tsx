@@ -9,9 +9,9 @@ function BeyondFlow() {
             <div className='bg-white max-lg:min-h-[60vh]  md:px-12 md:py-10 md:p-8 p-1 pb-10  flex flex-col justify-center items-center relative overflow-hidden '>
                 <div className='w-full md:max-w-[70%] mt-4 mb-4'>
                     <FadeInTop once={false} duration={0.6} distance={30}>
-                        <h2 className="font-roca text-2xl md:text-4xl font-thin text-center mb-3">Built for Talent That Moves Fast</h2>
+                        <h2 className="font-roca text-2xl md:text-4xl font-thin text-center mb-3">The Beyond Hut Flow</h2>
                     </FadeInTop>
-                    <p className='mt-1 text-center  text-lg text-[#516371]'>Super fast access to countless opportunities</p>
+                    <p className='mt-1 text-center  text-lg text-[#516371]'>By putting your customers at the center of your company’s sales strategy achieving <br className='hidden lg:flex'/> sustainable organic growth.</p>
                 </div>
 
 

@@ -61,8 +61,8 @@ const Footer = () => {
                     {/* First Column - Email Input */}
                     <div className='col-span-1 md:col-span-6 md:pt-10 flex flex-col max-w-[400px] md:p-5 gap-2 justify-start'>
                         <FadeInBottom once={false} distance={70} duration={1}>
-                            <div className="md:w-[120px] md:h-[80px] w-[90px] h-[60px] relative">
-                                <Image src="/assets/logo.png" alt="Logo" fill className="object-contain" />
+                            <div className="md:w-[200px] md:h-[100px] w-[200px] h-[100px] relative">
+                                <Image src="/assets/new/logolight.png" alt="Logo" fill className="object-contain" />
                             </div>
                         </FadeInBottom>
 

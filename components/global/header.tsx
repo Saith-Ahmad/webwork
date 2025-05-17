@@ -33,9 +33,9 @@ function Header() {
     <header className=" py-2 bg-white my-5 md:my-7 lg:my-8 rounded-3xl shadow-lg shadow-gray-200 px-10">
       <div className="flex justify-between items-center">
         {/* Logo */}
-        <div className="md:w-[90px] md:h-[60px] w-[70px] h-[50px] relative">
-          <Link href={'/'}>
-            <Image src="/assets/logo.png" alt="Logo" fill className="object-contain"/>
+        <div className="md:w-[150px] w-[100px] md:min-h-[50px] min-h-[40px] relative">
+          <Link href={'/'} className="flex justify-center items-center">
+            <Image src="/assets/new/logo.png" alt="Logo" fill className="object-contain"/>
           </Link>
         </div>
 
