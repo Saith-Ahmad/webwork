@@ -25,7 +25,7 @@ function BlogHero() {
                 </div>
 
                 <div className='relative z-[15] mt-5 md:mt-0'>
-                    <Image src={'/assets/new/blog.png'} alt='go beyond' width={500} height={500} />
+                    <Image src={'/assets/new/blogs.png'} alt='go beyond' width={500} height={500} />
                 </div>
 
             </div>
