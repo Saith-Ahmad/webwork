@@ -1,6 +1,6 @@
 export const navLinks = [
     { name: "Home", url: "/" },
-    { name: "Sales Consultancy ", url: "/sales-consultancy-automation" },
+    { name: "Systems", url: "/systems" },
     { name: "Job Seekers", url: "/job-seekers" },
     { name: "About Us", url: "/about-us" },
     // { name: "Pricing", url: "#" },

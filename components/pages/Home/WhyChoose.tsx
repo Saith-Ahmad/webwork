@@ -55,7 +55,7 @@ function WhyChoose() {
                         <Image src={'/assets/new/talent3.png'} alt='Support' width={300} height={300} unoptimized />
                     </div>
 
-                    <div className="md:col-span-4 bg-[#FAF9F699] p-8 rounded-2xl flex flex-col justify-between items-center gap-4 transform-3d">
+                    <div className="md:col-span-4 bg-[#fefcf499] p-8 rounded-2xl flex flex-col justify-between items-center gap-4 transform-3d">
                         <div>
                             <h4 className='text-2xl font-semibold text-center font-roca'>Graphic Designer <br/> & <br/> Video Editors</h4>
                             <p className='text-lg text-center text-[#1B1B1BD9]'>High-quality content creation for your brand.</p>

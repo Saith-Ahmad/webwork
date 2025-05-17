@@ -103,7 +103,7 @@ const SingleBlogPage = () => {
                     <img
                         src={post._embedded["wp:featuredmedia"][0].source_url}
                         alt={post.title.rendered}
-                        className="w-full md:max-h-96 object-cover bg-bottom rounded-lg mb-6 shadow-md"
+                        className="w-full md:max-h-96 object-cover bg-bottom rounded-lg mb-6 shadow-md min-h-72"
                     />
                 )}
 

@@ -30,12 +30,12 @@ function Header() {
 
   return (
     <div className="container">
-    <header className=" py-2 bg-white my-5 md:my-7 lg:my-8 rounded-3xl shadow-lg shadow-gray-200 px-10">
+    <header className=" py-4 bg-white my-5 md:my-7 lg:my-8 rounded-3xl shadow-lg shadow-gray-200 px-10">
       <div className="flex justify-between items-center">
         {/* Logo */}
         <div className="md:w-[150px] w-[100px] md:min-h-[50px] min-h-[40px] relative">
           <Link href={'/'} className="flex justify-center items-center">
-            <Image src="/assets/new/logo.png" alt="Logo" fill className="object-contain"/>
+            <Image src="/assets/new/logo.svg" alt="Logo" fill className="object-contain"/>
           </Link>
         </div>
 
@@ -44,7 +44,7 @@ function Header() {
           {navLinks.map((link, index) => (
             <Link href={link.url} key={index}>
               <li
-                className={`font-normal hover:scale-105 hover:text-gray-600 transition-all duration-300 ease-in-out transform ${pathname === link.url ? "text-black font-semibold" : "text-[#A6A6A6]"
+                className={`font-inter font-normal text-[17px] hover:scale-105 hover:text-gray-600 transition-all duration-300 ease-in-out transform ${pathname === link.url ? "text-black font-semibold" : "text-[#A6A6A6]"
                   }`}
               >
                 {link.name}
@@ -57,7 +57,7 @@ function Header() {
         <div className="hidden lg:flex justify-center items-center  gap-2">
           <UserButton />
           <Link href={'/get-started'} >
-            <Button size={'lg'} className="hover:scale-105 rounded-full transition-transform duration-300 ease-in-out transform">
+            <Button size={'lg'} className="hover:scale-105 bg-primarylight rounded-full transition-transform duration-300 ease-in-out transform">
               Get Started
             </Button>
           </Link> 

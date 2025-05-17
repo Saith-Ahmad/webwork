@@ -67,7 +67,7 @@ function WhatWeDo() {
                 <div className='flex flex-col justify-center items-center my-4'>
                   <div className='flex flex-row justify-center items-center gap-3'>
                     <Link href={'/get-started'}>
-                        <Button size={'lg'} className="hover:scale-105 rounded-full mb-[20px] transition-transform duration-300 ease-in-out transform shadow-md">
+                        <Button size={'lg'} className="bg-primarylight hover:scale-105 rounded-full mb-[20px] transition-transform duration-300 ease-in-out transform shadow-md">
                             Hire Talent <MoveRightIcon/>
                         </Button>
                         </Link>

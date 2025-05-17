@@ -84,7 +84,7 @@ function ThreeStepProcess() {
                 <div className='flex flex-col justify-center items-center mt-10'>
                     <div className='flex flex-row justify-center items-center gap-3'>
                         <Link href={'/get-started'}>
-                            <Button size={'lg'} className="hover:scale-105 rounded-full transition-transform duration-300 ease-in-out transform shadow-md">
+                            <Button size={'lg'} className="bg-primarylight hover:scale-105 rounded-full transition-transform duration-300 ease-in-out transform shadow-md">
                                 Hire Talent <MoveRightIcon />
                             </Button>
                         </Link>

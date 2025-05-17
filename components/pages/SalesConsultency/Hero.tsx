@@ -5,7 +5,7 @@ import React from 'react'
 function SalesConsultencyHero() {
     return (
         <div className='container '>
-            <div className='bg-white shadow-lg shadow-gray-200 max-lg:min-h-[60vh] flex flex-col justify-center items-center relative overflow-hidden md:rounded-[50px] rounded-[30px]'>
+            <div className='bg-white shadow-lg shadow-gray-200 min-h-[65vh] flex flex-col justify-center items-center relative overflow-hidden md:rounded-[50px] rounded-[30px]'>
 
                 {/* Glow*/}
                 <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
@@ -34,7 +34,7 @@ function SalesConsultencyHero() {
 
                     <div className='relative flexjustify-start items-start z-[10]'>
                         <Link href={'/get-started'}>
-                            <Button size={'lg'} className="hover:scale-105 rounded-full md:mt-5 mt-24 transition-transform duration-300 ease-in-out transform shadow-md">
+                            <Button size={'lg'} className="bg-primarylight hover:scale-105 rounded-full md:mt-10 mt-28 transition-transform duration-300 ease-in-out transform shadow-md">
                                 Hire Talent
                             </Button>
                         </Link>

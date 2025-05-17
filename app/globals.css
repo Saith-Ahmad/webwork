@@ -12,7 +12,7 @@
 
 @layer base {
   p {
-    @apply tracking-tight;
+    @apply tracking-tight font-inter;
   }
   :root {
     --background: 0 0% 100%;

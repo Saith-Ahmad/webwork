@@ -22,6 +22,9 @@ const config: Config = {
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
+        primarylight:{
+           DEFAULT: '#65CEEC'
+        },
         card: {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))'

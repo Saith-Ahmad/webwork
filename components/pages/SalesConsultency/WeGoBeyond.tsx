@@ -5,7 +5,7 @@ import React from 'react'
 
 function WeGoBeyond() {
     return (
-        <div className='my-14 py-14 bg-[#F6F6F6]  max-lg:min-h-[50vh] relative'>
+        <div className='my-14 py-14 bg-[#F6F6F6] min-h-[75vh] relative flex flex-col justify-center items-center'>
         <div  className='container'>
             <div className="custom-shape-divider-top-1747344540">
                 <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">

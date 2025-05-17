@@ -5,7 +5,7 @@ import React from 'react'
 function BlogHero() {
     return (
         <div className='container '>
-            <div className='bg-white shadow-lg shadow-gray-200 max-lg:min-h-[60vh] flex flex-col md:flex-row justify-center items-center relative overflow-hidden md:rounded-[50px] rounded-[30px] md:p-20 p-5'>
+            <div className='bg-white shadow-lg shadow-gray-200 min-h-[65vh] flex flex-col md:flex-row justify-center items-center relative overflow-hidden md:rounded-[50px] rounded-[30px] md:p-20 p-5'>
 
                 <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
                     <div className="relative w-full h-full">

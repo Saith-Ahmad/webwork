@@ -62,7 +62,7 @@ const Footer = () => {
                     <div className='col-span-1 md:col-span-6 md:pt-10 flex flex-col max-w-[400px] md:p-5 gap-2 justify-start'>
                         <FadeInBottom once={false} distance={70} duration={1}>
                             <div className="md:w-[200px] md:h-[100px] w-[200px] h-[100px] relative">
-                                <Image src="/assets/new/logolight.png" alt="Logo" fill className="object-contain" />
+                                <Image src="/assets/new/logolight.svg" alt="Logo" fill className="object-contain" />
                             </div>
                         </FadeInBottom>
 
@@ -95,7 +95,7 @@ const Footer = () => {
 
                     {/* Second Column - Links */}
                     <div className='col-span-1 md:col-span-2'>
-                        <h3 className="text-lg font-semibold mb-4 text-white">Our Target Industry</h3>
+                        <h3 className="text-lg font-semibold mb-4 text-white font-roca">Our Target Industry</h3>
                         <ul className="space-y-2">
                             {
                                 footerLinks1.map((link, i) => (
@@ -114,7 +114,7 @@ const Footer = () => {
 
                     {/* Third Column - Links */}
                     <div className='col-span-1 md:col-span-2'>
-                        <h3 className="text-lg font-semibold mb-4 text-white">Target Organizations</h3>
+                        <h3 className="text-lg font-semibold mb-4 text-white font-roca">Target Organizations</h3>
                         <ul className="space-y-2">
                             {
                                 footerLinks2.map((link, i) => (
@@ -130,11 +130,11 @@ const Footer = () => {
 
                     <FadeInLeft distance={20} duration={1} once={false}>
 
-                        <p className='text-white'>© 2025 Beyond Hut. Copyright and rights reserved</p>
+                        <p className='text-white font-rocathin'>© 2025 Beyond Hut. Copyright and rights reserved</p>
                     </FadeInLeft>
 
                     <FadeInTop duration={1} once={false}>
-                        <ul className='flex flex-row justify-center items-center gap-10 text-white'>
+                        <ul className='flex flex-row justify-center items-center gap-10 text-white font-rocathin'>
                             <li className='hover:text-white'>Terms and Condtions</li>
                             <li className='hover:text-white'>Privacy Policy</li>
                         </ul>
