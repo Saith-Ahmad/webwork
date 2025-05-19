@@ -69,24 +69,6 @@ function GrowthPuzzle() {
                     </div>
                 </div>
 
-                <div className='flex flex-col justify-center items-center mt-10'>
-                    <div className='flex flex-row justify-center items-center gap-3'>
-                        <Link href={'/get-started'}>
-                            <Button size={'lg'} className="bg-primarylight hover:scale-105 rounded-full transition-transform duration-300 ease-in-out transform shadow-md">
-                                Hire Talent <MoveRightIcon />
-                            </Button>
-                        </Link>
-
-                        <a href={'https://calendly.com/fahad-aslam4500'}>
-                            <Button size={'lg'} variant={'outline'} className="hover:scale-105 border-2 border-solid border-[#00B7EB] text-[#00B7EB] hover:text-[#00B7EB] hover:bg-[#e3f9ff] rounded-full transition-transform duration-300 ease-in-out transform shadow-md">
-                                Questions? <MoveRightIcon />
-                            </Button>
-                        </a>
-
-                    </div>
-                        <p className='mt-2 text-[12px]'>No Commitment Required · Cancel Anytime · Zero Risk</p>
-                </div>
-
             </div>
         </div>
 

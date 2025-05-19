@@ -21,10 +21,9 @@ function RightRole() {
             <div className='max-lg:min-h-[50vh]  md:px-12 md:py-10 md:p-8 p-1  flex flex-col justify-center items-center relative overflow-hidden '>
                 <div className='w-full md:max-w-[70%] mt-4 mb-4'>
                     <FadeInTop once={false} duration={0.6} distance={30}>
-                        <h2 className="font-roca text-2xl md:text-4xl font-thin text-center mb-3">We Make Finding the Right Role Simple</h2>
+                        <h2 className="font-roca text-2xl md:text-4xl font-thin text-center mb-3">What you get</h2>
                     </FadeInTop>
-                    <p className='mt-1 text-center  text-lg text-[#516371]'>Our Founder believes that looking for your next opportunity shouldn't feel like a full-time job.
-                        That's why we designed a process that's efficient, personal, and built to work for YOU.</p>
+                    <p className='mt-1 text-center  text-lg text-[#516371]'>Beyond Tools. Beyond tactics.</p>
                 </div>
 
                 <div className='flex gap-4 flex-col md:flex-row justify-center items-stretch overflow-hidden'>

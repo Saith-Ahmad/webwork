@@ -13,9 +13,9 @@ function StartWithUs() {
 
                 <div className='flex flex-col md:flex-row justify-center items-center w-full relative z-[20]'>
                     <div className='w-full md:max-w-[70%] mt-14 mb-10'>
-                            <h2 className="fade-in-up font-roca text-2xl max-md:text-center md:text-4xl font-thin text-start md:max-w-[900px]">Join Us & Grow Your Business</h2>
+                            <h2 className="fade-in-up font-roca text-2xl max-md:text-center md:text-4xl font-thin text-start md:max-w-[900px]">Growth starts with the right Partner</h2>
                    
-                        <p className='mt-1 text-start max-md:text-center  text-xl text-[#516371]'>To build the team you need Hassle free</p>
+                        <p className='mt-1 text-start max-md:text-center  text-xl text-[#516371]'>Let’s change the way your team performs, Forever</p>
                     </div>
 
                     <img src="/assets/new/arrow.png" alt="" className='absolute  top-36 hidden md:flex'/>
@@ -25,7 +25,7 @@ function StartWithUs() {
                     <div className='flex flex-col justify-center items-center'>
                     <Link href={'/get-started'}>
                         <Button size={'lg'} className="bg-primarylight hover:scale-105 rounded-full  transition-transform duration-300 ease-in-out transform shadow-md p-6 px-8">
-                            Get Started
+                            Let's Talk
                         </Button>
                     </Link>
                     <Link href={'/get-started'}>

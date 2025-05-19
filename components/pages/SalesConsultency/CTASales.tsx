@@ -24,7 +24,7 @@ function CTASales() {
                     <div className='flex flex-col justify-center items-center'>
                     <Link href={'/get-started'}>
                         <Button size={'lg'} className="bg-primarylight hover:scale-105 rounded-full  transition-transform duration-300 ease-in-out transform shadow-md p-6 px-12">
-                            Get Started
+                            Let's Talk
                         </Button>
                     </Link>
                     

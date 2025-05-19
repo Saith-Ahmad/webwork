@@ -25,7 +25,7 @@ function TalentWithoutHussle() {
                     <FadeInTop once={false} duration={0.6} distance={30}>
                         <h2 className="font-roca text-2xl md:text-4xl font-thin text-center">Talent Without Hassle</h2>
                     </FadeInTop>
-                    <p className='mt-1 text-center  text-lg text-[#516371]'>Beyond Hut helps businesses scale with cost-effective top-tier talent  vetted, trained and ready to plug into your team.</p>
+                    <p className='mt-1 text-center  text-lg text-[#516371]'>Fill any position in 8 days!</p>
                 </div>
 
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 overflow-hidden'>

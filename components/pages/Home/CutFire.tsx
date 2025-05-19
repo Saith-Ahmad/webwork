@@ -28,7 +28,7 @@ function CutFire() {
                 {/* Heading */}
                 <div className='w-full md:max-w-[60%] mt-4 p-5'>
                     <FadeInBottom once={false} duration={0.7} distance={30}>
-                        <h2 className="font-roca text-2xl md:text-4xl font-thin text-center">Cut Hire Time By Half</h2>
+                        <h2 className="font-roca text-2xl md:text-4xl font-thin text-center">Cut Hire Time By 70%</h2>
                     </FadeInBottom>
                     <p className='mt-1 text-center text-lg text-[#516371]'>Go beyond with us.</p>
                 </div>
