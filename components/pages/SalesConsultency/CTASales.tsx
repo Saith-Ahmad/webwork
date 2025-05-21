@@ -12,7 +12,7 @@ function CTASales() {
 
                 <div className='flex flex-col md:flex-row justify-center items-center w-full relative z-[20]'>
                     <div className='w-full md:max-w-[70%] mt-14 mb-10'>
-                            <h2 className="fade-in-up font-roca text-2xl max-md:text-center md:text-4xl font-thin text-start md:max-w-[900px]">Growth starts with the right partner.</h2>
+                            <h2 className="fade-in-up font-roca text-2xl max-md:text-center md:text-4xl font-thin text-start md:max-w-[900px]">Growth Starts With The Right Partner.</h2>
                    
                         <p className='mt-1 text-start max-md:text-center  text-xl text-[#516371]'>One call can change the way your team sells, forever.</p>
                     </div>

@@ -37,7 +37,7 @@ function JobSeekersHero() {
                     <div className='relative flexjustify-start items-start z-[10]'>
                         <Link href={'/application-form'}>
                             <Button size={'lg'} className="bg-primarylight hover:scale-105 rounded-full md:mt-10 mt-24 transition-transform duration-300 ease-in-out transform shadow-md">
-                                Hire Talent
+                                Get Hired
                             </Button>
                         </Link>
                     </div>

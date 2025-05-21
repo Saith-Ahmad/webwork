@@ -35,7 +35,7 @@ function SalesConsultencyHero() {
                     <div className='relative flexjustify-start items-start z-[10]'>
                         <Link href={'/get-started'}>
                             <Button size={'lg'} className="bg-primarylight hover:scale-105 rounded-full md:mt-10 mt-28 transition-transform duration-300 ease-in-out transform shadow-md">
-                                Hire Talent
+                                Fix My Funnel
                             </Button>
                         </Link>
                     </div>
