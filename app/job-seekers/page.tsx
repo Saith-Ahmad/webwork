@@ -1,5 +1,6 @@
 'use client'
 import StartWithUs from '@/components/pages/Home/StartWithUs'
+import CTAJobSeekers from '@/components/pages/JobSeekers/CtaJobSeekers'
 import JobSeekersHero from '@/components/pages/JobSeekers/JSHero'
 import MoreThanResume from '@/components/pages/JobSeekers/MoreThanResume'
 import TalentMovesFast from '@/components/pages/JobSeekers/TalentMovesFast'
@@ -15,7 +16,7 @@ function JobSeekers() {
       <MoreThanResume/>
       <TalentMovesFast/>
       <ThreeStepProcess/>
-      <StartWithUs/>
+      <CTAJobSeekers/>
       {/* <JobListings/> */}
     </div>
   )

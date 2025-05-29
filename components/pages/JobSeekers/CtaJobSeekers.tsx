@@ -4,32 +4,30 @@ import {  MoveRightIcon } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 
-function StartWithUs() {
+function CTAJobSeekers() {
     return (
         <div className='container my-12'>
-            <div className='bg-white shadow-lg relative shadow-gray-200 max-lg:min-h-[60vh] min-h-[400px] p-5  flex flex-col justify-center items-center md:rounded-[50px] rounded-[30px] overflow-hidden'>
+            <div className='bg-white shadow-lg relative shadow-gray-200 max-lg:min-h-[60vh] min-h-[450px] p-5  flex flex-col justify-center items-center md:rounded-[50px] rounded-[30px] overflow-hidden'>
 
 
-                <div className='flex flex-col md:flex-row justify-center items-center w-full relative z-[20]'>
-                    <div className='w-full md:max-w-[70%] mt-14 mb-10'>
-                            <h2 className="fade-in-up font-roca text-2xl max-md:text-center md:text-4xl font-thin text-start md:max-w-[900px]">Growth starts with the right Partner</h2>
+                <div className='flex flex-col justify-center items-center w-full relative z-[20]'>
+                    <div className='w-full mt-14 mb-10 flex flex-col gap-3'>
+                            <h2 className="fade-in-up font-roca text-2xl text-center md:text-[40px] font-thin mb-3">Let’s get you Hired</h2>
                    
-                        <p className='mt-1 text-start max-md:text-center  text-xl text-[#516371]'>Let’s change the way your team performs, Forever</p>
+                        <p className='mt-1 text-center  text-xl text-[#516371]'>No more black holes. No more ghosting. No more guessing</p>
+                        <p className='mt-1 text-center font-semibold  text-xl text-[#516371]'>Just Good Work With Good People</p>
                     </div>
 
-                    <img src="/assets/new/arrow.png" alt="" className='absolute  top-36 hidden md:flex'/>
-                    <img src="/assets/new/arrow.png" alt="" className='absolute w-[100px] rotate-[60deg] right-[240px] top-[200px] flex md:hidden'/>
 
-
-                    <div className='flex flex-col justify-center items-center'>
-                    <Link href={'/get-started'}>
+                    <div className='flex flex-row gap-3 justify-center items-center'>
+                    <Link href={'/application-form'}>
                         <Button size={'lg'} className="bg-primarylight hover:scale-105 rounded-full text-lg  transition-transform duration-300 ease-in-out transform shadow-md p-6 px-12">
-                            Get Started
+                            Apply Now
                         </Button>
                     </Link>
-                    <Link href={'/get-started'}>
-                        <div className="flex gap-1 flex-row justify-center items-center mt-3 hover:scale-105 transition-transform duration-300 ease-in-out transform ">
-                        Book A Call
+                    <Link href={'/job-listings'}>
+                        <div className="flex font-semibold gap-1 flex-row justify-center text-lg items-center mt-3 hover:scale-105 transition-transform duration-300 ease-in-out transform mb-2">
+                       View Open Roles
                             <MoveRightIcon/>
                         </div>
                     </Link>
@@ -61,4 +59,4 @@ function StartWithUs() {
     )
 }
 
-export default StartWithUs
+export default CTAJobSeekers

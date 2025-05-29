@@ -1,19 +1,17 @@
-"use client";
 
+"use client";
 import React, { useEffect, useState, useMemo } from "react";
-import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Card, CardContent } from "@/components/ui/card";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Search } from "lucide-react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { timeAgo } from "@/lib/constants/constants";
 
 const BlogsPage = () => {
     const router = useRouter();
     const [posts, setPosts] = useState<any[]>([]);
     const [categories, setCategories] = useState<any[]>([]);
-    const [selectedCategory, setSelectedCategory] = useState<string>("");
+    const [selectedCategory, setSelectedCategory] = useState<number[]>([]);
     const [sortOrder, setSortOrder] = useState("desc");
     const [searchTerm, setSearchTerm] = useState("");
     const [loading, setLoading] = useState(true);
@@ -65,38 +63,15 @@ const BlogsPage = () => {
         let filtered = [...posts];
 
         // Category filter
-        if (selectedCategory && selectedCategory !== "all") {
+        if (selectedCategory.length > 0) {
             filtered = filtered.filter((post) =>
-                post.categories.includes(parseInt(selectedCategory))
+                selectedCategory.some((catId) => post.categories.includes(catId))
             );
         }
 
-        // Search filter
-        if (debouncedSearchTerm) {
-            filtered = filtered.filter((post) => {
-                const titleMatch = post.title.rendered
-                    .toLowerCase()
-                    .includes(debouncedSearchTerm.toLowerCase());
-
-                const categoryMatch = categories
-                    .filter((cat) => post.categories.includes(cat.id))
-                    .some((cat) =>
-                        cat.name.toLowerCase().includes(debouncedSearchTerm.toLowerCase())
-                    );
-
-                return titleMatch || categoryMatch;
-            });
-        }
-
-        // Sort
-        filtered.sort((a, b) => {
-            const dateA = new Date(a.date).getTime();
-            const dateB = new Date(b.date).getTime();
-            return sortOrder === "desc" ? dateB - dateA : dateA - dateB;
-        });
 
         return filtered;
-    }, [posts, selectedCategory, sortOrder, debouncedSearchTerm, categories]);
+    }, [posts, selectedCategory, categories]);
 
     // Reset to page 1 when filters change
     useEffect(() => {
@@ -112,51 +87,45 @@ const BlogsPage = () => {
     }, [filteredPosts, currentPage]);
 
     return (
-        <div className="container py-10 min-h-[80vh]">
+        <div className="container py-10 min-h-[50vh]">
             <h2 className="text-2xl md:text-4xl mt-5 font-bold mb-6 font-roca text-center">Explore the Latest Blogs</h2>
 
             {/* Filters */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
-                {/* Category Filter */}
-                <div className="grid-cols-1">
-                    <Select onValueChange={(val) => setSelectedCategory(val)}>
-                        <SelectTrigger className="w-full py-[25px] text-lg text-gray-500 font-rocathin shadow-md shadow-gray-200">
-                            <SelectValue placeholder="Filter by Category" />
-                        </SelectTrigger>
-                        <SelectContent>
-                            <SelectItem value="all" className="px-4 py-2 text-base text-gray-500 font-rocathin">All</SelectItem>
-                            {categories.map((cat) => (
-                                <SelectItem className="capitalize px-4 py-2 text-base text-gray-500 font-rocathin" key={cat.id} value={cat.id.toString()}>
-                                    {cat.name}
-                                </SelectItem>
-                            ))}
-                        </SelectContent>
-                    </Select>
+            <div className="flex justify-start items-center">
+                {/* Category Filter Buttons */}
+                <div className="flex flex-wrap justify-start gap-2 mb-6 mt-6">
+                    <button
+                        className={`px-6 py-2 rounded-full text-sm border font-medium transition ${selectedCategory.length === 0
+                            ? "bg-sky-400 text-white"
+                            : "bg-white text-black border-gray-300"
+                            }`}
+                        onClick={() => setSelectedCategory([])}
+                    >
+                        All
+                    </button>
+                    {categories.map((cat) => {
+                        const isSelected = selectedCategory.includes(cat.id);
+                        return (
+                            <button
+                                key={cat.id}
+                                onClick={() => {
+                                    setSelectedCategory((prev) =>
+                                        prev.includes(cat.id)
+                                            ? prev.filter((id) => id !== cat.id)
+                                            : [...prev, cat.id]
+                                    );
+                                }}
+                                className={`px-5 py-2 rounded-full text-sm border font-medium transition capitalize ${isSelected
+                                    ? "bg-sky-400 text-white"
+                                    : "bg-white text-black border-gray-300"
+                                    }`}
+                            >
+                                {cat.name}
+                            </button>
+                        );
+                    })}
                 </div>
 
-                {/* Sort Filter */}
-                <div className="col-span-1">
-                    <Select onValueChange={(val) => setSortOrder(val)} defaultValue="desc">
-                        <SelectTrigger className="w-full py-[25px] text-lg text-gray-500 font-rocathin shadow-md shadow-gray-200">
-                            <SelectValue placeholder="Sort" />
-                        </SelectTrigger>
-                        <SelectContent>
-                            <SelectItem value="desc" className="px-4 py-2 text-base text-gray-500 font-rocathin">Latest</SelectItem>
-                            <SelectItem value="asc" className="px-4 py-2 text-base text-gray-500 font-rocathin">Oldest</SelectItem>
-                        </SelectContent>
-                    </Select>
-                </div>
-
-                {/* Search */}
-                <div className="w-full col-span-1 md:col-span-2 h-[60px] flex flex-row justify-center items-center gap-3 border-[1px] border-gray-200 px-5 py-2 rounded-lg shadow-md shadow-gray-200">
-                    <Search />
-                    <input
-                        placeholder="Search Your Favourite Blogs"
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                        className="w-full font-rocathin h-full border-none outline-none text-lg focus:outline-none focus:border-none focus:ring-0 focus:shadow-none bg-transparent"
-                    />
-                </div>
             </div>
 
             {/* Error */}
@@ -164,7 +133,7 @@ const BlogsPage = () => {
 
             {/* Loading */}
             {loading ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
                     {Array.from({ length: 6 }).map((_, i) => (
                         <div key={i} className="flex flex-col gap-1">
                             <Skeleton className="h-64 bg-gray-500" />
@@ -178,42 +147,51 @@ const BlogsPage = () => {
             ) : (
                 <>
                     {/* Blogs */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {paginatedPosts.map((post) => (
-                            <Card key={post.id} className="shadow-lg shadow-gray-100 transform-3d cursor-pointer" onClick={() => router.push(`/blogs/${post.slug}`)}>
-                                <CardContent className="p-4">
+                            <Card
+                                key={post.id}
+                                className="shadow-lg p-0 border-[2px] border-[#D8DBDF] border-dashed overflow-hidden shadow-gray-100 transform-3d cursor-pointer flex flex-col h-full"
+                                onClick={() => router.push(`/blogs/${post.slug}`)}
+                                style={{
+                                    borderBottomStyle: "solid",
+                                }}
+                            >
+
+                                <CardContent className="p-0 flex-1 flex flex-col">
                                     {/* Image */}
                                     {post._embedded?.["wp:featuredmedia"]?.[0]?.source_url && (
-                                        <div className="relative w-full min-h-[200px] md:h-[300px] mb-4 rounded-md overflow-hidden">
+                                        <div className="relative w-full min-h-[200px] md:h-[250px] mb-4 overflow-hidden">
                                             <Image
                                                 src={post._embedded["wp:featuredmedia"][0].source_url}
                                                 alt={post.title.rendered}
                                                 layout="fill"
                                                 objectFit="cover"
-                                                className="rounded-md"
                                                 placeholder="blur"
-                                                 objectPosition="center"
+                                                objectPosition="center"
                                                 blurDataURL="/assets/new/placeholder.jpg"
                                             />
                                         </div>
                                     )}
 
-                                    {/* Date + Time */}
-                                    <p className="text-sm text-gray-500 mb-1">
-                                        {new Date(post.date).toLocaleDateString()}
-                                    </p>
+                                    {/* Text content */}
+                                    <div className="flex flex-col flex-1 px-3 py-2">
+                                        <h2 className="font-semibold text-xl font-roca">
+                                            {truncate(post.title.rendered, 60)}
+                                        </h2>
 
-                                    {/* Title */}
-                                    <h2 className="font-semibold text-lg font-roca">
-                                        {truncate(post.title.rendered, 60)}
-                                    </h2>
+                                        <p className="text-gray-600 text-base">
+                                            {truncate(stripHtml(post.excerpt.rendered), 150)}
+                                        </p>
 
-                                    {/* Excerpt */}
-                                    <p className="text-gray-600 text-base">
-                                        {truncate(stripHtml(post.excerpt.rendered), 150)}
-                                    </p>
+                                        
+                                        <p className="text-sm text-gray-500 mt-auto border-t-2 border-dashed border-t-[#D8DBDF] pt-2">
+                                             {timeAgo(post.date)}
+                                        </p>
+                                    </div>
                                 </CardContent>
                             </Card>
+
                         ))}
                     </div>
                     {/* Pagination */}
