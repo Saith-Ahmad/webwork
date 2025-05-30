@@ -6,6 +6,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { timeAgo } from "@/lib/constants/constants";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const BlogsSection = () => {
     const router = useRouter();
@@ -91,7 +93,7 @@ const BlogsSection = () => {
                                         </h2>
 
                                         <p className="text-gray-600 text-base">
-                                            {truncate(stripHtml(post.excerpt.rendered), 150)}
+                                            {truncate(stripHtml(post.excerpt.rendered), 120)}
                                         </p>
 
                                         
@@ -103,6 +105,11 @@ const BlogsSection = () => {
                             </Card>
 
                         ))}
+                    </div>
+                    <div className="flex justify-center mt-10">
+                        <Link href={'/blogs'}>
+                            <Button size={'lg'} className="bg-black hover:bg-gray-800">View All</Button>
+                        </Link>
                     </div>
                 </>
             )}
