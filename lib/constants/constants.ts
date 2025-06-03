@@ -1,3 +1,4 @@
+
 export const navLinks = [
     { name: "Home", url: "/" },
     { name: "Sales Systems", url: "/sales-systems" },
@@ -63,3 +64,13 @@ export function timeAgo(dateString: string) {
 
     return "just now";
 }
+
+
+
+
+
+
+
+
+
+
