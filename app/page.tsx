@@ -1,6 +1,6 @@
-'use client'
 import BlogsSection from '@/components/pages/Home/BlogsSections'
 import CutFire from '@/components/pages/Home/CutFire'
+import FullServices from '@/components/pages/Home/FullServices'
 import GrowthPuzzle from '@/components/pages/Home/GrowthPuzzle'
 import HomeHero from '@/components/pages/Home/Hero'
 import HybridScrollSection from '@/components/pages/Home/HybridScrollSection'
@@ -20,6 +20,7 @@ function Home() {
       <WhatWeDo/>
       <HybridScrollSection/>
       <GrowthPuzzle/>
+      <FullServices/>
       <WhyChoose/>
       <BlogsSection/>
       <StartWithUs/>

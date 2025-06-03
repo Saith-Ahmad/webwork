@@ -19,7 +19,7 @@ const BlogsPage = () => {
 
     // Pagination
     const [currentPage, setCurrentPage] = useState(1);
-    const postsPerPage = 10;
+    const postsPerPage = 15;
 
     // Debounce search term
     const debouncedSearchTerm = useDebounce(searchTerm, 500);
@@ -115,7 +115,7 @@ const BlogsPage = () => {
                                             : [...prev, cat.id]
                                     );
                                 }}
-                                className={`px-5 py-2 rounded-full text-sm border font-medium transition capitalize ${isSelected
+                                className={`px-5 md:py-3 py-2 rounded-full text-sm border font-medium transition capitalize ${isSelected
                                     ? "bg-sky-400 text-white"
                                     : "bg-white text-black border-gray-300"
                                     }`}
@@ -147,7 +147,7 @@ const BlogsPage = () => {
             ) : (
                 <>
                     {/* Blogs */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-1">
                         {paginatedPosts.map((post) => (
                             <Card
                                 key={post.id}
@@ -176,14 +176,9 @@ const BlogsPage = () => {
 
                                     {/* Text content */}
                                     <div className="flex flex-col flex-1 px-3 py-2">
-                                        <h2 className="font-semibold text-xl font-roca">
-                                            {truncate(post.title.rendered, 60)}
+                                        <h2 className="font-semibold text-xl font-roca mb-4">
+                                            {truncate(post.title.rendered, 50)}
                                         </h2>
-
-                                        <p className="text-gray-600 text-base">
-                                            {truncate(stripHtml(post.excerpt.rendered), 150)}
-                                        </p>
-
                                         
                                         <p className="text-sm text-gray-500 mt-auto border-t-2 border-dashed border-t-[#D8DBDF] pt-2">
                                              {timeAgo(post.date)}

@@ -38,7 +38,7 @@ const BlogsSection = () => {
   
     return (
         <div className="container py-10">
-            <h2 className="text-2xl md:text-4xl mt-5 font-bold mb-6 font-roca text-center capitalize">Read latest <span className="text-primary">blog and articles</span></h2>
+            <h2 className="text-2xl md:text-4xl mt-5 font-bold mb-10 font-roca text-center capitalize ">Read latest <span className="text-primary">blog and articles</span></h2>
 
             {/* Error */}
             {error && <p className="text-red-900 mb-4 text-2xl mt-5 font-bold font-roca text-center">{error}</p>}
@@ -89,14 +89,8 @@ const BlogsSection = () => {
                                     {/* Text content */}
                                     <div className="flex flex-col flex-1 px-3 py-2 gap-3">
                                         <h2 className="font-semibold text-xl font-roca">
-                                            {truncate(post.title.rendered, 60)}
-                                        </h2>
-
-                                        <p className="text-gray-600 text-base">
-                                            {truncate(stripHtml(post.excerpt.rendered), 120)}
-                                        </p>
-
-                                        
+                                            {truncate(post.title.rendered, 50)}
+                                        </h2>                                        
                                         <p className="text-sm text-gray-500 mt-auto border-t-2 border-dashed border-t-[#D8DBDF] pt-2">
                                              {timeAgo(post.date)}
                                         </p>

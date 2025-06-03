@@ -4,6 +4,7 @@ import React from 'react'
 import ContactForm from './GetStartedForm'
 import FadeInLeft from '@/components/framermotion/FadeInLeft'
 import FadeInBottom from '@/components/framermotion/FadeInBottom'
+import Link from 'next/link'
 
 function GetStarted() {
   return (
@@ -20,7 +21,7 @@ function GetStarted() {
           </div>
 
           <FadeInLeft duration={0.8} distance={60} once={false}>
-            <Image src={'/assets/new/getstarted.png'} alt='get started' width={450} height={400} />
+            <Link href='/'><Image src={'/assets/new/getstarted.png'} alt='get started' width={450} height={400} /></Link>
           </FadeInLeft>
 
           <FadeInBottom duration={0.8} distance={60} once={false}>

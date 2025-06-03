@@ -4,6 +4,14 @@ import React, { useState } from 'react';
 import { InlineWidget } from 'react-calendly';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select"
+
 
 
 const ContactForm = () => {
@@ -93,24 +101,37 @@ const ContactForm = () => {
                 <InputField id="firstName" label="First name" value={formData.firstName} error={errors.firstName} onChange={handleChange} />
                 <InputField id="lastName" label="Last name" value={formData.lastName} error={errors.lastName} onChange={handleChange} />
                 <InputField id="workEmail" label="Work Email" type="email" value={formData.workEmail} error={errors.workEmail} onChange={handleChange} />
-
-                <div className="relative">
-                    <select
-                        id="companySize"
-                        name="companySize"
+                <div className="w-full">
+                    <Select
                         value={formData.companySize}
-                        onChange={handleChange}
-                        className={` peer border-2 border-black rounded-md py-3 px-4 w-full focus:outline-none focus:border-black focus:ring-0 ${errors.companySize && 'border-red-500'}`}
+                        onValueChange={(value) =>
+                            handleChange({
+                                target: { name: "companySize", value },
+                            } as React.ChangeEvent<HTMLSelectElement>)
+                        }
                     >
-                        <option value="" className=''>Company Size</option>
-                        <option value="1-10">1-10</option>
-                        <option value="11-50">11-50</option>
-                        <option value="51-200">51-200</option>
-                        <option value="201-500">201-500</option>
-                        <option value="500+">500+</option>
-                    </select>
-                    {errors.companySize && <span className="text-red-500 text-xs mt-1">{errors.companySize}</span>}
+                        <SelectTrigger
+                            className={`border-2 bg-[#F8F8F8] rounded-md py-6 px-4 w-full text-left font-semibold ${errors.companySize ? "border-red-500" : "border-[#D4D4D4]"
+                                } placeholder:text-gray-400 text-black`}
+                        >
+                            <SelectValue
+                                placeholder="Company Size"
+                                className={`${formData.companySize === "" ? "text-gray-200" : "text-gray-200"}`}
+                            />
+                        </SelectTrigger>
+                        <SelectContent>
+                            <SelectItem value="1-10">1-10</SelectItem>
+                            <SelectItem value="11-50">11-50</SelectItem>
+                            <SelectItem value="51-200">51-200</SelectItem>
+                            <SelectItem value="201-500">201-500</SelectItem>
+                            <SelectItem value="500+">500+</SelectItem>
+                        </SelectContent>
+                    </Select>
+                    {errors.companySize && (
+                        <span className="text-red-500 text-xs mt-1">{errors.companySize}</span>
+                    )}
                 </div>
+
 
                 <InputField id="companyWebsite" label="Company Website" value={formData.companyWebsite} onChange={handleChange} />
                 <InputField id="phoneNumber" label="Phone Number" value={formData.phoneNumber} error={errors.phoneNumber} onChange={handleChange} />
@@ -192,11 +213,11 @@ const InputField = ({
             placeholder=""
             value={value}
             onChange={onChange}
-            className={`peer border-2 border-black rounded-md py-3 px-4 w-full font-semibold  focus:border-black placeholder:text-black bg-[#F8F8F8] ${error && 'border-red-500'}`}
+            className={`peer border-2 border-[#D4D4D4] rounded-md py-3 px-4 w-full font-semibold  focus:border-black placeholder:text-black bg-[#F8F8F8] ${error && 'border-red-500'}`}
         />
         <label
             htmlFor={id}
-            className="absolute left-3 -top-2.5 text-gray-800 rounded-sm bg-[#F8F8F8] text-sm transition-all peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-900 peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-black peer-focus:font-semibold peer-focus:bg-[#F8F8F8]"
+            className="absolute left-3 -top-2.5 text-gray-800 rounded-sm bg-[#F8F8F8] text-sm transition-all peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-[#BDBDBD] peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-black peer-focus:font-semibold peer-focus:bg-[#F8F8F8]"
         >
             {label}
         </label>

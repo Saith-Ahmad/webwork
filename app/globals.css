@@ -9,6 +9,10 @@
 
 }
 
+/* Target placeholder in ShadCN (Radix) select */
+[data-placeholder] {
+  color: #BDBDBD !important; /* Or your desired light gray */
+}
 
 @layer base {
   p {
@@ -67,9 +71,12 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
+  .theme {
+    --animate-marquee: marquee var(--duration) infinite linear;
+    --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+
+  }
 }
-
-
 
 @layer base {
   * {
@@ -80,12 +87,6 @@
   }
 }
 
-
-
-
-
-
-
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -94,27 +95,14 @@
     @apply bg-white text-foreground;
   }
 }
-
-
-
-
 
 .transform-3d{
   @apply transition-transform transform-gpu hover:scale-[1.01] hover:rotate-[0.4deg] hover:shadow-md hover:shadow-gray-100;
 }
 
-
-
-
 .transform-scale-shadow {
   @apply transition-transform transform-gpu hover:scale-[1.02] hover:shadow-lg;
 }
-
-
-
-
-
-
 
 /* After Redesign */
 @keyframes glowMove {
@@ -129,14 +117,6 @@
 .glow-animation {
   animation: glowMove 6s ease-in-out infinite;
 }
-
-
-
-
-
-
-
-
 
 @keyframes glowTop {
   0%, 100% {
@@ -164,14 +144,6 @@
   animation: glowBottom 8s ease-in-out infinite;
 }
 
-
-
-
-
-
-
-
-
 @layer utilities {
   .fade-in-up {
     @apply opacity-0 translate-y-4 transition-all duration-700 ease-out;
@@ -190,9 +162,6 @@
   }
 }
 
-
-
-
 @layer utilities {
   .fade-in-down {
     @apply opacity-0 translate-y-4 transition-all duration-700 ease-out;
@@ -210,12 +179,6 @@
     }
   }
 }
-
-
-
-
-
-
 
 @keyframes zigzag-glow {
   0% {
@@ -246,14 +209,6 @@
   animation-fill-mode: forwards;
   opacity: 0.4;
 }
-
-
-
-
-
-
-
-
 
 /* Shape Dividor */
 /* Top Divider */
@@ -307,7 +262,6 @@
     }
 }
 
-
 /* globals.css */
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
@@ -315,4 +269,67 @@
 .hide-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+
+  }
+  body {
+    @apply bg-background text-foreground;
+
+  }
+
+}
+
+@theme inline {
+  @keyframes marquee {
+  from {
+    transform: translateX(0);
+
+    }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+
+    }
+
+  }
+  @keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+
+    }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+
+    }
+
+  }
+
+}
+
+
+
+
+
+
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.marquee-track {
+  display: inline-flex;
+  animation: scroll-left 20s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
