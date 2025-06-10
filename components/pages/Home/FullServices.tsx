@@ -12,7 +12,7 @@ function FullServices() {
 
 
                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mt-3'>
-                    <div className='bg-white min-h-[250px] flex flex-col min-w-[250px] p-5 rounded-xl border-8 border-[#C6C6C6]'>
+                    <div className='bg-white min-h-[250px] flex flex-col min-w-[250px] p-5 rounded-xl border-4 border-[#C6C6C6]'>
                         <h4 className='text-xl font-roca mb-4'>Recruiters</h4>
                         <ul className='text-[#616161] flex flex-col justify-start items-start gap-2'>
                             <div className=' flex justify-start items-center gap-3 '><Check size={15} strokeWidth={3} className='text-[#80E45B]'/><li >Dedicated</li></div>
@@ -25,7 +25,7 @@ function FullServices() {
                     </div>
 
 
-                    <div className='bg-[#65CEEC1A] min-h-[250px] flex flex-col min-w-[250px] p-5 rounded-xl border-8 border-[#65CEEC]'>
+                    <div className='bg-[#65CEEC1A] min-h-[250px] flex flex-col min-w-[250px] p-5 rounded-xl border-4 border-[#65CEEC]'>
                         <img src="/assets/new/logo.svg" alt="Logo" className="w-[120px]"/>
                         <ul className='text-[#616161] flex flex-col justify-start items-start gap-2'>
                             <div className=' flex justify-start items-center gap-3 '><Check size={15} strokeWidth={3} className='text-[#80E45B]'/><li >Dedicated</li></div>
@@ -40,7 +40,7 @@ function FullServices() {
 
 
 
-                    <div className='bg-white min-h-[250px] flex flex-col min-w-[250px] p-5 rounded-xl border-8 border-[#C6C6C6]'>
+                    <div className='bg-white min-h-[250px] flex flex-col min-w-[250px] p-5 rounded-xl border-4 border-[#C6C6C6]'>
                         <h4 className='text-xl font-roca mb-4'>Staffing Firms</h4>
                         <ul className='text-[#616161] flex flex-col justify-start items-start gap-2'>
                             <div className=' flex justify-start items-center gap-3 '><CircleMinus size={15} strokeWidth={3} className='text-[#FFDD87]'/><li >Dedicated</li></div>
@@ -55,7 +55,7 @@ function FullServices() {
 
 
 
-                    <div className='bg-white min-h-[250px] flex flex-col min-w-[250px] p-5 rounded-xl border-8 border-[#C6C6C6]'>
+                    <div className='bg-white min-h-[250px] flex flex-col min-w-[250px] p-5 rounded-xl border-4 border-[#C6C6C6]'>
                         <h4 className='text-xl font-roca mb-4'>Recruitment Platform</h4>
                         <ul className='text-[#616161] flex flex-col justify-start items-start gap-2'>
                             <div className=' flex justify-start items-center gap-3 '><X size={15} strokeWidth={3} className='text-[#FF5757]'/><li >Dedicated</li></div>

@@ -35,7 +35,7 @@ function ApplicationForm() {
         <hr className='min-w-[250px] h-[2px] bg-primary flex md:hidden'/>
 
 
-        <div className=' md:max-w-[50%] h-full flex flex-col justify-center items-center p-10 md:min-h-[100vh]'>
+        <div className=' md:min-w-[50%] md:max-w-[55%] h-full flex flex-col justify-center items-center p-10 md:min-h-[100vh]'>
           <Form />
         </div>
       </div>

@@ -30,7 +30,7 @@ function CutFire() {
                     <FadeInBottom once={false} duration={0.7} distance={30}>
                         <h2 className="font-roca text-2xl md:text-4xl font-thin text-center">Cut Hire Time By 70%</h2>
                     </FadeInBottom>
-                    <p className='mt-1 text-center text-lg text-[#516371]'>Go beyond with us.</p>
+                    <p className='mt-1 text-center text-lg text-[#516371]'>According to a study by Bersin Research, the average time-to-hire is 44 days and can even be higher in some industries</p>
                 </div>
 
                 {/* Animated Image */}
