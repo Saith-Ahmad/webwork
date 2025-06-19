@@ -60,7 +60,7 @@ function MoreThanResume() {
                         <div className='flex flex-col sm:flex-row justify-center items-center gap-3'>
                             <Link href={'/get-started'}>
                                 <Button size={'lg'} className="bg-black hover:bg-gray-800 hover:scale-105 rounded-full transition-transform duration-300 ease-in-out transform shadow-md">
-                                    Hire Talent <MoveRightIcon />
+                                    Get Hired <MoveRightIcon />
                                 </Button>
                             </Link>
 

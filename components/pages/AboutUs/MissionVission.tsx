@@ -32,9 +32,9 @@ function MissionVission() {
                         Our Mission
                     </h2>
 
-                    <h5 className='mt-3 text-start font-roca text-xl text-black max-w-[600px]'>To help growing teams win with the best talent and smarter systems. <br /><br/> Founder Fahad says this:<br />“Hiring shouldn’t be hard.”
+                    <h5 className='mt-3 text-start font-roca text-xl text-black max-w-[600px]'>Make scaling and delegation easier by pairing ambitious teams with world-class talent and systems that actually scale.<br /><br/> Our Founder Fahad believes:<br />“Hiring shouldn’t be a bottleneck. It should be a breakthrough.”
                     </h5>
-                    <p className='mt-3 text-start  text-lg text-[#516371] max-w-[600px]'>Providing companies and the best talent the opportunities they need to grow.
+                    <p className='mt-3 text-start  text-lg text-[#516371] max-w-[600px]'>We’re here to help companies build lean, high-performing teams, and help real and qualified people do their best work, wherever they are. Because when the right hire meets the right system, everything moves faster.
                     </p>
                 </div>
 

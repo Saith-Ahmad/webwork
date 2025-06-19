@@ -56,13 +56,13 @@ function FullServices() {
 
 
                     <div className='bg-white min-h-[250px] flex flex-col min-w-[250px] p-5 rounded-xl border-4 border-[#C6C6C6]'>
-                        <h4 className='text-xl font-roca mb-4'>Recruitment Platform</h4>
+                        <h4 className='text-xl font-roca mb-4'>Job Boards</h4>
                         <ul className='text-[#616161] flex flex-col justify-start items-start gap-2'>
                             <div className=' flex justify-start items-center gap-3 '><X size={15} strokeWidth={3} className='text-[#FF5757]'/><li >Dedicated</li></div>
                             <div className=' flex justify-start items-center gap-3 '><Check size={15} strokeWidth={3} className='text-[#80E45B]'/><li >Fast</li></div>
                             <div className=' flex justify-start items-center gap-3 '><Check size={15} strokeWidth={3} className='text-[#80E45B]'/><li >Flexible</li></div>
                             <div className=' flex justify-start items-center gap-3 '><X size={15} strokeWidth={3} className='text-[#FF5757]'/><li >Elite</li></div>
-                            <div className=' flex justify-start items-center gap-3 '><Check size={15} strokeWidth={3} className='text-[#80E45B]'/><li >Fully Supported</li></div>
+                            <div className=' flex justify-start items-center gap-3 '><X size={15} strokeWidth={3} className='text-[#FF5757]'/><li >Fully Supported</li></div>
                             <div className=' flex justify-start items-center gap-3 '><CircleMinus size={15} strokeWidth={3} className='text-[#FFDD87]'/><li >Dependable</li></div>
                         </ul>
                     </div>

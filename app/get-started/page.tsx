@@ -26,10 +26,10 @@ function GetStarted() {
 
           <FadeInBottom duration={0.8} distance={60} once={false}>
             <h1 className='text-center text-black font-roca md:text-4xl text-3xl font-bold mt-4'>
-              Hire Top Talent,<br /> Build Your Dream Team
+              Streamline your sales,<br /> Scale with confidence.
             </h1>
           </FadeInBottom>
-          <p className='text-[#516371] text-center p-4 md:p-8 text-base md:text-lg font-normal max-w-[500px] '>We connect you with world-class professionals in sales, design, tech, and operations – all rigorously vetted and ready to drive results</p>
+          <p className='text-[#516371] text-center p-4 md:p-8 text-base md:text-lg font-normal max-w-[500px] '>Get expert built scaleable system, Seamless automated journey, and strategy to boost conversions, save time and retain high value clients.</p>
         </div>
 
         <hr className='min-h-[500px] w-[4px] bg-primary hidden md:flex'/>
