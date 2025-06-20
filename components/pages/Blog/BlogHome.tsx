@@ -19,7 +19,7 @@ const BlogsPage = () => {
 
     // Pagination
     const [currentPage, setCurrentPage] = useState(1);
-    const postsPerPage = 15;
+    const postsPerPage = 12;
 
     // Debounce search term
     const debouncedSearchTerm = useDebounce(searchTerm, 500);
