@@ -62,7 +62,7 @@ function FullServices() {
                             <div className=' flex justify-start items-center gap-3 '><Check size={15} strokeWidth={3} className='text-[#80E45B]'/><li >Fast</li></div>
                             <div className=' flex justify-start items-center gap-3 '><Check size={15} strokeWidth={3} className='text-[#80E45B]'/><li >Flexible</li></div>
                             <div className=' flex justify-start items-center gap-3 '><X size={15} strokeWidth={3} className='text-[#FF5757]'/><li >Elite</li></div>
-                            <div className=' flex justify-start items-center gap-3 '><Check size={15} strokeWidth={3} className='text-[#80E45B]'/><li >Fully Supported</li></div>
+                            <div className=' flex justify-start items-center gap-3 '><X size={15} strokeWidth={3} className='text-[#FF5757]'/><li >Fully Supported</li></div>
                             <div className=' flex justify-start items-center gap-3 '><CircleMinus size={15} strokeWidth={3} className='text-[#FFDD87]'/><li >Dependable</li></div>
                         </ul>
                     </div>

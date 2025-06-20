@@ -166,7 +166,7 @@ const Form = () => {
             <InputField id="lastName" label="Last name" value={formData.lastName} error={errors.lastName} onChange={handleChange} />
             <InputField id="linkedinurl" label="LinkedIn Profile URL" value={formData.linkedinurl} error={errors.linkedinurl} onChange={handleChange} />
             <InputField id="phoneNumber" label="Phone Number" value={formData.phoneNumber} error={errors.phoneNumber} onChange={handleChange} />
-            <InputField id="videoLink" label="Add your video link here" value={formData.videoLink} onChange={handleChange} className="md:col-span-2" />
+            <InputField id="videoLink" label="Short Video Intro (1 min) - Google Drive or Loom Link" value={formData.videoLink} onChange={handleChange} className="md:col-span-2" />
 
             <div className="flex flex-col justify-center items-center gap-1 border-2 border-dashed border-gray-300 rounded-md p-4 text-center md:col-span-2">
                 <CloudUpload className='text-[#00B7EB] mx-auto' size={40} />
@@ -176,7 +176,7 @@ const Form = () => {
                 <label htmlFor="fileUpload"
                     className={`cursor-pointer px-5 py-2 text-sm bg-blue-50 border-[2px] border-[#00B7EBB2] text-[#00B7EBB2] font-medium rounded hover:bg-[#00B7EBB2] hover:text-white transition-all ${isUploading ? 'opacity-50 cursor-not-allowed' : ''}`}
                 >
-                    Select File
+                    Updated Resume
                 </label>
 
                 <input
