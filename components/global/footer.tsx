@@ -2,7 +2,7 @@
 
 import { usePathname } from 'next/navigation';
 import { footerLinks1, footerLinks2 } from '@/lib/constants/constants';
-import { ArrowRight, Check, Facebook, Instagram, Linkedin, Loader, Mail, Phone } from 'lucide-react';
+import { ArrowRight, Check, Facebook, Instagram, Linkedin, Loader, Loader2, Mail, Phone } from 'lucide-react';
 import Image from 'next/image';
 import React, { useState } from 'react';
 import FadeInLeft from '../framermotion/FadeInLeft';
@@ -20,38 +20,47 @@ const Footer = () => {
     }
 
     const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        setLoading(true);
+  e.preventDefault();
+  setLoading(true);
 
-        try {
-            const response = await fetch("https://script.google.com/macros/s/AKfycbyF2fK_kQ8cOMZwmgnWQZBBMsVDcD7JY1UiWFBdbaajUesrj4gQH87ah7aZuUcYGfg8/exec", {
-                method: "POST",
-                mode: "no-cors",
-                body: JSON.stringify({ email }),
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            });
+    const AIRTABLE_BASE_ID = process.env.NEXT_PUBLIC_AIRTABLE_BASE_ID;
+    const AIRTABLE_TABLE_NAME = 'Subscriptions'; 
+    const AIRTABLE_TOKEN = process.env.NEXT_PUBLIC_AIRTABLE_TOKEN;
 
-            if (response) {
-                console.log("Subscribe");
-                setEmail('');          // Clear the input field
-                setIsSend(true);       // Show success message
 
-                // Hide success message and redirect after 3 seconds
-                setTimeout(() => {
-                    setIsSend(false);
-                    window.location.href = '/';  // Redirect to home page
-                }, 3000);
-            } else {
-                console.log("Failed to send email");
-            }
-        } catch (error) {
-            console.log("Error:", error);
-        } finally {
-            setLoading(false);
-        }
-    };
+  const url = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_NAME}`;
+
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+       Authorization: `Bearer ${AIRTABLE_TOKEN}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        fields: {
+          email: email,
+        },
+      }),
+    });
+    console.log(response);
+
+    if (response.ok) {
+      setEmail('');
+      setIsSend(true);
+
+      setTimeout(() => {
+        setIsSend(false);
+      }, 4000);
+    } else {
+      console.error('Airtable Error:', await response.text());
+    }
+  } catch (error) {
+    console.error('Error submitting to Airtable:', error);
+  } finally {
+    setLoading(false);
+  }
+};
 
     return (
         <footer className="bg-[#161C28] text-[#A6A6A6] p-8 pt-20 mt-10">
@@ -86,17 +95,17 @@ const Footer = () => {
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 placeholder="Enter your email"
-                                className="outline-none bg-transparent flex-grow px-4 w-full"
+                                className="outline-none bg-transparent flex-grow px-4 w-full text-white"
                             />
                             <button
                                 type="submit"
                                 className="p-2 text-white transition-colors bg-[#00B7EB] hover:bg-[#2aa4c6] rounded-full"
                             >
-                                {loading ? <Loader /> : <ArrowRight className="h-7 w-7" />}
+                                {loading ? <Loader2 className='animate-spin'/> : <ArrowRight className="h-7 w-7" />}
 
                             </button>
                         </form>
-                        {send && <div className='flex ms-3 gap-3 justify-start items-center'><Check className='w-8 h-8 text-green-800' strokeWidth={5} /><p className='text-[] font-semibold'>Thanks for Subscribing</p></div>}
+                        {send && <div className='flex ms-3 gap-3 justify-start items-center'><Check className='w-6 h-6 text-white' strokeWidth={5} /><p className='text-[] font-normal text-gray-300'>Thanks for Subscribing</p></div>}
                         {/* social icons */}
                         <div className='flex justify-start items-center gap-2 mt-3'>
                             <a href='https://www.facebook.com/share/1GnpWaB48q/' target='_blank'><div className='bg-[#00B7EB] p-3 rounded-full w-[45px] h-[45px] flex justify-center items-center hover:scale-105 transition-transform duration-200'><Facebook strokeWidth={1} fill='white' color='white' width={20} /></div></a>

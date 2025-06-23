@@ -61,37 +61,58 @@ const ContactForm = () => {
         return Object.keys(newErrors).length === 0;
     };
 
-    const handleSubmit = async (e: React.FormEvent) => {
-        setSubmitting(true);
-        e.preventDefault();
-        if (validateForm()) {
-            try {
-                const response = await fetch("https://script.google.com/macros/s/AKfycbyuK3DTmChvzZZoeVcXmt01zCSxDJHCc9Be7Ckua-fZ1F3eTQ3ndpGKG7mwvAH5zUnR/exec", {
-                    method: "POST",
-                    mode: "no-cors",  // Disable CORS (not recommended for production)
-                    body: JSON.stringify(formData),
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                });
 
-                if (response) {
-                    console.log("Data sent successfully");
-                    // setFormData(initialFormData);  // Clear the form
-                    setIsFormValid(false);  // Reset form validity
-                    setIsCalendlyOpen(true);
-                } else {
-                    console.log("Failed to send data");
-                }
-            } catch (error) {
-                console.log("Error:", error);
-            } finally {
-                setSubmitting(false);
-            }
-        } else {
-            setSubmitting(false);
-        }
-    };
+
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setSubmitting(true);
+
+  if (!validateForm()) {
+    setSubmitting(false);
+    return;
+  }
+
+  const AIRTABLE_BASE_ID = process.env.NEXT_PUBLIC_AIRTABLE_BASE_ID;
+  const AIRTABLE_TOKEN = process.env.NEXT_PUBLIC_AIRTABLE_TOKEN;
+  console.log(AIRTABLE_BASE_ID, AIRTABLE_TOKEN);
+
+  const url = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/ContactFormSubmissions`;
+
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${AIRTABLE_TOKEN}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        fields: {
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          workEmail: formData.workEmail,
+          companySize: formData.companySize,
+          companyWebsite: formData.companyWebsite,
+          phoneNumber: formData.phoneNumber,
+          headquarters: formData.headquarters,
+        },
+      }),
+    });
+    console.log("response=======",  response);
+
+    if (response.ok) {
+      setIsCalendlyOpen(true);
+      setIsFormValid(false);
+    } else {
+      console.error('Airtable Error:', await response.text());
+    }
+  } catch (error) {
+    console.error('Error submitting to Airtable:', error);
+  } finally {
+    setSubmitting(false);
+  }
+};
+
+
 
     return (
         <div className='md:mt-10'>

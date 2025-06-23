@@ -47,8 +47,8 @@ const Form = () => {
         const file = e.target.files?.[0];
         if (!file) return;
 
-        if (file.size > 10 * 1024 * 1024) {
-            setUploadError('File size must be 10MB or less.');
+        if (file.size > 5 * 1024 * 1024) {
+            setUploadError('File size must be 5 MB or less.');
             setUploadedFile(null);
             return;
         }
@@ -112,6 +112,7 @@ const Form = () => {
         return Object.keys(newErrors).length === 0;
     };
 
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setSubmitting(true);
@@ -122,29 +123,50 @@ const Form = () => {
             return;
         }
 
-        try {
-            const allData = { ...formData, fileUrl: fileUploadUrl };
-            console.log(allData);
+        const AIRTABLE_BASE_ID = process.env.NEXT_PUBLIC_AIRTABLE_BASE_ID!;
+        const AIRTABLE_TOKEN = process.env.NEXT_PUBLIC_AIRTABLE_TOKEN!;
+        const AIRTABLE_TABLE_NAME = 'JobApplications'; // must match your Airtable table name exactly
 
-            const response = await fetch('/api/sendtosheet', {
+        const url = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_NAME}`;
+
+        try {
+            const response = await fetch(url, {
                 method: 'POST',
                 headers: {
+                    Authorization: `Bearer ${AIRTABLE_TOKEN}`,
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(allData),
+                body: JSON.stringify({
+                    fields: {
+                        firstName: formData.firstName,
+                        lastName: formData.lastName,
+                        linkedinurl: formData.linkedinurl,
+                        phoneNumber: formData.phoneNumber,
+                        videoLink: formData.videoLink,
+                        fileUrl: fileUploadUrl,
+                    },
+                }),
             });
 
-            console.log("response ====, ", response);
-            const result = await response.json();
-            console.log('Google Sheets response:', result);
+            console.log('Airtable response ====', response);
 
-            // Reset form
-            setFormData({ firstName: '', lastName: '', linkedinurl: '', phoneNumber: '', videoLink: '' });
-            setUploadedFile(null);
-            setFileUploadUrl('');
-            setIsFormValid(false);
-            setSuccessMessage('Data sent successfully!');
-            setTimeout(() => router.push('/'), 3000);
+            if (response.ok) {
+                setFormData({
+                    firstName: '',
+                    lastName: '',
+                    linkedinurl: '',
+                    phoneNumber: '',
+                    videoLink: '',
+                });
+                setUploadedFile(null);
+                setFileUploadUrl('');
+                setIsFormValid(false);
+                setSuccessMessage('Data sent successfully!');
+                setTimeout(() => router.push('/'), 3000);
+            } else {
+                const errorText = await response.text();
+                console.error('Submission Error:', errorText);
+            }
         } catch (err: any) {
             console.error('Submission error:', err);
         } finally {
@@ -152,69 +174,76 @@ const Form = () => {
         }
     };
 
-   return (
-    <div className="md:mt-10">
-        <h2 className="text-center text-3xl md:text-4xl font-bold font-roca">Be a part of our talent pool</h2>
 
-        {successMessage && (
-            <p className="text-center text-green-600 my-4">{successMessage}</p>
-        )}
 
-        <form onSubmit={handleSubmit} className="w-full h-full min-h-[20vh] mx-auto grid grid-cols-1 md:grid-cols-2 gap-3 md:p-1 mt-10">
 
-            <InputField id="firstName" label="First name" value={formData.firstName} error={errors.firstName} onChange={handleChange} />
-            <InputField id="lastName" label="Last name" value={formData.lastName} error={errors.lastName} onChange={handleChange} />
-            <InputField id="linkedinurl" label="LinkedIn Profile URL" value={formData.linkedinurl} error={errors.linkedinurl} onChange={handleChange} />
-            <InputField id="phoneNumber" label="Phone Number" value={formData.phoneNumber} error={errors.phoneNumber} onChange={handleChange} />
-            <InputField id="videoLink" label="Short Video Intro (1 min) - Google Drive or Loom Link" value={formData.videoLink} onChange={handleChange} className="md:col-span-2" />
 
-            <div className="flex flex-col justify-center items-center gap-1 border-2 border-dashed border-gray-300 rounded-md p-4 text-center md:col-span-2">
-                <CloudUpload className='text-[#00B7EB] mx-auto' size={40} />
-                <p className='text-lg'>Select a file or drag and drop here</p>
-                <p className='text-gray-400 text-sm'>JPG, PNG or PDF, file size no more than 10MB</p>
 
-                <label htmlFor="fileUpload"
-                    className={`cursor-pointer px-5 py-2 text-sm bg-blue-50 border-[2px] border-[#00B7EBB2] text-[#00B7EBB2] font-medium rounded hover:bg-[#00B7EBB2] hover:text-white transition-all ${isUploading ? 'opacity-50 cursor-not-allowed' : ''}`}
-                >
-                    Updated Resume
-                </label>
 
-                <input
-                    id="fileUpload"
-                    type="file"
-                    accept=".jpg,.jpeg,.png,.pdf"
-                    onChange={handleFileChange}
-                    className="mt-2 hidden"
-                    disabled={isUploading}
-                />
 
-                {uploadedFile && (
-                    <p className="text-sm text-gray-600 mt-1">
-                        <span className="font-medium">{uploadedFile.name}</span>
-                    </p>
-                )}
+    return (
+        <div className="md:mt-10">
+            <h2 className="text-center text-3xl md:text-4xl font-bold font-roca">Be a part of our talent pool</h2>
 
-                {isUploading && <Loader className="mx-auto animate-spin" />}
-                {fileUploadUrl && <p className="text-green-500 text-xs">File Uploaded Successfully</p>}
-                {uploadError && <p className="text-red-500 mt-2">{uploadError}</p>}
-            </div>
+            {successMessage && (
+                <p className="text-center text-green-600 my-4">{successMessage}</p>
+            )}
 
-            <p className='text-sm text-center text-black my-2 md:col-span-2'>
-                We respect your data. By submitting this form, you agree that we will contact you in relation to our products and services, in accordance with our privacy policy.
-            </p>
+            <form onSubmit={handleSubmit} className="w-full h-full min-h-[20vh] mx-auto grid grid-cols-1 md:grid-cols-2 gap-3 md:p-1 mt-10">
 
-            <div className="md:col-span-2 flex justify-center">
-                <button
-                    type="submit"
-                    className={`ml-[50%] translate-x-[-60%] font-semibold bg-[#00B7EB] text-white py-3 min-w-[200px] rounded-md hover:bg-gray-800 transition-all ${(!isFormValid || submitting || isUploading) && 'opacity-90 cursor-not-allowed'}`}
-                    disabled={!isFormValid || submitting || isUploading}
-                >
-                    {submitting ? 'Submitting...' : 'Submit'}
-                </button>
-            </div>
-        </form>
-    </div>
-);
+                <InputField id="firstName" label="First name" value={formData.firstName} error={errors.firstName} onChange={handleChange} />
+                <InputField id="lastName" label="Last name" value={formData.lastName} error={errors.lastName} onChange={handleChange} />
+                <InputField id="linkedinurl" label="LinkedIn Profile URL" value={formData.linkedinurl} error={errors.linkedinurl} onChange={handleChange} />
+                <InputField id="phoneNumber" label="Phone Number" value={formData.phoneNumber} error={errors.phoneNumber} onChange={handleChange} />
+                <InputField id="videoLink" label="Short Video Intro (1 min) - Google Drive or Loom Link" value={formData.videoLink} onChange={handleChange} className="md:col-span-2" />
+
+                <div className="flex flex-col justify-center items-center gap-1 border-2 border-dashed border-gray-300 rounded-md p-4 text-center md:col-span-2">
+                    <CloudUpload className='text-[#00B7EB] mx-auto' size={40} />
+                    <p className='text-lg'>Select a file or drag and drop here</p>
+                    <p className='text-gray-400 text-sm'>JPG, PNG or PDF, file size no more than 10MB</p>
+
+                    <label htmlFor="fileUpload"
+                        className={`cursor-pointer px-5 py-2 text-sm bg-blue-50 border-[2px] border-[#00B7EBB2] text-[#00B7EBB2] font-medium rounded hover:bg-[#00B7EBB2] hover:text-white transition-all ${isUploading ? 'opacity-50 cursor-not-allowed' : ''}`}
+                    >
+                        Upload Resume
+                    </label>
+
+                    <input
+                        id="fileUpload"
+                        type="file"
+                        accept=".jpg,.jpeg,.png,.pdf"
+                        onChange={handleFileChange}
+                        className="mt-2 hidden"
+                        disabled={isUploading}
+                    />
+
+                    {uploadedFile && (
+                        <p className="text-sm text-gray-600 mt-1">
+                            <span className="font-medium">{uploadedFile.name}</span>
+                        </p>
+                    )}
+
+                    {isUploading && <Loader className="mx-auto animate-spin" />}
+                    {fileUploadUrl && <p className="text-green-500 text-xs">File Uploaded Successfully</p>}
+                    {uploadError && <p className="text-red-500 mt-2">{uploadError}</p>}
+                </div>
+
+                <p className='text-sm text-center text-black my-2 md:col-span-2'>
+                    We respect your data. By submitting this form, you agree that we will contact you in relation to our products and services, in accordance with our privacy policy.
+                </p>
+
+                <div className="md:col-span-2 flex justify-center">
+                    <button
+                        type="submit"
+                        className={`ml-[50%] translate-x-[-60%] font-semibold bg-[#00B7EB] text-white py-3 min-w-[200px] rounded-md hover:bg-gray-800 transition-all ${(!isFormValid || submitting || isUploading) && 'opacity-90 cursor-not-allowed'}`}
+                        disabled={!isFormValid || submitting || isUploading}
+                    >
+                        {submitting ? 'Submitting...' : 'Submit'}
+                    </button>
+                </div>
+            </form>
+        </div>
+    );
 
 };
 
