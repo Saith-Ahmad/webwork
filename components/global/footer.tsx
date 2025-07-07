@@ -157,8 +157,8 @@ const Footer = () => {
 
                     <FadeInTop duration={1} once={false}>
                         <ul className='flex flex-row justify-center items-center gap-10 text-white'>
-                            <li className='hover:text-white text-sm md:text-base'>Terms and Condtions</li>
-                            <li className='hover:text-white text-sm md:text-base'>Privacy Policy</li>
+                            <Link href={'/terms-and-conditions'}><li className='hover:text-white text-sm md:text-base'>Terms and Condtions</li></Link>
+                            <Link href={'/privacy-policy'}><li className='hover:text-white text-sm md:text-base'>Privacy Policy</li></Link>
                         </ul >
                     </FadeInTop>
                 </div>
