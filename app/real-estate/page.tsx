@@ -1,23 +1,26 @@
-'use client'
-import Challenges from '@/components/pages/RealEstate/Challenges'
-import RealEstateHero from '@/components/pages/RealEstate/Hero'
-import RemotePartners from '@/components/pages/RealEstate/RemotePartners'
-import TimelineRealEstate from '@/components/pages/RealEstate/TimeLineRealEstate'
-import WhyRemoteStaffing from '@/components/pages/RealEstate/WhyRemoteStaffing'
-import HireTopTalent from '@/components/pages/TalentOutsourcing/HireTopTalent'
+import BlogsSection from '@/components/pages/Home/BlogsSections'
+import Beyondway from '@/components/pages/realestate/Beyondway'
+import CTARealEstate from '@/components/pages/realestate/CtaRealEstate'
+import ImmediateWins from '@/components/pages/realestate/ImeediateWins'
+import LounchPath from '@/components/pages/realestate/LounchPath'
+import PressureEveryAgentFeel from '@/components/pages/realestate/PressureAgentFeel'
+import RealEstateHero from '@/components/pages/realestate/RealEstateHero'
+import TalentReplacement from '@/components/pages/realestate/TalentReplacement'
 import React from 'react'
 
-function RealEstate() {
+function page() {
   return (
     <div>
-        <RealEstateHero/>
-        <WhyRemoteStaffing/>
-        <Challenges/>
-        <RemotePartners/>
-        <TimelineRealEstate/>
-        <HireTopTalent heading={"Ready to Hire Top Talent?"} para={"Tell us your needs, and we'll match you with the perfect candidate."} btnText={"Get Started"}/>
+      <RealEstateHero/>
+      <PressureEveryAgentFeel/>
+      <Beyondway/>
+      <TalentReplacement/>
+      <ImmediateWins/>
+      <LounchPath/>
+      <BlogsSection/>
+      <CTARealEstate/>
     </div>
   )
 }
 
-export default RealEstate
+export default page

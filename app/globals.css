@@ -9,6 +9,12 @@
 
 }
 
+
+.custom-list li::marker {
+  font-size: 20px; /* Adjust size */
+  color: #00B7EB;    /* Blue bullet */
+}
+
 /* Target placeholder in ShadCN (Radix) select */
 [data-placeholder] {
   color: #BDBDBD !important; /* Or your desired light gray */

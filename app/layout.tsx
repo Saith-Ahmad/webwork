@@ -67,7 +67,7 @@ export default function RootLayout({
           <Toaster />
           {children}
           <Footer />
-        </body>
+        </body> 
       </html>
     </ClerkProvider>
   );
