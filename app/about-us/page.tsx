@@ -7,6 +7,11 @@ import OurValues from '@/components/pages/AboutUs/OurValues'
 import WeGotHere from '@/components/pages/AboutUs/WeGotHere'
 import React from 'react'
 
+export const metadata = {
+  title: "About",
+}
+
+
 function AboutUs() {
   return (
     <>

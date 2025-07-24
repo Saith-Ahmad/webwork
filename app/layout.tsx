@@ -7,7 +7,7 @@ import { Toaster } from "sonner";
 import { ClerkProvider } from "@clerk/nextjs";
 import Head from "next/head";
 import Script from "next/script";
-import { metadata } from "../lib/constants/constants";
+import { metadata } from "./metadata";
 
 const Roca = localfont({
   src: [{ path: "../public/fonts/rocabold.ttf", weight: "700" }],

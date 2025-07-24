@@ -6,6 +6,7 @@ import FadeInLeft from '@/components/framermotion/FadeInLeft'
 import FadeInBottom from '@/components/framermotion/FadeInBottom'
 import Link from 'next/link'
 
+
 function GetStarted() {
   return (
     <div className='container'>
