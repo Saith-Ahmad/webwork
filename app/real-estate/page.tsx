@@ -8,6 +8,14 @@ import RealEstateHero from '@/components/pages/realestate/RealEstateHero'
 import TalentReplacement from '@/components/pages/realestate/TalentReplacement'
 import React from 'react'
 
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Real Estate',
+}
+
+
+
 function page() {
   return (
     <div>

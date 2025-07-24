@@ -5,19 +5,27 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: {
-     default: `Beyondhut`,
-      template: `%s | Beyondhut`,
+    default: `Beyondhut`,
+    template: `%s | Beyondhut`,
   },
-  description: "Top Choice for Remote Talent Hiring and Management",
+  description: "Top Choice for Remote Talent Hiring and Management Build Your Dream Team With The Best Talent And Management Hassle Free",
   keywords: [
     "remote hiring",
-    "remote developers",
-    "hire developers",
-    "hire remote team",
     "tech talent",
     "beyondhut",
+    "beyond hut",
     "remote jobs",
     "software engineers hiring",
+    "Top-tier talent",
+    "Hire remote teams",
+    "Recruitment services",
+    "Talent acquisition",
+    "Business staffing solutions",
+    "Cost-effective hiring",
+    "Team management support",
+    "Job placement services",
+    "Vetted professionals",
+    "Build your dream team"
   ],
   verification: {
     google: "9OJmvbrN5TpSQo-bvh3WbY5VTd5PAW3zds6fJP571oA",
@@ -28,10 +36,10 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: {
-     default: "Beyondhut",
+      default: "Beyondhut",
       template: `%s | Beyondhut`,
     },
-    description: "Top Choice for Remote Talent Hiring and Management",
+    description: "Top Choice for Remote Talent Hiring and Management Build Your Dream Team With The Best Talent And Management Hassle Free",
     url: "https://beyondhut.com",
     siteName: "Beyondhut",
     images: [
@@ -48,7 +56,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Beyondhut",
-    description: "Top Choice for Remote Talent Hiring and Management",
+    description: "Top Choice for Remote Talent Hiring and Management Build Your Dream Team With The Best Talent And Management Hassle Free",
     images: ["https://beyondhut.com/og-image.png"],
   },
   alternates: {

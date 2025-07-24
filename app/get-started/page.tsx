@@ -1,10 +1,17 @@
-'use client'
+
 import Image from 'next/image'
 import React from 'react'
 import ContactForm from './GetStartedForm'
 import FadeInLeft from '@/components/framermotion/FadeInLeft'
 import FadeInBottom from '@/components/framermotion/FadeInBottom'
 import Link from 'next/link'
+
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Get Started',
+}
+
 
 
 function GetStarted() {

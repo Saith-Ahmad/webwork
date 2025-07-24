@@ -8,6 +8,8 @@ import { ClerkProvider } from "@clerk/nextjs";
 import Head from "next/head";
 import Script from "next/script";
 import { metadata } from "./metadata";
+import CookieBanner from "@/components/global/CookieBanner";
+
 
 const Roca = localfont({
   src: [{ path: "../public/fonts/rocabold.ttf", weight: "700" }],
@@ -66,6 +68,7 @@ export default function RootLayout({
           <Header />
           <Toaster />
           {children}
+           <CookieBanner />
           <Footer />
         </body> 
       </html>

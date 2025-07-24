@@ -1,9 +1,14 @@
-'use client'
+
 import Image from 'next/image'
 import React from 'react'
 import FadeInLeft from '@/components/framermotion/FadeInLeft'
 import FadeInBottom from '@/components/framermotion/FadeInBottom'
 import Form from './Form'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Application Form',
+}
 
 function ApplicationForm() {
   return (
