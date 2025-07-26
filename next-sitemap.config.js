@@ -18,4 +18,14 @@ module.exports = {
   changefreq: 'daily',
   priority: 0.7,
   sitemapSize: 5000,
-};
+  // Add this to ensure current dates are used
+  transform: async (config, path) => {
+    return {
+      loc: path,
+      changefreq: config.changefreq,
+      priority: config.priority,
+      lastmod: new Date().toISOString(),
+      alternateRefs: config.alternateRefs ?? [],
+    }
+  },
+}
