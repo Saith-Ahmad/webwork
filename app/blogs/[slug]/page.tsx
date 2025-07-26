@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { Skeleton } from "@/components/ui/skeleton";
 import Link from "next/link";
+import Head from "next/head";
 
 const SingleBlogPage = () => {
     const { slug } = useParams();
@@ -95,7 +96,26 @@ const SingleBlogPage = () => {
     }
 
     return (
-        <div className="container py-10 min-h-[80vh] grid grid-cols-1 lg:grid-cols-3 gap-10">
+        <>
+            <Head>
+                <title>{post.title.rendered} | BeyondHut</title>
+                <meta name="description" content={stripHtml(post.content.rendered).substring(0, 160)} />
+                <link rel="canonical" href={`https://beyondhut.com/blogs/${slug}`} />
+                <meta property="og:title" content={post.title.rendered} />
+                <meta property="og:description" content={stripHtml(post.content.rendered).substring(0, 160)} />
+                <meta property="og:url" content={`https://beyondhut.com/blogs/${slug}`} />
+                <meta property="og:type" content="article" />
+                {post._embedded?.["wp:featuredmedia"]?.[0]?.source_url && (
+                    <meta property="og:image" content={post._embedded["wp:featuredmedia"][0].source_url} />
+                )}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={post.title.rendered} />
+                <meta name="twitter:description" content={stripHtml(post.content.rendered).substring(0, 160)} />
+                {post._embedded?.["wp:featuredmedia"]?.[0]?.source_url && (
+                    <meta name="twitter:image" content={post._embedded["wp:featuredmedia"][0].source_url} />
+                )}
+            </Head>
+            <div className="container py-10 min-h-[80vh] grid grid-cols-1 lg:grid-cols-3 gap-10">
             {/* Main Content */}
             <div className="md:col-span-2">
                 {/* Hero Image */}
@@ -181,6 +201,7 @@ const SingleBlogPage = () => {
                 </div>
             </div>
         </div>
+        </>
     );
 };
 
