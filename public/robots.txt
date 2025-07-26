@@ -4,6 +4,7 @@ Allow: /
 Disallow: /admin-dashboard
 Disallow: /admin-dashboard/*
 Disallow: /see-applicants
+Disallow: /api/*
 
 # Host
 Host: https://beyondhut.com
