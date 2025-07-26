@@ -26,7 +26,7 @@ module.exports = {
   changefreq: 'weekly',
   priority: 0.8,
   sitemapSize: 5000,
-  generateIndexSitemap: true,
+  generateIndexSitemap: false,  // This will create only one sitemap
   // Add this to ensure current dates are used
   transform: async (config, path) => {
     return {
