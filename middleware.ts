@@ -5,8 +5,17 @@ const isPublicRoute = createRouteMatcher([
   "/sign-in(.*)",
   "/sign-up(.*)",
   "/",         // Make home route public
-  "/about(.*)",// Example of other public routes if you have them
-  "/contact(.*)", // Example of other public routes if you have them
+  "/about-us(.*)",
+  "/blogs(.*)",
+  "/privacy-policy(.*)",
+  "/real-estate(.*)",
+  "/sales-systems(.*)",
+  "/job-seekers(.*)",
+  "/talent-outsourcing(.*)",
+  "/get-started(.*)",
+  "/application-form(.*)",
+  "/job-listings(.*)",
+  "/terms-and-conditions(.*)",
   "/api(.*)"   // Make all API routes public
 ]);
 
