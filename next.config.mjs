@@ -2,7 +2,7 @@
 const nextConfig = {
     trailingSlash: false,
     async redirects() {
-        return [];
+        return [];t
     },
     images: {
         remotePatterns: [
@@ -21,6 +21,10 @@ const nextConfig = {
           {
             protocol: 'https',
             hostname: 'blog.beyondhut.com',
+          },
+          {
+            protocol: 'https',
+            hostname: 'webwork.store',
           },
         ],
       },
