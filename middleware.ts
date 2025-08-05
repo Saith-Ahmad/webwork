@@ -23,6 +23,11 @@ export default clerkMiddleware(async (auth, request) => {
   const url = new URL(request.url);
   const path = url.pathname;
 
+  // Check if it's a public route first
+  if (isPublicRoute(request)) {
+    return; // Allow access without authentication
+  }
+
   // Protect only /admin-dashboard and its sub-routes
   if (path.startsWith("/admin-dashboard")) {
     await auth.protect();
