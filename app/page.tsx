@@ -22,7 +22,7 @@ function Home() {
       <GrowthPuzzle/>
       <FullServices/>
       <WhyChoose/>
-      <BlogsSection/>
+      {/* <BlogsSection/> */}
       <StartWithUs/>
     </div>
   )

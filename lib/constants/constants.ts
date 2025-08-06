@@ -5,7 +5,7 @@ export const navLinks = [
     { name: "Job Seekers", url: "/job-seekers" },
     { name: "Real Estate", url: "/real-estate" },
     { name: "About Us", url: "/about-us" },
-    { name: "Blogs", url: "/blogs" },
+    // { name: "Blogs", url: "/blogs" },
   ];
 
 
