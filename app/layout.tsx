@@ -5,7 +5,6 @@ import Header from "@/components/global/header";
 import Footer from "@/components/global/footer";
 import { Toaster } from "sonner";
 import { ClerkProvider } from "@clerk/nextjs";
-import Head from "next/head";
 import Script from "next/script";
 import { metadata } from "./metadata";
 import CookieBanner from "@/components/global/CookieBanner";
@@ -35,7 +34,8 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <Head>
+        <head>
+          <link rel="sitemap" type="application/xml" title="Sitemap" href="https://beyondhut.com/sitemap.xml" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="theme-color" content="#000000" />
           <meta name="format-detection" content="telephone=no" />
@@ -48,7 +48,7 @@ export default function RootLayout({
               alt="Meta Pixel"
             />
           </noscript>
-        </Head>
+        </head>
 
         <Script id="meta-pixel" strategy="afterInteractive">
           {`
@@ -106,9 +106,9 @@ export default function RootLayout({
           <Header />
           <Toaster />
           {children}
-           <CookieBanner />
+          <CookieBanner />
           <Footer />
-        </body> 
+        </body>
       </html>
     </ClerkProvider>
   );

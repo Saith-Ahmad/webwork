@@ -80,6 +80,7 @@ export const metadata: Metadata = {
   },
   category: "business",
   classification: "business",
+
 };
 
 
