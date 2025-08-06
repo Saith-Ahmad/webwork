@@ -7,7 +7,7 @@ Disallow: /see-applicants
 Disallow: /api/*
 
 # Host
-Host: https://beyondhut.com
+Host: https://webwork.store
 
 # Sitemaps
-Sitemap: https://beyondhut.com/sitemap.xml
+Sitemap: https://webwork.store/sitemap.xml

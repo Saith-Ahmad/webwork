@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://beyondhut.com',
+  siteUrl: 'https://webwork.store',
   generateRobotsTxt: true,
   exclude: [
     '/admin-dashboard',        // exact route
@@ -20,7 +20,7 @@ module.exports = {
       },
     ],
     additionalSitemaps: [
-      'https://beyondhut.com/sitemap.xml',
+      'https://webwork.store/sitemap.xml',
     ],
   },
   changefreq: 'weekly',

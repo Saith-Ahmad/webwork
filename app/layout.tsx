@@ -35,7 +35,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <head>
-          <link rel="sitemap" type="application/xml" title="Sitemap" href="https://beyondhut.com/sitemap.xml" />
+          <link rel="sitemap" type="application/xml" title="Sitemap" href="https://webwork.store/sitemap.xml" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="theme-color" content="#000000" />
           <meta name="format-detection" content="telephone=no" />
@@ -73,8 +73,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               "name": "BeyondHut",
-              "url": "https://beyondhut.com",
-              "logo": "https://beyondhut.com/logo.png",
+              "url": "https://webwork.store",
+              "logo": "https://webwork.store/logo.png",
               "description": "Top Choice for Remote Talent Hiring and Management. Build Your Dream Team With The Best Talent And Management Hassle Free.",
               "foundingDate": "2024",
               "address": {
@@ -88,7 +88,7 @@ export default function RootLayout({
                 "email": "info@beyondhut.com"
               },
               "sameAs": [
-                "https://beyondhut.com"
+                "https://webwork.store"
               ],
               "serviceType": [
                 "Remote Talent Hiring",

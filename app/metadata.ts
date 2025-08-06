@@ -4,7 +4,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://beyondhut.com'),
+  metadataBase: new URL('https://webwork.store'),
   title: {
     default: `BeyondHut - Top Choice for Remote Talent Hiring and Management`,
     template: `%s | BeyondHut`,
@@ -55,11 +55,11 @@ export const metadata: Metadata = {
       template: `%s | BeyondHut`,
     },
     description: "Build Your Dream Team With The Best Talent And Management Hassle Free. BeyondHut helps businesses scale with cost-effective top-tier talent vetted, trained and ready to plug into your team.",
-    url: "https://beyondhut.com",
+    url: "https://webwork.store",
     siteName: "BeyondHut",
     images: [
       {
-        url: "https://beyondhut.com/og-image.png",
+        url: "https://webwork.store/og-image.png",
         width: 1200,
         height: 630,
         alt: "BeyondHut - Remote Talent Hiring and Management",
@@ -72,11 +72,11 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "BeyondHut - Top Choice for Remote Talent Hiring and Management",
     description: "Build Your Dream Team With The Best Talent And Management Hassle Free. BeyondHut helps businesses scale with cost-effective top-tier talent vetted, trained and ready to plug into your team.",
-    images: ["https://beyondhut.com/og-image.png"],
+    images: ["https://webwork.store/og-image.png"],
     creator: "@beyondhut",
   },
   alternates: {
-    canonical: "https://beyondhut.com",
+    canonical: "https://webwork.store",
   },
   category: "business",
   classification: "business",
